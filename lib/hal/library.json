@@ -1,0 +1,21 @@
+{
+    "name": "HardwareAbstractionLayer",
+    "version": "1.0.0",
+    "authors":
+    [
+        {
+            "name": "Jonas Frei"
+        }
+    ],
+    "frameworks": "espidf",
+    "platforms": "espressif32",
+    "headers": 
+    [
+        "encoder_driver.h",
+        "motor_driver.h"
+    ],
+    "dependencies":
+    {
+        "SafetySystem": "^1.0.0"
+    }
+}

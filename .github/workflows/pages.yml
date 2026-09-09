@@ -1,0 +1,103 @@
+name: Deploy Doxygen Docs
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install Doxygen 1.17.0
+        run: |
+          curl -L -o /tmp/doxygen.tar.gz \
+            https://github.com/doxygen/doxygen/releases/download/Release_1_17_0/doxygen-1.17.0.linux.bin.tar.gz
+          tar -xzf /tmp/doxygen.tar.gz -C /tmp
+          sudo mv /tmp/doxygen-1.17.0/bin/doxygen /usr/local/bin/doxygen
+          rm -rf /tmp/doxygen.tar.gz /tmp/doxygen-1.17.0
+          doxygen --version
+
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+
+      - name: Determine version label
+        id: vars
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            echo "version=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=latest" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build Doxygen docs
+        run: |
+          mkdir -p build/${{ steps.vars.outputs.version }}
+          (cat Doxyfile; echo "OUTPUT_DIRECTORY=build/${{ steps.vars.outputs.version }}") | doxygen -
+
+      - name: Deploy this version to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/${{ steps.vars.outputs.version }}/html
+          destination_dir: ${{ steps.vars.outputs.version }}
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Update version index and root redirect
+        run: |
+          git fetch origin gh-pages
+          git worktree add /tmp/gh-pages gh-pages
+
+          # versions.json
+          python3 - <<'EOF'
+          import json, os
+          path = "/tmp/gh-pages/versions.json"
+          version = os.environ["VERSION"]
+          try:
+              with open(path) as f:
+                  versions = json.load(f)
+          except FileNotFoundError:
+              versions = []
+          if version not in versions:
+              versions.insert(0, version)
+          with open(path, "w") as f:
+              json.dump(versions, f, indent=2)
+          EOF
+
+          # root redirect, only create if it doesn't exist yet
+          if [ ! -f /tmp/gh-pages/index.html ]; then
+            cat > /tmp/gh-pages/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <title>Redirecting to latest docs…</title>
+            <meta http-equiv="refresh" content="0; url=./latest/index.html">
+            <script>window.location.replace('./latest/index.html');</script>
+          </head>
+          <body>
+            <p>Redirecting to the <a href="./latest/index.html">latest documentation</a>…</p>
+          </body>
+          </html>
+          HTML
+          fi
+        env:
+          VERSION: ${{ steps.vars.outputs.version }}
+
+      - name: Commit version index
+        run: |
+          cd /tmp/gh-pages
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add versions.json index.html
+          git diff --cached --quiet || git commit -m "Update versions.json / add root redirect"
+          git push origin gh-pages

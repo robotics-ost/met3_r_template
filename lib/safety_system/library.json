@@ -1,0 +1,19 @@
+{
+    "name": "SafetySystem",
+    "version": "1.0.0",
+    "authors":
+    [
+        {
+            "name": "Jonas Frei"
+        }
+    ],
+    "frameworks": "espidf",
+    "platforms": "espressif32",
+    "headers": "safety_system.h",
+    "dependencies":
+    {
+        "HardwareAbstractionLayer": "^1.0.0",
+        "UDPInterface": "^1.0.0",
+        "ControlSystem": "^1.0.0"
+    }
+}

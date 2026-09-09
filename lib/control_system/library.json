@@ -1,0 +1,23 @@
+{
+    "name": "ControlSystem",
+    "version": "1.0.0",
+    "authors":
+    [
+        {
+            "name": "Jonas Frei"
+        }
+    ],
+    "frameworks": "espidf",
+    "platforms": "espressif32",
+    "headers": 
+    [
+        "common_math.h",
+        "control_system.h"
+    ],
+    "dependencies":
+    {
+        "UDPInterface": "^1.0.0",
+        "HardwareAbstractionLayer": "^1.0.0",
+        "SafetySystem": "^1.0.0"
+    }
+}

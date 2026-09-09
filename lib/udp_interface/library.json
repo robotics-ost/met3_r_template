@@ -1,0 +1,18 @@
+{
+    "name": "UDPInterface",
+    "version": "1.0.0",
+    "authors":
+    [
+        {
+            "name": "Jonas Frei"
+        }
+    ],
+    "frameworks": "espidf",
+    "platforms": "espressif32",
+    "headers": "udp_interface.h",
+    "dependencies":
+    {
+        "SafetySystem": "^1.0.0",
+        "Sequencer": "^1.0.0"
+    }
+}

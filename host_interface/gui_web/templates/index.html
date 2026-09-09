@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESP32 Telemetry Console</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>
+      <span class="dot" id="conn-dot"></span>
+      ESP32 Telemetry Console
+      <span class="target">{{ esp32_host }}:{{ esp32_port }}</span>
+    </h1>
+    <div class="status-cluster">
+      <span class="stat">packets <b id="stat-packets">0</b></span>
+      <span class="stat">samples <b id="stat-samples">0</b></span>
+      <span class="stat">dropped <b id="stat-dropped">0</b></span>
+      <span class="stat">seq <b id="stat-seq">-</b></span>
+    </div>
+  </header>
+
+  <main>
+    <div id="charts-column">
+      <!-- chart-card elements are injected here by app.js -->
+      <button id="add-chart-btn">+ Add plot</button>
+    </div>
+
+    <aside>
+      <section class="panel sidebar-block">
+        <h2>Safety Level</h2>
+        <div class="last-safety-readout level" id="last-safety-value">--</div>
+        <h2>Safety Events</h2>
+        <div class="btn-row">
+          <button class="cmd-btn safety-event" data-event="0">Do System On</button>
+          <button class="cmd-btn safety-event" data-event="1">Do System Off</button>
+          <button class="cmd-btn safety-event" data-event="4">Emergency</button>
+          <button class="cmd-btn safety-event" data-event="5">Reset Emergency</button>
+          <button class="cmd-btn safety-event" data-event="6">Start Operation</button>
+          <button class="cmd-btn safety-event" data-event="7">Stop Operation</button>
+        </div>
+      </section>
+
+      <section class="panel sidebar-block">
+        <h2>Sequencer queue</h2>
+        <div id="step-track"></div>
+        <form class="cmd-form single" id="form-remove-step">
+          <div>
+            <span class="field-label">step_id to remove</span>
+            <input type="number" name="step_id" required min="0" />
+          </div>
+          <button type="submit">Remove</button>
+        </form>
+      </section>
+
+      <section class="panel sidebar-block">
+        <h2>Wait</h2>
+        <form class="cmd-form single" id="form-wait">
+          <div>
+            <span class="field-label">duration (ms)</span>
+            <input type="number" name="duration_ms" required min="0" />
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="panel sidebar-block">
+        <h2>Command log</h2>
+        <div class="log" id="cmd-log"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

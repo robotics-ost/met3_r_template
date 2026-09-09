@@ -1,0 +1,421 @@
+:root {
+  --bg: #0f1214;
+  --panel: #171c1f;
+  --panel-alt: #1d2327;
+  --border: #262e33;
+  --text: #e7ecee;
+  --text-muted: #869097;
+  --accent: #5eb3f6;
+  --good: #7ee8a0;
+  --warn: #f5c451;
+  --bad: #f76d6d;
+
+  --sig-enc-A: #5eb3f6;
+  --sig-enc-B: #f2a154;
+  --sig-safety: #f5c451;
+
+  --font-ui: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+
+header.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+header.topbar h1 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header.topbar .target {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.status-cluster {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.status-cluster .stat b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bad);
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(126, 232, 160, 0.5);
+}
+
+.dot.live {
+  background: var(--good);
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(126, 232, 160, 0.45); }
+  70% { box-shadow: 0 0 0 6px rgba(126, 232, 160, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(126, 232, 160, 0); }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+  padding: 16px 20px 40px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+section.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+section.panel + section.panel {
+  margin-top: 16px;
+}
+
+.panel h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+#charts-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px 6px;
+}
+
+.chart-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.chart-card-head input.title-input {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 2px 4px;
+  width: 60%;
+}
+
+.chart-card-head input.title-input:focus {
+  outline: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.chart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chart-controls label {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chart-controls input[type="number"] {
+  width: 56px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.signal-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 10px;
+}
+
+.signal-toggle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--panel-alt);
+  user-select: none;
+}
+
+.signal-toggle.active {
+  color: var(--bg);
+  font-weight: 600;
+  border-color: transparent;
+}
+
+.remove-chart-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 2px 6px;
+}
+
+.remove-chart-btn:hover {
+  color: var(--bad);
+}
+
+.chart-canvas-wrap {
+  height: 190px;
+}
+
+#add-chart-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+#add-chart-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* -- command console -- */
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button.cmd-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--text);
+  cursor: pointer;
+}
+
+button.cmd-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+button.cmd-btn.safety-event {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+button.cmd-btn.safety-event:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+form.cmd-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+form.cmd-form.single {
+  grid-template-columns: 1fr auto;
+}
+
+form.cmd-form input {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  width: 100%;
+}
+
+form.cmd-form button {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+form.cmd-form button:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.field-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.sidebar-block + .sidebar-block {
+  margin-top: 20px;
+}
+
+/* -- sequencer queue track (signature element) -- */
+
+#step-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+}
+
+.step-card {
+  flex: 0 0 auto;
+  width: 92px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 8px 10px;
+  position: relative;
+}
+
+.step-card .step-id {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.step-card .step-type {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 4px 0 6px;
+}
+
+.step-card.type-wait .step-type {
+  color: var(--warn);
+}
+
+.step-card .step-detail {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.step-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 8px;
+  height: 1px;
+  background: var(--border);
+}
+
+.step-card:last-child::after {
+  display: none;
+}
+
+#step-track:empty::before {
+  content: "No steps queued";
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.last-safety-readout {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 4px 0 16px;
+}
+
+/* Per-level color for the safety readout. Class names come from app.js's
+   `level-${last.safety_level}` -- keep these in sync with
+   safetyLevelToString() in app.js whenever the set of safety levels changes. */
+.last-safety-readout.level-0 { color: var(--text-muted); } /* System Off */
+.last-safety-readout.level-1 { color: var(--text-muted); } /* Initializing */
+.last-safety-readout.level-2 { color: var(--warn); }       /* Shutting Down */
+.last-safety-readout.level-3 { color: var(--bad); }        /* Emergency */
+.last-safety-readout.level-4 { color: var(--good); }       /* Ready */
+.last-safety-readout.level-5 { color: var(--good); }       /* Active */
+
+.log {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  max-height: 90px;
+  overflow-y: auto;
+  margin-top: 8px;
+  line-height: 1.6;
+}
