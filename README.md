@@ -1,13 +1,13 @@
 # Mobiler Ausbildungsroboter ESP32
 
-[![Deploy Doxygen Docs](https://github.com/robotics-ost/mobile_robot_esp32/actions/workflows/pages.yml/badge.svg)](https://github.com/robotics-ost/mobile_robot_esp32/actions/workflows/pages.yml)&emsp;
-[![Docs HUB](https://img.shields.io/badge/Read_the-Docs-1d70b8?style=flat-square&logo=readthedocs)](https://robotics-ost.github.io/mobile_robot_esp32/)
+[![Deploy Doxygen Docs](https://github.com/robotics-ost/met3_r_template/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/robotics-ost/met3_r_template/actions/workflows/pages/pages-build-deployment)&emsp;
+[![Docs HUB](https://img.shields.io/badge/Read_the-Docs-1d70b8?style=flat-square&logo=readthedocs)](https://robotics-ost.github.io/met3_r_template/)
 
-A mobile differential-drive robot educational platform built on the **Waveshare General Driver for Robots (ESP32-WROOM-32UE)** with **ESP-IDF** and **PlatformIO**.
+This repo serves as a template for the MeT3_R practica. It contains the starter code to programm a mobile differential-drive robot educational platform built on the **Waveshare General Driver for Robots (ESP32-WROOM-32UE)** with **ESP-IDF** and **PlatformIO**.
 
 ## Architecture Overview
 
-The system is designed in four layers (Safety System, Control System, Sequencer, Hardware Abstraction Layer). Solid lines indicate write operations, while dashed lines stand for read only. Users can only interact with the sequencer, e.g. to queue new goal states for the robot.
+The core system is designed in four layers (Safety System, Control System, Sequencer, Hardware Abstraction Layer). In addition, the network interface enables the user to interact with the robot via telemetry. Solid lines indicate write operations, while dashed lines stand for read only.
 
 ```mermaid
 flowchart TB
@@ -47,13 +47,13 @@ flowchart TB
     UDP -->|"Queue\nSteps"| Seq
 ```
 
-| Layer | Target Core | Priority | Status |
-|---|---|---|---|
-| **Sequencer** | Core 0 | Non RT (~50-100 Hz) | Implemented |
-| **Control System** | Core 1 | Hard RT (~500-1000 Hz) | Implemented |
-| **Safety System** | Core 1 | Hard RT (500-1000 Hz) | Implemented |
-| **HAL** | Core 0 | Direct Register Access | Implemented |
-| **UDP Telemetry** | Core 0 | Non RT (50 Hz) | Implemented |
+| Layer | Target Core | Priority |
+|---|---|---|
+| **Sequencer** | Core 0 | Non RT (~50-100 Hz) |
+| **Control System** | Core 1 | Hard RT (~500-1000 Hz) |
+| **Safety System** | Core 1 | Hard RT (500-1000 Hz) |
+| **HAL** | Core 0 | Direct Register Access |
+| **UDP Telemetry** | Core 0 | Non RT (50 Hz) |
 
 ## Current Status
 
@@ -71,38 +71,9 @@ flowchart TB
 
 **Safety System** provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.
 
-**Control System** provides a main control task that allows to add a custom control logic. For the purpose of testing and demonstration the following control architecture is implemented:
-```mermaid
-flowchart LR
-    ED["Encoder\nDriver"]
-    MM1["Motor\nModel"]
-    FWKINODOM["Forward\nKinematics\nand Odometry"]
-    PC["Position\nControl"]
-    INVKIN["Inverse\nKinematics"]
-    PI["PI Velocity\nControl"]
-    MM2["Motor\nModel"]
-    MD["Motor\nDriver"]
+**Control System** provides a main control task that allows to add a custom control logic.
 
-    ED --> MM1
-    MM1 --> FWKINODOM
-    FWKINODOM --> PC
-    PC --> INVKIN
-    INVKIN --> PI
-    PI --> MM2
-    MM2 --> MD
-```
-- Encoder Driver: Read encoder values (input shaft angles)
-- Motor Model: Calculate joint (wheel) velocities
-- Kinematics: Calculate the robot position in global frame (forward kinematics and odometry)
-- Cartesian Position Control: Calculate the velocities of the robot in the robot frame so that it moves along a smooth trajectory to a target position in global space.
-- Kinematics: Calculate the joint velocities from the robot velocities (inverse kinematics)
-- Joint Space Control: Kinematic PI velocity control
-- Motor Model: Calculate the motor voltage
-- Motor Driver: Set the motor voltages using the motor driver
-
-The **sequencer** is implemented as a doubly linked list that can store a sequence of steps. Currently two step types are implemented:
-- MoveToPose: Moves to a specified pose in global space (x, y, phi).
-- Wait: Waits for a specified duration in ms.
+The **sequencer** is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.
 
 ## Build & Run
 
