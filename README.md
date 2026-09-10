@@ -92,4 +92,16 @@ Some constants are used from different components of the system. In order to avo
 
 Therefore, to change the configuration, edit `include/config.h` accordingly and make sure that the `main_app()` methods correctly uses them to fill the config structs of the individual components.
 
-> **Note:** These values are baked into the binary. Any change requires a full reflash.
+### WIFI Configuration
+
+The wifi SSID and password are stored in the file `include/wifi_secrets.h`. This file is listed in the `.gitignore` file to prevent it from being accidentally leaked when changes are committed to GitHub. Therefore, it must be created manually after cloning the repository, containing the following:
+
+```c
+#pragma once
+
+#define UPD_INTERFACE_WIFI_SSID "XXX" /**< WiFi SSID for UDP interface */
+#define UPD_INTERFACE_WIFI_PASS "XXX" /**< WiFi password for UDP interface */
+
+```
+
+> **Note:** All configuration parameters are baked into the binary. Any change requires a full reflash.

@@ -20,6 +20,7 @@
 #include "sequencer.h"
 
 #include "config.h"
+#include "wifi_secrets.h"
 
 static const char *TAG = "Main Application"; /**< Tag for logging purposes */
 

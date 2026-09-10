@@ -10,3 +10,4 @@ doc
 **/.venv
 **/__pycache__
 **/esp32_config.json
+include/wifi_secrets.h

@@ -23,8 +23,6 @@
 #define I2C_MASTER_SDA_IO 32 /**< GPIO pin for I2C master SDA */
 
 // UPD interface configuration constants
-#define UPD_INTERFACE_WIFI_SSID "XXX"        /**< WiFi SSID for UDP interface */
-#define UPD_INTERFACE_WIFI_PASS "XXX"        /**< WiFi password for UDP interface */
 #define UPD_INTERFACE_HOSTNAME "robot_1"     /**< Hostname for the ESP32 on the network */
 #define UPD_INTERFACE_UDP_PORT 3333          /**< UDP port for communication */
 #define UPD_INTERFACE_TASK_PERIOD_MS 20      /**< Network task period [ms] */
@@ -41,7 +39,7 @@
 #define MOTOR_DRIVER_MOTOR_B_FREE_SPIN false            /**< Motor B free spin configuration */
 
 // Control system configuration constants
-#define CONTROL_SYSTEM_TASK_PERIOD_MS 100                                             /**< Control system task period [ms] */
+#define CONTROL_SYSTEM_TASK_PERIOD_MS 5                                               /**< Control system task period [ms] */
 #define CONTROL_SYSTEM_TASK_PERIOD_S ((float)CONTROL_SYSTEM_TASK_PERIOD_MS / 1000.0f) /**< Control system task period [s] */
 
 // Sequencer configuration constants
