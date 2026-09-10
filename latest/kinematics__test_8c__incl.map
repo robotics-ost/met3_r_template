@@ -1,0 +1,7 @@
+<map id="test/test_cs_kinematics/kinematics_test.c" name="test/test_cs_kinematics/kinematics_test.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,181,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="6,93,71,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,47,57,84,52,80,78,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="96,93,203,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,44,135,80,131,84,105,47"/>
+</map>
