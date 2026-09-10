@@ -218,8 +218,15 @@ Commands</h2>
 Configuration</h1>
 <p>Some constants are used from different components of the system. In order to avoid constants from drifting apart, all the configurabel constants are gathered in <span class="tt"><a class="el" href="config_8h.html">include/config.h</a></span> and the <span class="tt">main_app()</span> method in <span class="tt">src\<a class="el" href="main_8c.html" title="Main application entry point.">main.c</a></span> is responsible to hand them over to the individual components during their initialisation. On the other hand, each component should accept a config struct during initialisation.</p>
 <p>Therefore, to change the configuration, edit <span class="tt"><a class="el" href="config_8h.html">include/config.h</a></span> accordingly and make sure that the <span class="tt">main_app()</span> methods correctly uses them to fill the config structs of the individual components.</p>
-<blockquote class="doxtable">
-<p><b>Note:</b> These values are baked into the binary. Any change requires a full reflash. </p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+WIFI Configuration</h2>
+<p>The wifi SSID and password are stored in the file <span class="tt">include/wifi_secrets.h</span>. This file is listed in the <span class="tt">.gitignore</span> file to prevent it from being accidentally leaked when changes are committed to GitHub. Therefore, it must be created manually after cloning the repository, containing the following:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define UPD_INTERFACE_WIFI_SSID &quot;XXX&quot; </span><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#define UPD_INTERFACE_WIFI_PASS &quot;XXX&quot; </span><span class="preprocessor"></span></div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p><b>Note:</b> All configuration parameters are baked into the binary. Any change requires a full reflash. </p>
 </blockquote>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

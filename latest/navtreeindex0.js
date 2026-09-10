@@ -128,11 +128,9 @@ var NAVTREEINDEX0 =
 "config_8h.html#a51813ee1361cac8fb192828e281863a1":[3,0,1,0,8],
 "config_8h.html#a5b3d085f860203a6bdc6b2e258a4b901":[3,0,1,0,9],
 "config_8h.html#a880c9ec401a35c3cc7331107a3201d40":[3,0,1,0,11],
-"config_8h.html#a959874d5738cfee468b3378055c87513":[3,0,1,0,18],
 "config_8h.html#ab261af5cc162e1530abc121e3c5595f6":[3,0,1,0,1],
 "config_8h.html#acc21ca3ca98dc0afac2a1de24ed24395":[3,0,1,0,10],
 "config_8h.html#acfe55fc85c69d993b2e9af4e2a42a876":[3,0,1,0,16],
-"config_8h.html#ad0a323e778d61b15893e595bccb1530c":[3,0,1,0,17],
 "config_8h.html#aef256d73dd0e41c4302ce129af19fff5":[3,0,1,0,12],
 "config_8h.html#af47631d568bba17edf9d1ea042602bb6":[3,0,1,0,5],
 "config_8h.html#afcfce035b095e74e2cd8aa2702dbf02c":[3,0,1,0,6],
@@ -237,6 +235,7 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md14":[0,2,0],
 "index.html#autotoc_md15":[0,2,1],
 "index.html#autotoc_md16":[0,3],
+"index.html#autotoc_md17":[0,3,0],
 "kinematics__test_8c.html":[3,0,4,1,0],
 "kinematics__test_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70":[3,0,4,1,0,0],
 "kinematics__test_8c.html#a6475029759e9cf9d5db1fd94034988a4":[3,0,4,1,0,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "motor__driver_8c.html":[3,0,2,1,1,1],
 "motor__driver_8c.html#a04fa26959b58ab07f48179771642b88c":[3,0,2,1,1,1,12],
 "motor__driver_8c.html#a2551e3932da69152ab5bf09e0a615fdf":[3,0,2,1,1,1,20],
-"motor__driver_8c.html#a26b2f302662ab303277057793f07532a":[3,0,2,1,1,1,14]
+"motor__driver_8c.html#a26b2f302662ab303277057793f07532a":[3,0,2,1,1,1,14],
+"motor__driver_8c.html#a30472a24529de96b2b3e383cb38b23d8":[3,0,2,1,1,1,6]
 };

@@ -6,5 +6,7 @@ var index =
       [ "Prerequisites", "index.html#autotoc_md14", null ],
       [ "Commands", "index.html#autotoc_md15", null ]
     ] ],
-    [ "Configuration", "index.html#autotoc_md16", null ]
+    [ "Configuration", "index.html#autotoc_md16", [
+      [ "WIFI Configuration", "index.html#autotoc_md17", null ]
+    ] ]
 ];

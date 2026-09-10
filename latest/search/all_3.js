@@ -22,7 +22,7 @@ var searchData=
   ['config_2eh_19',['config.h',['../config_8h.html',1,'']]],
   ['config_5fenv_5fvar_20',['CONFIG_ENV_VAR',['../namespaceudp__core.html#a5814796c12ea1c369091e2a71f7c23d2',1,'udp_core']]],
   ['config_5ffilename_21',['CONFIG_FILENAME',['../namespaceudp__core.html#a36b241b3c66fc67385b3de5d92db31bb',1,'udp_core']]],
-  ['configuration_22',['Configuration',['../index.html#autotoc_md16',1,'']]],
+  ['configuration_22',['Configuration',['../index.html#autotoc_md16',1,'Configuration'],['../index.html#autotoc_md17',1,'WIFI Configuration']]],
   ['constrain_5fangle_5fto_5fpm_5fpi_23',['constrain_angle_to_pm_pi',['../common__math_8h.html#a194875e44f54a50bf2a38511734b3d3c',1,'constrain_angle_to_pm_pi(float *angle):&#160;common_math.c'],['../common__math_8c.html#a194875e44f54a50bf2a38511734b3d3c',1,'constrain_angle_to_pm_pi(float *angle):&#160;common_math.c']]],
   ['control_20sample_20periodic_20telemetry_20values_24',['A. Changing what&apos;s in a control sample (periodic telemetry values)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md7',1,'']]],
   ['control_5fsample_5fcount_25',['control_sample_count',['../structtelemetry__packet__t.html#a469eeccf5b70fae2df3a6bb204e1b244',1,'telemetry_packet_t']]],

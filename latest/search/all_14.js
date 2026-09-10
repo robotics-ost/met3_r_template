@@ -18,9 +18,7 @@ var searchData=
   ['upd_5finterface_5ftask_5fperiod_5fms_15',['UPD_INTERFACE_TASK_PERIOD_MS',['../config_8h.html#a2223a5719614413027fa18b9c872272a',1,'config.h']]],
   ['upd_5finterface_5ftelemetry_5fqueue_5flen_16',['UPD_INTERFACE_TELEMETRY_QUEUE_LEN',['../config_8h.html#a01aa1992ed840607b7ebbeb47f2d90eb',1,'config.h']]],
   ['upd_5finterface_5fudp_5fport_17',['UPD_INTERFACE_UDP_PORT',['../config_8h.html#acfe55fc85c69d993b2e9af4e2a42a876',1,'config.h']]],
-  ['upd_5finterface_5fwifi_5fpass_18',['UPD_INTERFACE_WIFI_PASS',['../config_8h.html#ad0a323e778d61b15893e595bccb1530c',1,'config.h']]],
-  ['upd_5finterface_5fwifi_5fssid_19',['UPD_INTERFACE_WIFI_SSID',['../config_8h.html#a959874d5738cfee468b3378055c87513',1,'config.h']]],
-  ['update_5fbus_5fvoltage_5ftask_20',['update_bus_voltage_task',['../motor__driver_8h.html#a9faa987f5036ce8ed81daa5c69918602',1,'update_bus_voltage_task(void *arg):&#160;motor_driver.c'],['../motor__driver_8c.html#a9faa987f5036ce8ed81daa5c69918602',1,'update_bus_voltage_task(void *arg):&#160;motor_driver.c']]],
-  ['usage_21',['Python Usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md3',1,'']]],
-  ['usage_22',['Command-line usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md4',1,'']]]
+  ['update_5fbus_5fvoltage_5ftask_18',['update_bus_voltage_task',['../motor__driver_8h.html#a9faa987f5036ce8ed81daa5c69918602',1,'update_bus_voltage_task(void *arg):&#160;motor_driver.c'],['../motor__driver_8c.html#a9faa987f5036ce8ed81daa5c69918602',1,'update_bus_voltage_task(void *arg):&#160;motor_driver.c']]],
+  ['usage_19',['Python Usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md3',1,'']]],
+  ['usage_20',['Command-line usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md4',1,'']]]
 ];

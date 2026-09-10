@@ -8,7 +8,7 @@ var searchData=
   ['command_20line_20usage_5',['Command-line usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md4',1,'']]],
   ['commands_6',['Commands',['../index.html#autotoc_md15',1,'']]],
   ['config_20file_20esp32_5fconfig_20json_7',['Config file (&lt;span class=&quot;tt&quot;&gt;esp32_config.json&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md2',1,'']]],
-  ['configuration_8',['Configuration',['../index.html#autotoc_md16',1,'']]],
+  ['configuration_8',['Configuration',['../index.html#autotoc_md16',1,'Configuration'],['../index.html#autotoc_md17',1,'WIFI Configuration']]],
   ['control_20sample_20periodic_20telemetry_20values_9',['A. Changing what&apos;s in a control sample (periodic telemetry values)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md7',1,'']]],
   ['core_20core_20udp_5fcore_20py_10',['Shared core (&lt;span class=&quot;tt&quot;&gt;core/udp_core.py&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md1',1,'']]],
   ['core_20udp_5fcore_20py_11',['Shared core (&lt;span class=&quot;tt&quot;&gt;core/udp_core.py&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md1',1,'']]],
