@@ -1,6 +1,7 @@
 # Mobiler Ausbildungsroboter ESP32
 
 [![Deploy Doxygen Docs](https://github.com/robotics-ost/met3_r_template/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/robotics-ost/met3_r_template/actions/workflows/pages/pages-build-deployment)&emsp;
+[![Create Release on Tag](https://github.com/robotics-ost/met3_r_template/actions/workflows/create_release_on_tag.yml/badge.svg)](https://github.com/robotics-ost/met3_r_template/actions/workflows/create_release_on_tag.yml)&emsp;
 [![Docs HUB](https://img.shields.io/badge/Read_the-Docs-1d70b8?style=flat-square&logo=readthedocs)](https://robotics-ost.github.io/met3_r_template/)
 
 This repo serves as a template for the MeT3_R practica. It contains the starter code to programm a mobile differential-drive robot educational platform built on the **Waveshare General Driver for Robots (ESP32-WROOM-32UE)** with **ESP-IDF** and **PlatformIO**.
