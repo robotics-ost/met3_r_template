@@ -129,11 +129,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
-<p><a href="https://github.com/robotics-ost/mobile_robot_esp32/actions/workflows/pages.yml"><img src="https://github.com/robotics-ost/mobile_robot_esp32/actions/workflows/pages.yml/badge.svg" alt="Deploy Doxygen Docs" style="pointer-events: none;" class="inline"/></a>&emsp; <a href="https://robotics-ost.github.io/mobile_robot_esp32/"><img src="https://img.shields.io/badge/Read_the-Docs-1d70b8?style=flat-square&amp;logo=readthedocs" alt="Docs HUB" class="inline"/></a></p>
-<p>A mobile differential-drive robot educational platform built on the <b>Waveshare General Driver for Robots (ESP32-WROOM-32UE)</b> with <b>ESP-IDF</b> and <b>PlatformIO</b>.</p>
+<p><a href="https://github.com/robotics-ost/met3_r_template/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/robotics-ost/met3_r_template/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Deploy Doxygen Docs" style="pointer-events: none;" class="inline"/></a>&emsp; <a href="https://robotics-ost.github.io/met3_r_template/"><img src="https://img.shields.io/badge/Read_the-Docs-1d70b8?style=flat-square&amp;logo=readthedocs" alt="Docs HUB" class="inline"/></a></p>
+<p>This repo serves as a template for the MeT3_R practica. It contains the starter code to programm a mobile differential-drive robot educational platform built on the <b>Waveshare General Driver for Robots (ESP32-WROOM-32UE)</b> with <b>ESP-IDF</b> and <b>PlatformIO</b>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 Architecture Overview</h1>
-<p>The system is designed in four layers (Safety System, Control System, Sequencer, Hardware Abstraction Layer). Solid lines indicate write operations, while dashed lines stand for read only. Users can only interact with the sequencer, e.g. to queue new goal states for the robot.</p>
+<p>The core system is designed in four layers (Safety System, Control System, Sequencer, Hardware Abstraction Layer). In addition, the network interface enables the user to interact with the robot via telemetry. Solid lines indicate write operations, while dashed lines stand for read only.</p>
 <div class="mermaidgraph">
 <pre class="mermaid">
 flowchart TB
@@ -174,17 +174,17 @@ flowchart TB
 </div>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Layer  </th><th class="markdownTableHeadNone">Target Core  </th><th class="markdownTableHeadNone">Priority  </th><th class="markdownTableHeadNone">Status  </th></tr>
+<th class="markdownTableHeadNone">Layer  </th><th class="markdownTableHeadNone">Target Core  </th><th class="markdownTableHeadNone">Priority  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Sequencer</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (~50-100 Hz)  </td><td class="markdownTableBodyNone">Implemented  </td></tr>
+<td class="markdownTableBodyNone"><b>Sequencer</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (~50-100 Hz)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Control System</b>  </td><td class="markdownTableBodyNone">Core 1  </td><td class="markdownTableBodyNone">Hard RT (~500-1000 Hz)  </td><td class="markdownTableBodyNone">Implemented  </td></tr>
+<td class="markdownTableBodyNone"><b>Control System</b>  </td><td class="markdownTableBodyNone">Core 1  </td><td class="markdownTableBodyNone">Hard RT (~500-1000 Hz)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Safety System</b>  </td><td class="markdownTableBodyNone">Core 1  </td><td class="markdownTableBodyNone">Hard RT (500-1000 Hz)  </td><td class="markdownTableBodyNone">Implemented  </td></tr>
+<td class="markdownTableBodyNone"><b>Safety System</b>  </td><td class="markdownTableBodyNone">Core 1  </td><td class="markdownTableBodyNone">Hard RT (500-1000 Hz)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>HAL</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Direct Register Access  </td><td class="markdownTableBodyNone">Implemented  </td></tr>
+<td class="markdownTableBodyNone"><b>HAL</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Direct Register Access  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>UDP Telemetry</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (50 Hz)  </td><td class="markdownTableBodyNone">Implemented  </td></tr>
+<td class="markdownTableBodyNone"><b>UDP Telemetry</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (50 Hz)  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Current Status</h1>
@@ -201,40 +201,8 @@ Current Status</h1>
 <li><b>Encoder Driver</b> — ESP-IDF PCNT quadrature encoding; 2 encoders with configurable transmission ratio</li>
 </ul>
 <p><b>Safety System</b> provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.</p>
-<p><b>Control System</b> provides a main control task that allows to add a custom control logic. For the purpose of testing and demonstration the following control architecture is implemented: </p><div class="mermaidgraph">
-<pre class="mermaid">
-flowchart LR
-    ED[&quot;Encoder\nDriver&quot;]
-    MM1[&quot;Motor\nModel&quot;]
-    FWKINODOM[&quot;Forward\nKinematics\nand Odometry&quot;]
-    PC[&quot;Position\nControl&quot;]
-    INVKIN[&quot;Inverse\nKinematics&quot;]
-    PI[&quot;PI Velocity\nControl&quot;]
-    MM2[&quot;Motor\nModel&quot;]
-    MD[&quot;Motor\nDriver&quot;]
-
-    ED --&gt; MM1
-    MM1 --&gt; FWKINODOM
-    FWKINODOM --&gt; PC
-    PC --&gt; INVKIN
-    INVKIN --&gt; PI
-    PI --&gt; MM2
-    MM2 --&gt; MD</pre>
-</div>
-<ul>
-<li>Encoder Driver: Read encoder values (input shaft angles)</li>
-<li>Motor Model: Calculate joint (wheel) velocities</li>
-<li>Kinematics: Calculate the robot position in global frame (forward kinematics and odometry)</li>
-<li>Cartesian Position Control: Calculate the velocities of the robot in the robot frame so that it moves along a smooth trajectory to a target position in global space.</li>
-<li>Kinematics: Calculate the joint velocities from the robot velocities (inverse kinematics)</li>
-<li>Joint Space Control: Kinematic PI velocity control</li>
-<li>Motor Model: Calculate the motor voltage</li>
-<li>Motor Driver: Set the motor voltages using the motor driver</li>
-</ul>
-<p>The <b>sequencer</b> is implemented as a doubly linked list that can store a sequence of steps. Currently two step types are implemented:</p><ul>
-<li>MoveToPose: Moves to a specified pose in global space (x, y, phi).</li>
-<li>Wait: Waits for a specified duration in ms.</li>
-</ul>
+<p><b>Control System</b> provides a main control task that allows to add a custom control logic.</p>
+<p>The <b>sequencer</b> is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Build &amp; Run</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
