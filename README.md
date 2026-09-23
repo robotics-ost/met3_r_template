@@ -56,25 +56,31 @@ flowchart TB
 | **HAL** | Core 0 | Direct Register Access |
 | **UDP Telemetry** | Core 0 | Non RT (50 Hz) |
 
-## Current Status
+### UDP telemetry
 
-**UDP telemetry infrastructure is implemented.** This provides:
+The UDP telemetry library provides:
 
 - WiFi STA connection to a router
 - UDP socket for bidirectional communication
-- Batched telemetry packets (20 samples/batch, ~50 Hz send rate) containing safety + control samples
-- Incoming command handling (HELLO registration, GOODBYE unregistration, safety state commands)
+- Batched telemetry packets (20 samples/batch, ~50 Hz send rate) containing safety and control samples, as well as sequencer steps
+- Incoming command handling (HELLO registration, GOODBYE unregistration, commands)
 
-**Hardware Abstraction Layer (HAL)** controls the physical hardware:
+### Hardware Abstraction Layer (HAL)
+
+The HAL controls the physical hardware:
 
 - **Motor Driver** — TB6612FNG via PWM; per-motor voltage control with direction, INA219 bus voltage monitoring
 - **Encoder Driver** — ESP-IDF PCNT quadrature encoding; 2 encoders with configurable transmission ratio
 
-**Safety System** provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.
+### Safety System
+The safety system provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.
 
-**Control System** provides a main control task that allows to add a custom control logic.
+### Control System
 
-The **sequencer** is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.
+The control system provides a main control task that allows to add a custom control logic.
+
+### Sequencer
+The sequencer is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.
 
 ## Build & Run
 
