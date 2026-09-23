@@ -186,39 +186,47 @@ flowchart TB
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>UDP Telemetry</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (50 Hz)  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
-Current Status</h1>
-<p><b>UDP telemetry infrastructure is implemented.</b> This provides:</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+UDP telemetry</h2>
+<p>The UDP telemetry library provides:</p>
 <ul>
 <li>WiFi STA connection to a router</li>
 <li>UDP socket for bidirectional communication</li>
-<li>Batched telemetry packets (20 samples/batch, ~50 Hz send rate) containing safety + control samples</li>
-<li>Incoming command handling (HELLO registration, GOODBYE unregistration, safety state commands)</li>
+<li>Batched telemetry packets (20 samples/batch, ~50 Hz send rate) containing safety and control samples, as well as sequencer steps</li>
+<li>Incoming command handling (HELLO registration, GOODBYE unregistration, commands)</li>
 </ul>
-<p><b>Hardware Abstraction Layer (HAL)</b> controls the physical hardware:</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Hardware Abstraction Layer (HAL)</h2>
+<p>The HAL controls the physical hardware:</p>
 <ul>
 <li><b>Motor Driver</b> — TB6612FNG via PWM; per-motor voltage control with direction, INA219 bus voltage monitoring</li>
 <li><b>Encoder Driver</b> — ESP-IDF PCNT quadrature encoding; 2 encoders with configurable transmission ratio</li>
 </ul>
-<p><b>Safety System</b> provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.</p>
-<p><b>Control System</b> provides a main control task that allows to add a custom control logic.</p>
-<p>The <b>sequencer</b> is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
-Build &amp; Run</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Safety System</h2>
+<p>The safety system provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Control System</h2>
+<p>The control system provides a main control task that allows to add a custom control logic.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Sequencer</h2>
+<p>The sequencer is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Build &amp; Run</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Prerequisites</h2>
 <ul>
 <li><a href="https://platformio.org/">PlatformIO</a> installed in VS Code (or CLI)</li>
 <li>ESP-IDF components included with PlatformIO</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 Commands</h2>
 <p>Use the PlatformIO's <span class="tt">Build</span>, <span class="tt">Upload</span>, <span class="tt">Test</span> and <span class="tt">Serial Monitor</span> commands available in the command palette to build and run the application.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 Configuration</h1>
 <p>Some constants are used from different components of the system. In order to avoid constants from drifting apart, all the configurabel constants are gathered in <span class="tt"><a class="el" href="config_8h.html">include/config.h</a></span> and the <span class="tt">main_app()</span> method in <span class="tt">src\<a class="el" href="main_8c.html" title="Main application entry point.">main.c</a></span> is responsible to hand them over to the individual components during their initialisation. On the other hand, each component should accept a config struct during initialisation.</p>
 <p>Therefore, to change the configuration, edit <span class="tt"><a class="el" href="config_8h.html">include/config.h</a></span> accordingly and make sure that the <span class="tt">main_app()</span> methods correctly uses them to fill the config structs of the individual components.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 WIFI Configuration</h2>
 <p>The wifi SSID and password are stored in the file <span class="tt">include/wifi_secrets.h</span>. This file is listed in the <span class="tt">.gitignore</span> file to prevent it from being accidentally leaked when changes are committed to GitHub. Therefore, it must be created manually after cloning the repository, containing the following:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>

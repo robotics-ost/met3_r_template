@@ -5,7 +5,7 @@ var searchData=
   ['wait_5ffmt_2',['WAIT_FMT',['../namespaceudp__core.html#a7dfe937712d0c29cda7a15a6c1b9b90f',1,'udp_core']]],
   ['web_20gui_20gui_5fweb_3',['Web GUI (&lt;span class=&quot;tt&quot;&gt;gui_web/&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md5',1,'']]],
   ['what_20s_20in_20a_20control_20sample_20periodic_20telemetry_20values_4',['A. Changing what&apos;s in a control sample (periodic telemetry values)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md7',1,'']]],
-  ['wifi_20configuration_5',['WIFI Configuration',['../index.html#autotoc_md17',1,'']]],
+  ['wifi_20configuration_5',['WIFI Configuration',['../index.html#autotoc_md21',1,'']]],
   ['wifi_5fconnected_5fbit_6',['WIFI_CONNECTED_BIT',['../udp__interface_8c.html#ad552e7688532cbbecd3967538ced06ac',1,'udp_interface.c']]],
   ['wifi_5fevent_5fgroup_7',['wifi_event_group',['../udp__interface_8c.html#a20c6ba80259caf6916ca631b853d82af',1,'udp_interface.c']]],
   ['wifi_5fevent_5fhandler_8',['wifi_event_handler',['../udp__interface_8c.html#ac31e38637f7a5e5c8ce4d033b0955fec',1,'udp_interface.c']]],
