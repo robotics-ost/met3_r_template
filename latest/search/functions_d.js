@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parse_5ftelemetry_0',['parse_telemetry',['../namespaceudp__core.html#a5e3c665a7c9108fc7a3700fa83953151',1,'udp_core']]]
+  ['on_5ftelemetry_0',['on_telemetry',['../classudp__core_1_1UdpClient.html#a49d5c777ec5daef4363cc2c5ea2a7993',1,'udp_core::UdpClient']]]
 ];

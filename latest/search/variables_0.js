@@ -13,5 +13,7 @@ var searchData=
   ['_5fsocket_5ftimeout_5fs_10',['_socket_timeout_s',['../classudp__core_1_1UdpClient.html#a0a93b5ec2ecfe8d191085ad58de08f24',1,'udp_core::UdpClient']]],
   ['_5fstats_5flock_11',['_stats_lock',['../classudp__core_1_1UdpClient.html#a1188298a41d37af357a8d381fcf06758',1,'udp_core::UdpClient']]],
   ['_5fsubscribers_12',['_subscribers',['../namespaceapp.html#a364c653fb800810e2dbc1c6a83cf8ee7',1,'app']]],
-  ['_5fsubscribers_5flock_13',['_subscribers_lock',['../namespaceapp.html#a15e321737f4264ee4f576be44edfe62e',1,'app']]]
+  ['_5fsubscribers_5flock_13',['_subscribers_lock',['../namespaceapp.html#a15e321737f4264ee4f576be44edfe62e',1,'app']]],
+  ['_5fxi_5fd_14',['_xi_d',['../position__controller__diff__drive_8c.html#a681745663aeef5c0865059388ce2a0ee',1,'position_controller_diff_drive.c']]],
+  ['_5fxi_5fd_5fmutex_15',['_xi_d_mutex',['../position__controller__diff__drive_8c.html#ab57d822ba69a6c82eb8d6be232f90c77',1,'position_controller_diff_drive.c']]]
 ];

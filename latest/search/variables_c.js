@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['registered_5ftask_5fcount_0',['registered_task_count',['../safety__system_8c.html#a9d955c28f03ce4ae7651f46e4a7bb902',1,'safety_system.c']]],
-  ['remove_5fstep_5ffmt_1',['REMOVE_STEP_FMT',['../namespaceudp__core.html#ac3dee3c4bf319be2557151a9b76ffc5c',1,'udp_core']]]
+  ['orientation_5ftolerance_0',['orientation_tolerance',['../structposition__controller__config__t.html#a346651fb69b77c88e577d69ac21b8d58',1,'position_controller_config_t']]]
 ];

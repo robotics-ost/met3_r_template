@@ -8,5 +8,6 @@ var searchData=
   ['build_5fsafety_5fcmd_5',['build_safety_cmd',['../namespaceudp__core.html#a94f286aff0674487689e6184d2859346',1,'udp_core']]],
   ['build_5fwait_5fcmd_6',['build_wait_cmd',['../namespaceudp__core.html#a9b215d62dd5ff58552ffa2147c22dc40',1,'udp_core']]],
   ['bus_5fvoltage_7',['bus_voltage',['../motor__driver_8c.html#ab5b31a04d0e22cd08a758aac9ca5db0a',1,'motor_driver.c']]],
-  ['bus_5fvoltage_5fupdate_5finterval_5fms_8',['bus_voltage_update_interval_ms',['../structmotor__driver__config__t.html#a52577a3ec8cafff3f0631e6399d5e93a',1,'motor_driver_config_t']]]
+  ['bus_5fvoltage_5fupdate_5finterval_5fms_8',['bus_voltage_update_interval_ms',['../structmotor__driver__config__t.html#a52577a3ec8cafff3f0631e6399d5e93a',1,'motor_driver_config_t']]],
+  ['by_20wire_9',['Steer-by-Wire',['../dir_096b0de097b3e98f91191e9d894d4363.html#autotoc_md26',1,'']]]
 ];
