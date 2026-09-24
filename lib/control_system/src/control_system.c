@@ -68,7 +68,6 @@ void control_system_task(void *arg)
 
     // Main control loop
     float shaft_angles[2] = {0.0f, 0.0f};
-    float U[2] = {0.0f, 0.0f};
     TickType_t last_wake = xTaskGetTickCount();
     while (!safety_system_is_shutting_down())
     {
