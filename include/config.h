@@ -1,5 +1,5 @@
 /**
- * @file config.c
+ * @file config.h
  * @brief Configuration constants for the robot system.
  * @author Jonas Frei
  * @date 01.09.2026
@@ -22,11 +22,11 @@
 #define I2C_MASTER_SCL_IO 33 /**< GPIO pin for I2C master SCL */
 #define I2C_MASTER_SDA_IO 32 /**< GPIO pin for I2C master SDA */
 
-// UPD interface configuration constants
-#define UPD_INTERFACE_HOSTNAME "robot_1"     /**< Hostname for the ESP32 on the network */
-#define UPD_INTERFACE_UDP_PORT 3333          /**< UDP port for communication */
-#define UPD_INTERFACE_TASK_PERIOD_MS 20      /**< Network task period [ms] */
-#define UPD_INTERFACE_TELEMETRY_QUEUE_LEN 64 /**< Length of the telemetry queue [-] */
+// UDP interface configuration constants
+#define UDP_INTERFACE_HOSTNAME "robot_1"     /**< Hostname for the ESP32 on the network */
+#define UDP_INTERFACE_UDP_PORT 3333          /**< UDP port for communication */
+#define UDP_INTERFACE_TASK_PERIOD_MS 20      /**< Network task period [ms] */
+#define UDP_INTERFACE_TELEMETRY_QUEUE_LEN 64 /**< Length of the telemetry queue [-] */
 
 // Encoder driver configuration constants
 #define ENCODER_DRIVER_ENC_A_PPR 16.0f /**< Encoder A pulses per revolution */
