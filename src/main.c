@@ -20,7 +20,11 @@
 #include "sequencer.h"
 
 #include "config.h"
+#if __has_include("wifi_secrets.h")
 #include "wifi_secrets.h"
+#else
+#error "include/wifi_secrets.h is missing. Copy include/wifi_secrets.h.example to include/wifi_secrets.h and enter your WiFi SSID and password (see README.md, Quick Start, Step 5)."
+#endif
 
 static const char *TAG = "Main Application"; /**< Tag for logging purposes */
 
