@@ -1,3 +1,6 @@
+# This file automates the template repository robotics-ost/met3_r_template.
+# It is not needed in your own repository. You can delete the whole .github folder.
+
 name: Deploy Doxygen Docs
 
 on:
@@ -10,19 +13,20 @@ permissions:
 
 jobs:
   docs:
+    if: github.repository == 'robotics-ost/met3_r_template' # only run in the original template, not in student repos
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Install Doxygen 1.17.0
+      - name: Install Doxygen 1.18.0
         run: |
           curl -L -o /tmp/doxygen.tar.gz \
-            https://github.com/doxygen/doxygen/releases/download/Release_1_17_0/doxygen-1.17.0.linux.bin.tar.gz
+            https://github.com/doxygen/doxygen/releases/download/Release_1_18_0/doxygen-1.18.0.linux.bin.tar.gz
           tar -xzf /tmp/doxygen.tar.gz -C /tmp
-          sudo mv /tmp/doxygen-1.17.0/bin/doxygen /usr/local/bin/doxygen
-          rm -rf /tmp/doxygen.tar.gz /tmp/doxygen-1.17.0
+          sudo mv /tmp/doxygen-1.18.0/bin/doxygen /usr/local/bin/doxygen
+          rm -rf /tmp/doxygen.tar.gz /tmp/doxygen-1.18.0
           doxygen --version
 
       - name: Install Graphviz
