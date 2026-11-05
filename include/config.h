@@ -5,7 +5,7 @@
  * @date 01.09.2026
  * @version 1.0
  *
- * @warning DO NOT add any other content besides #define statements to this file.
+ * @warning DO NOT add any other content besides \#define statements to this file.
  * This file is intended to be included only in main.c to provide configuration constants.
  * DO NOT include this file in other source files besides main.c.
  *

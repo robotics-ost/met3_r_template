@@ -1,0 +1,10 @@
+# Normalize line endings: files are stored with LF in the repository and
+# checked out with the native line ending of each operating system.
+# Makes the repo behave the same regardless of the user's Git settings.
+* text=auto
+
+# Binary files
+*.ico binary
+*.png binary
+*.jpg binary
+*.pdf binary

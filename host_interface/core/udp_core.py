@@ -115,7 +115,7 @@ def find_config_path(explicit_path: Optional[str] = None) -> Optional[Path]:
       1. explicit_path argument
       2. ESP32_CONFIG_PATH environment variable
       3. ./esp32_config.json (current working directory)
-      4. <repo_root>/esp32_config.json (repo root = parent of this file's
+      4. esp32_config.json in the repo root (repo root = parent of this file's
          parent, i.e. host_interface/ when this file is at core/)
 
     @param explicit_path Optional explicit path that, if given, is checked
