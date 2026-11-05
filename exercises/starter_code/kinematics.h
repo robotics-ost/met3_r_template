@@ -41,7 +41,7 @@ esp_err_t kinematics_init(const kinematics_config_t *config);
  * - Integrate velocities to update the robot pose in the global frame (odometry):
  * \f[{}^{G}\xi_{R} = \int{}^{G}\dot{\xi}_{R} dt + {}^{G}\xi_{R,0} \f]
  *
- * @param qd Pointer to the wheel velocities [rad/s].
+ * @param qd Pointer to the wheel velocities [m/s].
  *           Index 0: left wheel, index 1: right wheel.
  * @param xi Pointer to the robot pose [x, y, phi] in the global frame [m, m, rad].
  * @param xid Pointer to the robot velocities [vx, vy, omega] in the global frame [m/s, m/s, rad/s].
@@ -56,7 +56,7 @@ void kinematics_calc_fw_kin_odom(const float qd[2], float xi[3], float xid[3]);
  * \f[\dot{q} = {}^{W}J_{R}\left(q\right)\cdot{}{}^R\dot{\xi}_{R} \f]
  *
  * @param xid_d Pointer to the desired robot velocities [vx, vy, omega] in the robot frame.
- * @param qd_d Pointer to the required wheel velocities [rad/s].
+ * @param qd_d Pointer to the required wheel velocities [m/s].
  *             Index 0: left wheel, index 1: right wheel.
  */
 void kinematics_calc_inv_kin(const float xid_d[3], float qd_d[2]);

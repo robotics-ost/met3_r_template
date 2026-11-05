@@ -1,0 +1,7 @@
+/* Custom styles for the Doxygen documentation */
+
+/* Scale images down to the width of the page */
+div.image img {
+    max-width: 100%;
+    height: auto;
+}

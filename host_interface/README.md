@@ -1,5 +1,10 @@
 # Host side ESP32 UDP telemetry/command interface
 
+> [!TIP]
+> **Just want to use the web GUI?** Follow the step-by-step guide [Web GUI](../docs/WEB_GUI.md). This README describes the details of the protocol and how to adapt the GUI.
+
+## Overview
+
 ```
 host_interface/
 ├── esp32_config.json.example   <- copy to esp32_config.json and edit (see "Config file" below)
