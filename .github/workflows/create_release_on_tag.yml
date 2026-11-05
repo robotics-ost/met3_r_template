@@ -1,3 +1,6 @@
+# This file automates the template repository robotics-ost/met3_r_template.
+# It is not needed in your own repository. You can delete the whole .github folder.
+
 name: Create Release on Tag
 
 on:
@@ -10,6 +13,7 @@ permissions:
 
 jobs:
   build_latex_and_upload:
+    if: github.repository == 'robotics-ost/met3_r_template' # only run in the original template, not in student repos
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
