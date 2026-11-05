@@ -39,7 +39,7 @@ cp esp32_config.json.example esp32_config.json
 ```
 ```json
 {
-  "esp32_host": "esp32-robot.local",
+  "esp32_host": "robot_1.local",
   "esp32_port": 3333
 }
 ```
@@ -61,7 +61,7 @@ Bonjour on Windows). If resolution fails you'll get a clear error message.
 from udp_core import UdpClient
 
 client = UdpClient("192.168.1.50")            # IP...
-client = UdpClient("esp32-robot.local")       # ...or a hostname
+client = UdpClient("robot_1.local")       # ...or a hostname
 client.on_telemetry(lambda batch: print(batch.seq, batch.control_samples))
 client.start()          # resolves the host, sends HELLO, starts the receiver thread
 

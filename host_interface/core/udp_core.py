@@ -162,7 +162,7 @@ def resolve_host(host: str) -> str:
     @details
     Plain dotted IPv4 addresses are returned unchanged. Regular DNS
     hostnames and mDNS '.local' names (e.g. an ESP32 advertising itself as
-    'esp32-robot.local') are resolved via the OS resolver -- note that
+    'robot_1.local') are resolved via the OS resolver -- note that
     '.local' resolution requires mDNS support to be set up on this machine
     (built in on macOS; on Linux needs avahi-daemon + libnss-mdns; on
     Windows needs Bonjour/iTunes or similar).
@@ -413,7 +413,7 @@ class UdpClient:
     Usage:
     @code
         client = UdpClient("192.168.1.50")          # or a hostname:
-        client = UdpClient("esp32-robot.local")
+        client = UdpClient("robot_1.local")
         client.on_telemetry(my_callback)
         client.start()
         ...
