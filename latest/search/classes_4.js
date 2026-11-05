@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kinematics_5fconfig_5ft_0',['kinematics_config_t',['../structkinematics__config__t.html',1,'']]]
+  ['encoder_5fdriver_5fconfig_5ft_0',['encoder_driver_config_t',['../structencoder__driver__config__t.html',1,'']]]
 ];

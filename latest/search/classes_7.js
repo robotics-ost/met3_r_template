@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pd_5fcontroller_5fconfig_5ft_0',['pd_controller_config_t',['../structpd__controller__config__t.html',1,'']]],
-  ['pi_5fcontroller_5fconfig_5ft_1',['pi_controller_config_t',['../structpi__controller__config__t.html',1,'']]],
-  ['position_5fcontroller_5fconfig_5ft_2',['position_controller_config_t',['../structposition__controller__config__t.html',1,'']]]
+  ['motor_5fdriver_5fconfig_5ft_0',['motor_driver_config_t',['../structmotor__driver__config__t.html',1,'']]],
+  ['motor_5fmodel_5fconfig_5ft_1',['motor_model_config_t',['../structmotor__model__config__t.html',1,'']]],
+  ['motor_5fmodel_5fparams_5ft_2',['motor_model_params_t',['../structmotor__model__params__t.html',1,'']]]
 ];

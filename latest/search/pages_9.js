@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json_0',['Config file (&lt;span class=&quot;tt&quot;&gt;esp32_config.json&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md2',1,'']]]
+  ['9_3a_20save_20your_20work_20regularly_20commit_20amp_20push_0',['Step 9: Save your work regularly (commit &amp;amp; push)',['../index.html#step-9-save-your-work-regularly-commit-amp-push',1,'']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['file_20esp32_5fconfig_20json_0',['Config file (&lt;span class=&quot;tt&quot;&gt;esp32_config.json&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md2',1,'']]],
-  ['find_5fconfig_5fpath_1',['find_config_path',['../namespaceudp__core.html#a065c85f2ad98118381ec7ee64b523976',1,'udp_core']]]
+  ['6_201_3a_20kinematics_20of_20the_20end_20effector_0',['Task 6.1: Kinematics of the end effector',['../md_exercises_206__tcp__control.html#task-61-kinematics-of-the-end-effector',1,'']]],
+  ['6_202_3a_20end_20effector_20position_20control_1',['Task 6.2: End-effector position control',['../md_exercises_206__tcp__control.html#task-62-end-effector-position-control',1,'']]],
+  ['6_3a_20give_20your_20robot_20a_20unique_20name_2',['Step 6: Give your robot a unique name',['../index.html#step-6-give-your-robot-a-unique-name',1,'']]],
+  ['6_3a_20python_203_3',['Step 6: Python 3',['../md_docs_2GETTING__STARTED.html#step-6-python-3',1,'']]]
 ];

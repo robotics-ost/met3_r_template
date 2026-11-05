@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['telemetry_5fcontrol_5fsample_5ft_0',['telemetry_control_sample_t',['../structtelemetry__control__sample__t.html',1,'']]],
-  ['telemetry_5fpacket_5ft_1',['telemetry_packet_t',['../structtelemetry__packet__t.html',1,'']]],
-  ['telemetry_5fsafety_5fsample_5ft_2',['telemetry_safety_sample_t',['../structtelemetry__safety__sample__t.html',1,'']]],
-  ['telemetry_5fsequencer_5fsample_5ft_3',['telemetry_sequencer_sample_t',['../structtelemetry__sequencer__sample__t.html',1,'']]],
-  ['telemetrybatch_4',['TelemetryBatch',['../classudp__core_1_1TelemetryBatch.html',1,'udp_core']]]
+  ['safety_5fsystem_5fconfig_5ft_0',['safety_system_config_t',['../structsafety__system__config__t.html',1,'']]],
+  ['safetysample_1',['SafetySample',['../classudp__core_1_1SafetySample.html',1,'udp_core']]],
+  ['sequencer_5fconfig_5ft_2',['sequencer_config_t',['../structsequencer__config__t.html',1,'']]],
+  ['sequencer_5fstep_5ft_3',['sequencer_step_t',['../structsequencer__step__t.html',1,'']]],
+  ['sequencerstep_4',['SequencerStep',['../classudp__core_1_1SequencerStep.html',1,'udp_core']]]
 ];

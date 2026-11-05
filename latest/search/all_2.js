@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['b_20changing_20sequencer_20step_20types_0',['B. Changing sequencer step types',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md8',1,'']]],
-  ['build_20run_1',['Build &amp;amp; Run',['../index.html#autotoc_md17',1,'']]],
-  ['build_5fgoodbye_2',['build_goodbye',['../namespaceudp__core.html#af496406e85b0e9e84e94e62a763f0661',1,'udp_core']]],
-  ['build_5fhello_3',['build_hello',['../namespaceudp__core.html#a1df11e3be913047d2c112bf50ea4e775',1,'udp_core']]],
-  ['build_5fremove_5fstep_5fcmd_4',['build_remove_step_cmd',['../namespaceudp__core.html#a1661f7d0a925f9cab4d86d44a22b397e',1,'udp_core']]],
-  ['build_5fsafety_5fcmd_5',['build_safety_cmd',['../namespaceudp__core.html#a94f286aff0674487689e6184d2859346',1,'udp_core']]],
-  ['build_5fwait_5fcmd_6',['build_wait_cmd',['../namespaceudp__core.html#a9b215d62dd5ff58552ffa2147c22dc40',1,'udp_core']]],
-  ['bus_5fvoltage_7',['bus_voltage',['../motor__driver_8c.html#ab5b31a04d0e22cd08a758aac9ca5db0a',1,'motor_driver.c']]],
-  ['bus_5fvoltage_5fupdate_5finterval_5fms_8',['bus_voltage_update_interval_ms',['../structmotor__driver__config__t.html#a52577a3ec8cafff3f0631e6399d5e93a',1,'motor_driver_config_t']]],
-  ['by_20wire_9',['Steer-by-Wire',['../dir_096b0de097b3e98f91191e9d894d4363.html#autotoc_md26',1,'']]]
+  ['2_0',['Exercise 03: DC Motor Control, Part 2',['../md_exercises_203__dc__motor__control__2.html',1,'']]],
+  ['2_201_3a_20dc_20motor_20model_1',['Task 2.1: DC motor model',['../md_exercises_202__dc__motor__control__1.html#task-21-dc-motor-model',1,'']]],
+  ['2_202_3a_20position_20controller_2',['Task 2.2: Position controller',['../md_exercises_202__dc__motor__control__1.html#task-22-position-controller',1,'']]],
+  ['2_20stage_3',['2. Stage',['../md_docs_2GIT__GUIDE.html#autotoc_md2-stage',1,'']]],
+  ['2_3a_20connect_20the_20robot_20to_20wifi_4',['Task 1.2: Connect the robot to WiFi',['../md_exercises_201__robot__basics.html#task-12-connect-the-robot-to-wifi',1,'']]],
+  ['2_3a_20create_20your_20own_20repository_5',['Step 2: Create your own repository',['../index.html#step-2-create-your-own-repository',1,'']]],
+  ['2_3a_20end_20effector_20position_20control_6',['Task 6.2: End-effector position control',['../md_exercises_206__tcp__control.html#task-62-end-effector-position-control',1,'']]],
+  ['2_3a_20fill_20in_20the_20to_20dos_7',['Step 2: Fill in the TO DOs',['../md_docs_2WORKING__WITH__THE__CODE.html#step-2-fill-in-the-to-dos',1,'']]],
+  ['2_3a_20git_8',['Step 2: Git',['../md_docs_2GETTING__STARTED.html#step-2-git',1,'']]],
+  ['2_3a_20inverse_20kinematics_9',['Task 4.2: Inverse kinematics',['../md_exercises_204__kinematics.html#task-42-inverse-kinematics',1,'']]],
+  ['2_3a_20position_20controller_10',['Task 2.2: Position controller',['../md_exercises_202__dc__motor__control__1.html#task-22-position-controller',1,'']]],
+  ['2_3a_20velocity_20controller_11',['Task 3.2: Velocity controller',['../md_exercises_203__dc__motor__control__2.html#task-32-velocity-controller',1,'']]]
 ];

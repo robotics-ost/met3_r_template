@@ -13,8 +13,8 @@ var config_8h =
     [ "SAFETY_SYSTEM_EVENT_QUEUE_LENGTH", "config_8h.html#acc21ca3ca98dc0afac2a1de24ed24395", null ],
     [ "SAFETY_SYSTEM_TASK_PERIOD_MS", "config_8h.html#a880c9ec401a35c3cc7331107a3201d40", null ],
     [ "SEQUENCER_TASK_PERIOD_MS", "config_8h.html#aef256d73dd0e41c4302ce129af19fff5", null ],
-    [ "UPD_INTERFACE_HOSTNAME", "config_8h.html#a364a227f3039720cb8547af8d1406d21", null ],
-    [ "UPD_INTERFACE_TASK_PERIOD_MS", "config_8h.html#a2223a5719614413027fa18b9c872272a", null ],
-    [ "UPD_INTERFACE_TELEMETRY_QUEUE_LEN", "config_8h.html#a01aa1992ed840607b7ebbeb47f2d90eb", null ],
-    [ "UPD_INTERFACE_UDP_PORT", "config_8h.html#acfe55fc85c69d993b2e9af4e2a42a876", null ]
+    [ "UDP_INTERFACE_HOSTNAME", "config_8h.html#ae5b4fc67982f64461175710c65dd2c21", null ],
+    [ "UDP_INTERFACE_TASK_PERIOD_MS", "config_8h.html#a179a8150f10db5004fa1e4f4dc61006a", null ],
+    [ "UDP_INTERFACE_TELEMETRY_QUEUE_LEN", "config_8h.html#a7061a25a2b6aa1eb2fabfb98109e00df", null ],
+    [ "UDP_INTERFACE_UDP_PORT", "config_8h.html#a1926bb04e06d49d5a72a99f5627f2a4a", null ]
 ];

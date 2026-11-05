@@ -1,16 +1,19 @@
 var searchData=
 [
-  ['wait_0',['WAIT',['../sequencer_8h.html#a02e420230ae4451790880207676b6f20a79a322ccb4b29b85b3cab52dbccefd17',1,'sequencer.h']]],
-  ['wait_1',['wait',['../structsequencer__step__t.html#add763935e208425b2367d1ba33a8d6be',1,'sequencer_step_t']]],
-  ['wait_5ffmt_2',['WAIT_FMT',['../namespaceudp__core.html#a7dfe937712d0c29cda7a15a6c1b9b90f',1,'udp_core']]],
-  ['web_20gui_20gui_5fweb_3',['Web GUI (&lt;span class=&quot;tt&quot;&gt;gui_web/&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md5',1,'']]],
-  ['what_20s_20in_20a_20control_20sample_20periodic_20telemetry_20values_4',['A. Changing what&apos;s in a control sample (periodic telemetry values)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#autotoc_md7',1,'']]],
-  ['wheel_5fdistance_5',['wheel_distance',['../structkinematics__config__t.html#a595a89c66991ab115a4bcbfbe810726d',1,'kinematics_config_t']]],
-  ['wifi_20configuration_6',['WIFI Configuration',['../index.html#autotoc_md21',1,'']]],
-  ['wifi_5fconnected_5fbit_7',['WIFI_CONNECTED_BIT',['../udp__interface_8c.html#ad552e7688532cbbecd3967538ced06ac',1,'udp_interface.c']]],
-  ['wifi_5fevent_5fgroup_8',['wifi_event_group',['../udp__interface_8c.html#a20c6ba80259caf6916ca631b853d82af',1,'udp_interface.c']]],
-  ['wifi_5fevent_5fhandler_9',['wifi_event_handler',['../udp__interface_8c.html#ac31e38637f7a5e5c8ce4d033b0955fec',1,'udp_interface.c']]],
-  ['wifi_5fpass_10',['wifi_pass',['../structudp__interface__config__t.html#ae58f9decfb99efc2fb8eb703d9b25b30',1,'udp_interface_config_t']]],
-  ['wifi_5fssid_11',['wifi_ssid',['../structudp__interface__config__t.html#ad5eac8d056c0b0ee834d318e88b6a9b4',1,'udp_interface_config_t']]],
-  ['wire_12',['Steer-by-Wire',['../dir_096b0de097b3e98f91191e9d894d4363.html#autotoc_md26',1,'']]]
+  ['last_20commit_20not_20pushed_20yet_0',['I want to undo my last commit (not pushed yet)',['../md_docs_2GIT__GUIDE.html#i-want-to-undo-my-last-commit-not-pushed-yet',1,'']]],
+  ['last_5frx_5ftime_1',['last_rx_time',['../classudp__core_1_1LinkStats.html#ada0ef811e47eac951cbcc2fb6c42ce65',1,'udp_core::LinkStats']]],
+  ['last_5fseq_2',['last_seq',['../classudp__core_1_1LinkStats.html#a43822510ae064adbfc392cc06739038b',1,'udp_core::LinkStats']]],
+  ['layer_20hal_3',['Hardware Abstraction Layer (HAL)',['../index.html#hardware-abstraction-layer-hal',1,'']]],
+  ['learning_20objectives_4',['Learning objectives',['../md_exercises_201__robot__basics.html#learning-objectives',1,'Learning objectives'],['../md_exercises_202__dc__motor__control__1.html#learning-objectives-1',1,'Learning objectives'],['../md_exercises_203__dc__motor__control__2.html#learning-objectives-2',1,'Learning objectives'],['../md_exercises_204__kinematics.html#learning-objectives-3',1,'Learning objectives'],['../md_exercises_205__cartesian__position__control.html#learning-objectives-4',1,'Learning objectives'],['../md_exercises_206__tcp__control.html#learning-objectives-5',1,'Learning objectives']]],
+  ['levels_5',['C. Changing safety events and safety levels',['../dir_7fb88deff7a1179c2129339c39b4c556.html#c-changing-safety-events-and-safety-levels',1,'']]],
+  ['line_20usage_6',['Command-line usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#command-line-usage',1,'']]],
+  ['lines_20but_20the_20build_20works_7',['VS Code shows red squiggly lines, but the build works',['../md_docs_2TROUBLESHOOTING.html#vs-code-shows-red-squiggly-lines-but-the-build-works',1,'']]],
+  ['linkstats_8',['LinkStats',['../classudp__core_1_1LinkStats.html',1,'udp_core']]],
+  ['linux_9',['Linux',['../md_docs_2GETTING__STARTED.html#linux',1,'']]],
+  ['list_10',['Todo List',['../todo.html',1,'']]],
+  ['load_5fconfig_11',['load_config',['../namespaceudp__core.html#af7b6fa842a2f26158ab50b2b53dcc9ad',1,'udp_core']]],
+  ['locally_12',['Push rejected: &quot;Updates were rejected because the remote contains work that you do not have locally&quot;',['../md_docs_2GIT__GUIDE.html#push-rejected-updates-were-rejected-because-the-remote-contains-work-that-you-do-not-have-locally',1,'']]],
+  ['long_13',['The first build takes very long',['../md_docs_2TROUBLESHOOTING.html#the-first-build-takes-very-long',1,'']]],
+  ['looking_20at_20an_20earlier_20solution_14',['Looking at an earlier solution',['../md_docs_2GIT__GUIDE.html#looking-at-an-earlier-solution',1,'']]],
+  ['loop_15',['Step 5: Use the module in the control loop',['../md_docs_2WORKING__WITH__THE__CODE.html#step-5-use-the-module-in-the-control-loop',1,'']]]
 ];

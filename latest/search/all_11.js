@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['q_5fprev_0',['q_prev',['../motor__model_8c.html#a255b141cd1acc82d4bbf611edbcea1dd',1,'motor_model.c']]]
+  ['fails_20with_20strange_20errors_20right_20from_20the_20start_0',['The build fails with strange errors right from the start',['../md_docs_2TROUBLESHOOTING.html#the-build-fails-with-strange-errors-right-from-the-start',1,'']]],
+  ['fatal_20error_3a_20motor_5fmodel_20h_3a_20no_20such_20file_20or_20directory_1',['&lt;span class=&quot;tt&quot;&gt;fatal error: motor_model.h: No such file or directory&lt;/span&gt;',['../md_docs_2TROUBLESHOOTING.html#fatal-error-motor_modelh-no-such-file-or-directory',1,'']]],
+  ['file_2',['I want to undo my changes to a file',['../md_docs_2GIT__GUIDE.html#i-want-to-undo-my-changes-to-a-file',1,'']]],
+  ['file_20esp32_5fconfig_20json_3',['Config file (&lt;span class=&quot;tt&quot;&gt;esp32_config.json&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#config-file-esp32_configjson',1,'']]],
+  ['file_20or_20directory_4',['&lt;span class=&quot;tt&quot;&gt;fatal error: motor_model.h: No such file or directory&lt;/span&gt;',['../md_docs_2TROUBLESHOOTING.html#fatal-error-motor_modelh-no-such-file-or-directory',1,'']]],
+  ['files_5',['files',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#header-and-source-files',1,'Header and source files'],['../md_docs_2WORKING__WITH__THE__CODE.html#step-1-copy-the-files',1,'Step 1: Copy the files']]],
+  ['fill_20in_20the_20to_20dos_6',['Step 2: Fill in the TO DOs',['../md_docs_2WORKING__WITH__THE__CODE.html#step-2-fill-in-the-to-dos',1,'']]],
+  ['find_20what_7',['Where do I find what?',['../index.html#where-do-i-find-what',1,'']]],
+  ['find_5fconfig_5fpath_8',['find_config_path',['../namespaceudp__core.html#a065c85f2ad98118381ec7ee64b523976',1,'udp_core']]],
+  ['finished_20exercise_20with_20a_20tag_9',['Marking a finished exercise with a tag',['../md_docs_2GIT__GUIDE.html#marking-a-finished-exercise-with-a-tag',1,'']]],
+  ['first_20build_20takes_20very_20long_10',['The first build takes very long',['../md_docs_2TROUBLESHOOTING.html#the-first-build-takes-very-long',1,'']]],
+  ['for_20and_20while_11',['&lt;span class=&quot;tt&quot;&gt;if&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;for&lt;/span&gt; and &lt;span class=&quot;tt&quot;&gt;while&lt;/span&gt;',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#if-for-and-while',1,'']]],
+  ['for_20python_20programmers_12',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'']]],
+  ['forward_20kinematics_20and_20odometry_13',['Task 4.1: Forward kinematics and odometry',['../md_exercises_204__kinematics.html#task-41-forward-kinematics-and-odometry',1,'']]],
+  ['found_14',['&lt;span class=&quot;tt&quot;&gt;python&lt;/span&gt; or &lt;span class=&quot;tt&quot;&gt;pip&lt;/span&gt; is not found',['../md_docs_2TROUBLESHOOTING.html#python-or-pip-is-not-found',1,'']]],
+  ['found_20could_20not_20open_20port_20no_20com_20port_15',['The robot is not found / &lt;span class=&quot;tt&quot;&gt;Could not open port&lt;/span&gt; / no COM port',['../md_docs_2TROUBLESHOOTING.html#the-robot-is-not-found--could-not-open-port--no-com-port',1,'']]],
+  ['from_20dependabot_20appeared_20on_20github_16',['A pull request from &quot;dependabot&quot; appeared on GitHub',['../md_docs_2GIT__GUIDE.html#a-pull-request-from-dependabot-appeared-on-github',1,'']]],
+  ['from_20the_20start_17',['The build fails with strange errors right from the start',['../md_docs_2TROUBLESHOOTING.html#the-build-fails-with-strange-errors-right-from-the-start',1,'']]],
+  ['from_20the_20starter_20code_18',['Adding a module from the starter code',['../md_docs_2WORKING__WITH__THE__CODE.html#adding-a-module-from-the-starter-code',1,'']]],
+  ['from_20your_20pc_19',['Step 8: Connect to the robot from your PC',['../index.html#step-8-connect-to-the-robot-from-your-pc',1,'']]],
+  ['function_20',['&lt;span class=&quot;tt&quot;&gt;implicit declaration of function &apos;...&apos;&lt;/span&gt;',['../md_docs_2TROUBLESHOOTING.html#implicit-declaration-of-function-',1,'']]],
+  ['functions_20return_20results_20through_20pointers_21',['Functions return results through pointers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#functions-return-results-through-pointers',1,'']]]
 ];

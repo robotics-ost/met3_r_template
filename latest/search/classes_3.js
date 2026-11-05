@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['encoder_5fdriver_5fconfig_5ft_0',['encoder_driver_config_t',['../structencoder__driver__config__t.html',1,'']]]
+  ['doubly_5flinked_5fstep_5flist_5fnode_0',['doubly_linked_step_list_node',['../structdoubly__linked__step__list__node.html',1,'']]]
 ];
