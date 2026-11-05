@@ -1,0 +1,13 @@
+<map id="exercises/starter_code/kinematics.c" name="exercises/starter_code/kinematics.c">
+<area shape="rect" id="Node000001" title="Kinematics implementation for the robot system." alt="" coords="119,5,287,45"/>
+<area shape="rect" id="Node000002" href="$kinematics_8h.html" title="Kinematics header file for the robot system." alt="" coords="5,93,112,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,48,93,89,91,84,167,43"/>
+<area shape="rect" id="Node000004" href="$common__math_8h.html" title="Common mathematical functions header file." alt="" coords="137,93,269,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,46,205,79,200,79,200,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="293,93,361,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="234,43,298,84,295,88,231,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,167,99,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,119,61,153,56,153,56,119"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="167,167,238,192"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="205,119,205,153,200,153,200,119"/>
+</map>
