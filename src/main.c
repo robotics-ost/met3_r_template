@@ -54,12 +54,12 @@ void app_main()
     ESP_ERROR_CHECK(i2c_new_master_bus(&conf, &bus_handle));
 
     const udp_interface_config_t udp_config = {
-        .wifi_ssid = UPD_INTERFACE_WIFI_SSID,
-        .wifi_pass = UPD_INTERFACE_WIFI_PASS,
-        .hostname = UPD_INTERFACE_HOSTNAME,
-        .udp_port = UPD_INTERFACE_UDP_PORT,
-        .task_period_ms = UPD_INTERFACE_TASK_PERIOD_MS,
-        .telemetry_queue_len = UPD_INTERFACE_TELEMETRY_QUEUE_LEN,
+        .wifi_ssid = UDP_INTERFACE_WIFI_SSID,
+        .wifi_pass = UDP_INTERFACE_WIFI_PASS,
+        .hostname = UDP_INTERFACE_HOSTNAME,
+        .udp_port = UDP_INTERFACE_UDP_PORT,
+        .task_period_ms = UDP_INTERFACE_TASK_PERIOD_MS,
+        .telemetry_queue_len = UDP_INTERFACE_TELEMETRY_QUEUE_LEN,
     };
     ESP_ERROR_CHECK(udp_interface_init(&udp_config));
 
