@@ -24,7 +24,8 @@ typedef struct
  */
 typedef enum
 {
-    WAIT = 0,             /**< Wait for a specified duration */
+    WAIT = 0,    /**< Wait for a specified duration */
+    MOVE_TO = 1, /**< Move to a target pose (x, y, phi) in the global frame */
 
     _COUNT /**< Count of step types, used for validation */
 } sequencer_step_type_t;
@@ -42,6 +43,12 @@ typedef struct
         {
             uint32_t duration_ms; /**< Duration to wait in milliseconds */
         } wait;                   /**< Parameters for WAIT step */
+        struct
+        {
+            float x;   /**< Target x position in the global frame [m] */
+            float y;   /**< Target y position in the global frame [m] */
+            float phi; /**< Target orientation in the global frame [rad] */
+        } move_to;     /**< Parameters for MOVE_TO step */
     };
 } sequencer_step_t;
 
@@ -85,7 +92,7 @@ void sequencer_get_first_N_steps_in_queue(const uint8_t N, sequencer_step_t step
  * @brief The main task function for the sequencer.
  *
  * This function runs in a FreeRTOS task and processes the sequencer steps in the queue.
- * It handles the execution of MOVE_TO_POSE and WAIT steps based on their types.
+ * It handles the execution of MOVE_TO and WAIT steps based on their types.
  *
  * @param arg Pointer to any arguments passed to the task (not used).
  */

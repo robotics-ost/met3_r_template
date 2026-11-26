@@ -81,6 +81,7 @@ The terminal shows `Connected to ESP32 at ...` when the GUI has started. To stop
 | **Safety Level** | The current safety level of the robot. |
 | **Safety Events** | Buttons that send a safety event to the robot, e.g. **Start Operation**. After start-up, the robot is in the level *Ready*. The motors only run in the level *Active*. |
 | **Sequencer Queue** | The steps waiting in the sequencer, each with its `step_id`. Enter a `step_id` and click **Remove** to remove a step. |
+| **Move to** | Adds a move-to step with the given target pose (x and y in m, phi in rad) to the sequencer. The robot only drives to the target once the position controller is implemented (Exercise 5). |
 | **Wait** | Adds a wait step with the given duration (ms) to the sequencer. |
 | **Command Log** | All commands sent to the robot. |
 

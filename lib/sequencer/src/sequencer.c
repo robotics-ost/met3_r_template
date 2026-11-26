@@ -12,6 +12,7 @@
 #include <freertos/semphr.h>
 #include <safety_system.h>
 #include <esp_log.h>
+/* TO DO: include the header of the position controller */
 
 static const char *TAG = "Sequencer"; /**< Tag for logging purposes */
 
@@ -70,6 +71,8 @@ static char *sequencer_step_type_to_string(sequencer_step_type_t type)
     {
     case WAIT:
         return "WAIT";
+    case MOVE_TO:
+        return "MOVE_TO";
     default:
         return "UNKNOWN";
     }
@@ -343,6 +346,45 @@ void sequencer_task(void *arg)
                 // Increment the cycle counter
                 i++;
                 break;
+            case MOVE_TO:
+            {
+                // Check if an abort has been requested (e.g. the step was removed by the user)
+                if (abort_requested)
+                {
+                    if (step_initialized)
+                    {
+                        // The target was already handed over to the position controller
+                        /* TO DO: Abort the current position control operation */
+                    }
+                    step_in_progress = false;
+                    step_initialized = false;
+                    abort_requested = false;
+                    ESP_LOGW(TAG, "MOVE_TO step aborted.");
+                    break;
+                }
+                // Initialize the step on the first cycle: set the new target pose
+                if (!step_initialized)
+                {
+                    ESP_LOGI(TAG, "Executing MOVE_TO step: x=%.3f m, y=%.3f m, phi=%.3f rad",
+                             current_step.move_to.x, current_step.move_to.y, current_step.move_to.phi);
+                    /* TO DO: Hand the target pose over to the position controller.
+                     *        The target is stored in current_step.move_to (x, y, phi). */
+                    step_initialized = true;
+                    break;
+                }
+                // Check if the target has been reached. The step stays active until then.
+                bool target_reached = false;
+                /* TO DO: Ask the position controller if the target has been reached */
+                if (target_reached)
+                {
+                    ESP_LOGI(TAG, "MOVE_TO step completed.");
+                    step_in_progress = false;
+                    step_initialized = false;
+                    abort_requested = false;
+                    sequencer_remove_step_from_queue(current_step.id); // Remove the completed step from the queue
+                }
+                break;
+            }
             default:
                 ESP_LOGW(TAG, "Unknown step type: %d", current_step.type);
                 step_in_progress = false;

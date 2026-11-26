@@ -289,7 +289,7 @@ function refreshCharts() {
 /**
  * @brief Render the sequencer queue as a row of step cards in #step-track.
  * @param {Array<object>} steps Array of step objects from the latest
- *        telemetry batch, each `{ step_type, step_id, x, y, phi, duration_ms }`.
+ *        telemetry batch, each `{ step_type, step_id, duration_ms, x, y, phi }`.
  */
 function renderSteps(steps) {
   const track = document.getElementById("step-track");
@@ -301,6 +301,12 @@ function renderSteps(steps) {
             <div class="step-id">${s.step_id}</div>
             <div class="step-type">wait</div>
             <div class="step-detail">dur ${s.duration_ms}ms</div>
+          </div>`;
+        case 1: // move to
+          return `<div class="step-card type-move-to">
+            <div class="step-id">${s.step_id}</div>
+            <div class="step-type">move to</div>
+            <div class="step-detail">x ${s.x.toFixed(2)} m<br>y ${s.y.toFixed(2)} m<br>phi ${s.phi.toFixed(2)} rad</div>
           </div>`;
         default: // unrecognized step type
           return `<div class="step-card type-unknown">
@@ -432,6 +438,17 @@ function wireCommandForms() {
     btn.addEventListener("click", () => {
       postCommand("/api/command/safety", { event: Number(btn.dataset.event) });
     });
+  });
+
+  document.getElementById("form-move-to").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    postCommand("/api/command/move_to", {
+      x: Number(f.get("x")),
+      y: Number(f.get("y")),
+      phi: Number(f.get("phi"))
+    });
+    e.target.reset();
   });
 
   document.getElementById("form-wait").addEventListener("submit", (e) => {

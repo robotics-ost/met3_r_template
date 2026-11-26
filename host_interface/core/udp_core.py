@@ -47,6 +47,8 @@ MSG_TYPE_CMD_SAFETY = 0x02
 MSG_TYPE_CMD_REMOVE_STEP = 0x03
 ## Host -> ESP32: queue a wait step.
 MSG_TYPE_CMD_WAIT = 0x04
+## Host -> ESP32: queue a move-to step.
+MSG_TYPE_CMD_MOVE_TO = 0x05
 ## Host -> ESP32: unregister this host as the telemetry destination.
 MSG_TYPE_GOODBYE = 0xFF
 ## @}
@@ -68,8 +70,9 @@ STEPS_PER_BATCH = 5
 SAFETY_SAMPLE_FMT = "<IB"
 ## One control sample: `timestamp_us` (uint32), `enc_A_pos, enc_B_pos` (2x float32).
 CONTROL_SAMPLE_FMT = "<I2f"
-## One sequencer step: `step_type, step_id` (uint8 each), `duration_ms` (uint32).
-SEQUENCER_STEP_FMT = "<BBI"
+## One sequencer step: `step_type, step_id` (uint8 each), `duration_ms` (uint32),
+#  `x, y, phi` (3x float32).
+SEQUENCER_STEP_FMT = "<BBI3f"
 ## Telemetry packet header: `magic, msg_type` (uint8 each), `seq` (uint16),
 #  `safety_cnt, control_cnt, steps_cnt` (uint8 each).
 HEADER_FMT = "<BBHBBB"
@@ -79,6 +82,8 @@ HELLO_FMT = "<BBH"
 SAFETY_FMT = "<BBHB"
 ## Wait command packet: `magic, msg_type` (uint8 each), `seq` (uint16), `duration_ms` (uint32).
 WAIT_FMT = "<BBHI"
+## Move-to command packet: `magic, msg_type` (uint8 each), `seq` (uint16), `x, y, phi` (3x float32).
+MOVE_TO_FMT = "<BBH3f"
 ## Remove-step command packet: `magic, msg_type` (uint8 each), `seq` (uint16), `step_id` (uint8).
 REMOVE_STEP_FMT = "<BBHB"
 ## @}
@@ -94,6 +99,8 @@ HEADER_SIZE = struct.calcsize(HEADER_FMT)
 # Sequencer step_type values (must match firmware).
 ## Sequencer step type: wait for a fixed duration.
 STEP_TYPE_WAIT = 0
+## Sequencer step type: move to a target pose.
+STEP_TYPE_MOVE_TO = 1
 
 
 # --------------------------------------------------------------------------
@@ -225,12 +232,18 @@ class SequencerStep:
     Only the fields relevant to `step_type` carry valid data; the rest are
     zero (e.g. for a STEP_TYPE_WAIT step only `duration_ms` is meaningful).
     """
-    ## STEP_TYPE_MOVE_TO or STEP_TYPE_WAIT.
+    ## STEP_TYPE_WAIT or STEP_TYPE_MOVE_TO.
     step_type: int
     ## Firmware-assigned id of this step, used with send_remove_step().
     step_id: int
     ## Wait duration in milliseconds (valid for STEP_TYPE_WAIT).
     duration_ms: int
+    ## Target x position in the global frame [m] (valid for STEP_TYPE_MOVE_TO).
+    x: float = 0.0
+    ## Target y position in the global frame [m] (valid for STEP_TYPE_MOVE_TO).
+    y: float = 0.0
+    ## Target orientation in the global frame [rad] (valid for STEP_TYPE_MOVE_TO).
+    phi: float = 0.0
 
 
 @dataclass
@@ -327,6 +340,18 @@ def build_wait_cmd(seq: int, duration_ms: int) -> bytes:
     return struct.pack(WAIT_FMT, PROTO_MAGIC, MSG_TYPE_CMD_WAIT, seq, duration_ms)
 
 
+def build_move_to_cmd(seq: int, x: float, y: float, phi: float) -> bytes:
+    """!
+    @brief Build a command packet that queues a move-to sequencer step.
+    @param seq Outgoing sequence number (see _SeqCounter.next()).
+    @param x Target x position in the global frame [m].
+    @param y Target y position in the global frame [m].
+    @param phi Target orientation in the global frame [rad].
+    @return The packed command packet bytes.
+    """
+    return struct.pack(MOVE_TO_FMT, PROTO_MAGIC, MSG_TYPE_CMD_MOVE_TO, seq, x, y, phi)
+
+
 def build_remove_step_cmd(seq: int, step_id: int) -> bytes:
     """!
     @brief Build a command packet that removes a queued sequencer step.
@@ -385,10 +410,10 @@ def parse_telemetry(data: bytes) -> Optional[TelemetryBatch]:
     for _ in range(steps_cnt):
         if offset + SEQUENCER_STEP_SIZE > len(data):
             break
-        step_type, step_id, duration_ms = struct.unpack_from(
+        step_type, step_id, duration_ms, x, y, phi = struct.unpack_from(
             SEQUENCER_STEP_FMT, data, offset
         )
-        batch.steps.append(SequencerStep(step_type, step_id, duration_ms))
+        batch.steps.append(SequencerStep(step_type, step_id, duration_ms, x, y, phi))
         offset += SEQUENCER_STEP_SIZE
 
     return batch
@@ -571,6 +596,15 @@ class UdpClient:
         @param duration_ms Wait duration in milliseconds.
         """
         self._send(build_wait_cmd(self._seq_counter.next(), duration_ms))
+
+    def send_move_to(self, x: float, y: float, phi: float) -> None:
+        """!
+        @brief Send a command that queues a move-to sequencer step.
+        @param x Target x position in the global frame [m].
+        @param y Target y position in the global frame [m].
+        @param phi Target orientation in the global frame [rad].
+        """
+        self._send(build_move_to_cmd(self._seq_counter.next(), x, y, phi))
 
     def send_remove_step(self, step_id: int) -> None:
         """!

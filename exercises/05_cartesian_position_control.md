@@ -4,15 +4,17 @@
 
 You can implement a position controller in Cartesian space for a mobile robot with differential drive.
 
+You can explain how a command from the PC reaches the control system via the sequencer.
+
 ## Task 5: Position control in Cartesian space
 
 1. Draw the block diagram of the complete system. Combine functional components, such as the inverse kinematics, into a single block.
 2. Implement the position controller for differential-drive robots based on the provided starter code (`position_controller_diff_drive`) and integrate it into the control system.
-3. Implement a new step in the sequencer that sets a new target pose.
-   - Adapt the web interface accordingly.
-4. Test your implementation by sending different target poses to the robot via the web interface.
+3. Connect the `MOVE_TO` step of the sequencer to the position controller. The step itself and the **Move to** form in the web GUI are already provided, you only have to add the calls to the position controller. The places are marked with `/* TO DO */` in `lib/sequencer/src/sequencer.c`.
+4. Test your implementation by sending different target poses to the robot via the **Move to** form of the web GUI.
    - Test different values for the parameters K1, K2 and K3.
    - How accurately can the robot return to its starting point? What influences the accuracy?
+   - What happens if you remove the active `MOVE_TO` step from the queue while the robot is driving?
    - How does the robot react to a change of the safety level?
 
 ## Bonus task
@@ -42,12 +44,14 @@ How to integrate a new module into the control system is explained step by step 
 
 ## Hints
 
-- How to add a new step type on the PC side is described in the [host interface guide](../host_interface/README.md), section *B. Changing sequencer step types*.
+- The sequencer and the control system run in different tasks. Which functions of the position controller are called by the sequencer, and which one by the control system? The provided functions show how the two tasks share data safely. Read them before you implement `position_controller_run()`.
 
 ## Done when
 
 - [ ] the robot drives to a target pose that you send from the web GUI,
+- [ ] the robot stops when you remove the active `MOVE_TO` step from the queue,
 - [ ] you can explain the influence of K1, K2 and K3,
+- [ ] you can explain how a target pose gets from the web GUI to the position controller,
 - [ ] you can explain how the robot reacts to a change of the safety level.
 
 ## Save your solution

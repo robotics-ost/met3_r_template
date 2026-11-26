@@ -170,38 +170,70 @@ This is the data the ESP32 streams continuously (e.g. sensor readings or global 
    under `:root` for each new signal (used as its chart line color);
    remove ones no longer referenced.
 
-### B. Changing sequencer step types
+### B. Adding a new sequencer step type
 
-Currently there are two step types, `STEP_TYPE_MOVE_TO` (0) and
-`STEP_TYPE_WAIT` (1); every step shares one fixed-size struct
-(`x, y, phi, duration_ms`), with whichever fields don't apply to a given
-step's type left at zero. To add a new step type (optionally with its own
-command to queue it):
+Currently there are two step types, `WAIT` (0) and `MOVE_TO` (1). In the
+telemetry, every step travels in one fixed-size struct (`step_type, step_id,
+duration_ms, x, y, phi`); fields that don't apply to a step's type are zero
+(`WAIT` uses only `duration_ms`, `MOVE_TO` only `x, y, phi`).
+
+To add a new step type (with its own command to queue it), change the
+firmware **and** the PC side. Use `WAIT` and `MOVE_TO` as templates.
+
+**ESP32 firmware**
+
+1. **`lib/sequencer/include/sequencer.h`**
+   - Add a value to `sequencer_step_type_t` (before `_COUNT`).
+   - If the step has parameters: add a struct to the union in
+     `sequencer_step_t`.
+2. **`lib/sequencer/src/sequencer.c`**
+   - `sequencer_step_type_to_string()` -- add a `case`.
+   - `sequencer_task()` -- add a `case` to the `switch`. A step is executed
+     in several cycles: initialize it in the first cycle, check in every
+     following cycle whether it is completed, and handle an abort (the step
+     was removed from the queue). Never wait inside the `case`.
+3. **`lib/udp_interface/src/udp_interface.c`**
+   - Add a `MSG_TYPE_CMD_*` constant and a packed struct for the command
+     (same byte layout as on the PC side, see below).
+   - `handle_command()` -- add a `case` that creates the step and adds it to
+     the queue with `sequencer_add_step_to_queue()`.
+   - If the web GUI should display the parameters of the step: add fields to
+     the packed struct `telemetry_sequencer_sample_t` and fill them in the loop
+     that fills `packet.sequencer_samples`. Set the fields that don't belong to
+     the step type to zero.
+
+**PC (host interface)**
 
 1. **`core/udp_core.py`**
-   - Add a new `STEP_TYPE_*` constant.
-   - `SEQUENCER_STEP_FMT` and the `SequencerStep` dataclass -- extend if
-     the new step type needs fields the current struct doesn't have
-     (every step type shares the same struct layout, so new fields must
-     make sense as "zero when unused" for the existing types too).
-   - `parse_telemetry()`'s step-unpacking line, if the struct changed.
-   - If the new step type needs a new command to queue it: add a new
-     `MSG_TYPE_CMD_*` constant, a new `..._FMT` struct format, a new
-     `build_..._cmd()` function, and a new `send_...()` method on
-     `UdpClient` -- mirror `build_wait_cmd()` / `send_wait()`.
+   - Add a new `STEP_TYPE_*` constant (same value as in the firmware).
+   - Add a new `MSG_TYPE_CMD_*` constant (same value as in the firmware),
+     a new `..._FMT` struct format, a new `build_..._cmd()` function, and a
+     new `send_...()` method on `UdpClient` -- mirror `build_move_to_cmd()` /
+     `send_move_to()`.
+   - If the step has parameters that the web GUI should display:
+     `SEQUENCER_STEP_FMT`, the `SequencerStep` dataclass and the
+     step-unpacking lines in `parse_telemetry()`. They must match
+     `telemetry_sequencer_sample_t` in the firmware. Every step type shares the
+     same struct layout, so new fields must make sense as "zero when unused"
+     for the existing types too.
 2. **`gui_web/app.py`**
-   - `_on_telemetry()`'s `"steps"` JSON list -- add any new fields.
-   - If you added a new command: a new `/api/command/<name>` Flask route
-     calling your new `send_...()` method -- mirror `cmd_wait()`.
+   - A new `/api/command/<name>` Flask route calling your new `send_...()`
+     method -- mirror `cmd_move_to()`.
+   - `_on_telemetry()`'s `"steps"` JSON list -- add the new telemetry fields.
 3. **`gui_web/static/app.js`**
-   - `renderSteps()` -- the `switch (s.step_type)` check (and whatever detail
-     text/label it builds) needs a branch for each step type you support.
-   - `wireCommandForms()` -- wire up a new command's form, if you added one.
-4. **`gui_web/templates/index.html`** -- add a new form for a new command,
-   mirroring the existing wait form.
+   - `renderSteps()` -- add a `case` for the new `step_type` (label and detail
+     text of the card).
+   - `wireCommandForms()` -- wire up the form of the new command.
+4. **`gui_web/templates/index.html`** -- add a form for the new command,
+   mirroring the **Move to** form.
 5. **`gui_web/static/style.css`** -- add a `.step-card.type-<name>` rule
    if you want the new step type visually distinct, mirroring
    `.step-card.type-wait`.
+
+> [!WARNING]
+> The packed C struct of the command and the Python `struct` format must
+> match **byte for byte** (order, types, size). If they don't, the firmware
+> silently ignores the command: there is no error message.
 
 ### C. Changing safety events and safety levels
 
