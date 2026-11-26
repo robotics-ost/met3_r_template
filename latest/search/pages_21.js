@@ -2,7 +2,7 @@ var searchData=
 [
   ['want_20to_20undo_20my_20changes_20to_20a_20file_0',['I want to undo my changes to a file',['../md_docs_2GIT__GUIDE.html#i-want-to-undo-my-changes-to-a-file',1,'']]],
   ['want_20to_20undo_20my_20last_20commit_20not_20pushed_20yet_1',['I want to undo my last commit (not pushed yet)',['../md_docs_2GIT__GUIDE.html#i-want-to-undo-my-last-commit-not-pushed-yet',1,'']]],
-  ['web_20gui_2',['Web GUI',['../md_docs_2WEB__GUI.html',1,'']]],
+  ['web_20gui_2',['Web GUI',['../md_docs_2WEB__GUI.html',1,'nav_guides']]],
   ['web_20gui_3',['web GUI',['../md_docs_2WORKING__WITH__THE__CODE.html#plots-in-the-web-gui',1,'Plots in the web GUI'],['../md_docs_2TROUBLESHOOTING.html#wifi-and-web-gui',1,'WiFi and web GUI']]],
   ['web_20gui_20doesn_20t_20start_3a_20could_20not_20resolve_20host_4',['The web GUI doesn&apos;t start: &lt;span class=&quot;tt&quot;&gt;Could not resolve host&lt;/span&gt;',['../md_docs_2TROUBLESHOOTING.html#the-web-gui-doesnt-start-could-not-resolve-host',1,'']]],
   ['web_20gui_20gui_5fweb_5',['Web GUI (&lt;span class=&quot;tt&quot;&gt;gui_web/&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#web-gui-gui_web',1,'']]],
@@ -30,7 +30,7 @@ var searchData=
   ['with_20define_27',['Constants with &lt;span class=&quot;tt&quot;&gt;#define&lt;/span&gt;',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#constants-with-define',1,'']]],
   ['with_20other_20tasks_28',['Sharing data with other tasks',['../md_docs_2CONTROL__SYSTEM.html#sharing-data-with-other-tasks',1,'']]],
   ['with_20strange_20errors_20right_20from_20the_20start_29',['The build fails with strange errors right from the start',['../md_docs_2TROUBLESHOOTING.html#the-build-fails-with-strange-errors-right-from-the-start',1,'']]],
-  ['with_20the_20code_30',['Working with the Code',['../md_docs_2WORKING__WITH__THE__CODE.html',1,'']]],
+  ['with_20the_20code_30',['Working with the Code',['../md_docs_2WORKING__WITH__THE__CODE.html',1,'nav_guides']]],
   ['work_31',['Something doesn&apos;t work?',['../md_docs_2WEB__GUI.html#something-doesnt-work',1,'']]],
   ['work_20regularly_20commit_20amp_20push_32',['Step 9: Save your work regularly (commit &amp;amp; push)',['../index.html#step-9-save-your-work-regularly-commit-amp-push',1,'']]],
   ['work_20that_20you_20do_20not_20have_20locally_33',['Push rejected: &quot;Updates were rejected because the remote contains work that you do not have locally&quot;',['../md_docs_2GIT__GUIDE.html#push-rejected-updates-were-rejected-because-the-remote-contains-work-that-you-do-not-have-locally',1,'']]],
@@ -38,7 +38,7 @@ var searchData=
   ['workflow_35',['Everyday workflow',['../md_docs_2GIT__GUIDE.html#everyday-workflow',1,'']]],
   ['working_20after_20i_20changed_20the_20telemetry_36',['The plots stopped working after I changed the telemetry',['../md_docs_2TROUBLESHOOTING.html#the-plots-stopped-working-after-i-changed-the-telemetry',1,'']]],
   ['working_20on_20more_20than_20one_20computer_37',['Working on more than one computer',['../md_docs_2GIT__GUIDE.html#working-on-more-than-one-computer',1,'']]],
-  ['working_20with_20the_20code_38',['Working with the Code',['../md_docs_2WORKING__WITH__THE__CODE.html',1,'']]],
+  ['working_20with_20the_20code_38',['Working with the Code',['../md_docs_2WORKING__WITH__THE__CODE.html',1,'nav_guides']]],
   ['works_39',['VS Code shows red squiggly lines, but the build works',['../md_docs_2TROUBLESHOOTING.html#vs-code-shows-red-squiggly-lines-but-the-build-works',1,'']]],
   ['wrong_20commit_40',['I tagged the wrong commit',['../md_docs_2GIT__GUIDE.html#i-tagged-the-wrong-commit',1,'']]],
   ['wrong_20direction_41',['A wheel turns in the wrong direction',['../md_docs_2TROUBLESHOOTING.html#a-wheel-turns-in-the-wrong-direction',1,'']]]

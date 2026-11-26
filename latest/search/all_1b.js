@@ -50,7 +50,7 @@ var searchData=
   ['printing_20values_47',['Printing values',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#printing-values',1,'']]],
   ['problems_48',['Common problems',['../md_docs_2GIT__GUIDE.html#common-problems',1,'']]],
   ['program_20runs_49',['How the program runs',['../md_docs_2WORKING__WITH__THE__CODE.html#how-the-program-runs',1,'']]],
-  ['programmers_50',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'']]],
+  ['programmers_50',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'nav_guides']]],
   ['project_20in_20vs_20code_51',['Step 4: Open the project in VS Code',['../index.html#step-4-open-the-project-in-vs-code',1,'']]],
   ['project_20structure_52',['Project structure',['../index.html#project-structure',1,'']]],
   ['proto_5fmagic_53',['PROTO_MAGIC',['../udp__interface_8c.html#a5544340b2d6c706f985c7b6bdb6e4c4e',1,'PROTO_MAGIC:&#160;udp_interface.c'],['../namespaceudp__core.html#a4f98415af377949159b0e50504a14e7c',1,'udp_core.PROTO_MAGIC']]],
@@ -63,6 +63,6 @@ var searchData=
   ['py_60',['Shared core (&lt;span class=&quot;tt&quot;&gt;core/udp_core.py&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#shared-core-coreudp_corepy',1,'']]],
   ['python_203_61',['Step 6: Python 3',['../md_docs_2GETTING__STARTED.html#step-6-python-3',1,'']]],
   ['python_20or_20pip_20is_20not_20found_62',['&lt;span class=&quot;tt&quot;&gt;python&lt;/span&gt; or &lt;span class=&quot;tt&quot;&gt;pip&lt;/span&gt; is not found',['../md_docs_2TROUBLESHOOTING.html#python-or-pip-is-not-found',1,'']]],
-  ['python_20programmers_63',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'']]],
+  ['python_20programmers_63',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'nav_guides']]],
   ['python_20usage_64',['Python Usage',['../dir_7fb88deff7a1179c2129339c39b4c556.html#python-usage',1,'']]]
 ];

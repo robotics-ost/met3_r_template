@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_20changing_20safety_20events_20and_20safety_20levels_0',['C. Changing safety events and safety levels',['../dir_7fb88deff7a1179c2129339c39b4c556.html#c-changing-safety-events-and-safety-levels',1,'']]],
-  ['c_20for_20python_20programmers_1',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'']]],
+  ['c_20for_20python_20programmers_1',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'nav_guides']]],
   ['cartesian_20space_2',['Exercise 05: Position Control in Cartesian Space',['../md_exercises_205__cartesian__position__control.html',1,'nav_exercises']]],
   ['cartesian_20space_3',['Task 5: Position control in Cartesian space',['../md_exercises_205__cartesian__position__control.html#task-5-position-control-in-cartesian-space',1,'']]],
   ['changed_20the_20telemetry_4',['The plots stopped working after I changed the telemetry',['../md_docs_2TROUBLESHOOTING.html#the-plots-stopped-working-after-i-changed-the-telemetry',1,'']]],
@@ -35,7 +35,7 @@ var searchData=
   ['components_20and_20folders_32',['Components and folders',['../md_docs_2ROBOT__SOFTWARE.html#components-and-folders',1,'']]],
   ['components_20use_20the_20safety_20system_33',['How other components use the safety system',['../md_docs_2SAFETY__SYSTEM.html#how-other-components-use-the-safety-system',1,'']]],
   ['computer_34',['computer',['../md_docs_2WEB__GUI.html#set-up-once-per-computer',1,'Set up (once per computer)'],['../index.html#step-3-clone-the-repository-to-your-computer',1,'Step 3: Clone the repository to your computer'],['../md_docs_2GIT__GUIDE.html#working-on-more-than-one-computer',1,'Working on more than one computer']]],
-  ['concept_35',['Architecture Concept',['../md_docs_2SYSTEM__ARCHITECTURE.html',1,'']]],
+  ['concept_35',['Architecture Concept',['../md_docs_2SYSTEM__ARCHITECTURE.html',1,'nav_architecture']]],
   ['concept_36',['concept',['../md_docs_2CONTROL__SYSTEM.html#the-concept',1,'The concept'],['../md_docs_2HAL.html#the-concept-1',1,'The concept'],['../md_docs_2SAFETY__SYSTEM.html#the-concept-2',1,'The concept'],['../md_docs_2SEQUENCER.html#the-concept-3',1,'The concept'],['../md_docs_2UDP__INTERFACE.html#the-concept-4',1,'The concept']]],
   ['config_20file_20esp32_5fconfig_20json_37',['Config file (&lt;span class=&quot;tt&quot;&gt;esp32_config.json&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#config-file-esp32_configjson',1,'']]],
   ['configuration_38',['Configuration',['../index.html#configuration',1,'Configuration'],['../index.html#wifi-configuration',1,'WiFi Configuration']]],
@@ -57,7 +57,7 @@ var searchData=
   ['control_20part_201_54',['Exercise 02: DC Motor Control, Part 1',['../md_exercises_202__dc__motor__control__1.html',1,'nav_exercises']]],
   ['control_20part_202_55',['Exercise 03: DC Motor Control, Part 2',['../md_exercises_203__dc__motor__control__2.html',1,'nav_exercises']]],
   ['control_20sample_20periodic_20telemetry_20values_56',['A. Changing what&apos;s in a control sample (periodic telemetry values)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#a-changing-whats-in-a-control-sample-periodic-telemetry-values',1,'']]],
-  ['control_20system_57',['Control System',['../md_docs_2CONTROL__SYSTEM.html',1,'']]],
+  ['control_20system_57',['Control System',['../md_docs_2CONTROL__SYSTEM.html',1,'nav_architecture']]],
   ['control_20system_20and_20the_20safety_20level_58',['The control system and the safety level',['../md_docs_2CONTROL__SYSTEM.html#the-control-system-and-the-safety-level',1,'']]],
   ['control_20task_59',['The control task',['../md_docs_2CONTROL__SYSTEM.html#the-control-task',1,'']]],
   ['controller_60',['controller',['../md_exercises_202__dc__motor__control__1.html#task-22-position-controller',1,'Task 2.2: Position controller'],['../md_exercises_203__dc__motor__control__2.html#task-32-velocity-controller',1,'Task 3.2: Velocity controller']]],

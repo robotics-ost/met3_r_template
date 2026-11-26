@@ -38,7 +38,7 @@ var searchData=
   ['the_20build_20fails_20with_20strange_20errors_20right_20from_20the_20start_35',['The build fails with strange errors right from the start',['../md_docs_2TROUBLESHOOTING.html#the-build-fails-with-strange-errors-right-from-the-start',1,'']]],
   ['the_20build_20works_36',['VS Code shows red squiggly lines, but the build works',['../md_docs_2TROUBLESHOOTING.html#vs-code-shows-red-squiggly-lines-but-the-build-works',1,'']]],
   ['the_20code_37',['The code',['../md_docs_2SEQUENCER.html#the-code',1,'']]],
-  ['the_20code_38',['Working with the Code',['../md_docs_2WORKING__WITH__THE__CODE.html',1,'']]],
+  ['the_20code_38',['Working with the Code',['../md_docs_2WORKING__WITH__THE__CODE.html',1,'nav_guides']]],
   ['the_20components_39',['The components',['../md_docs_2SYSTEM__ARCHITECTURE.html#the-components',1,'']]],
   ['the_20concept_40',['The concept',['../md_docs_2CONTROL__SYSTEM.html#the-concept',1,'The concept'],['../md_docs_2HAL.html#the-concept-1',1,'The concept'],['../md_docs_2SAFETY__SYSTEM.html#the-concept-2',1,'The concept'],['../md_docs_2SEQUENCER.html#the-concept-3',1,'The concept'],['../md_docs_2UDP__INTERFACE.html#the-concept-4',1,'The concept']]],
   ['the_20configuration_41',['Step 3: Add the configuration',['../md_docs_2WORKING__WITH__THE__CODE.html#step-3-add-the-configuration',1,'']]],

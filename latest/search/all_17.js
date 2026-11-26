@@ -3,7 +3,7 @@ var searchData=
   ['last_20commit_20not_20pushed_20yet_0',['I want to undo my last commit (not pushed yet)',['../md_docs_2GIT__GUIDE.html#i-want-to-undo-my-last-commit-not-pushed-yet',1,'']]],
   ['last_5frx_5ftime_1',['last_rx_time',['../classudp__core_1_1LinkStats.html#ada0ef811e47eac951cbcc2fb6c42ce65',1,'udp_core::LinkStats']]],
   ['last_5fseq_2',['last_seq',['../classudp__core_1_1LinkStats.html#a43822510ae064adbfc392cc06739038b',1,'udp_core::LinkStats']]],
-  ['layer_20hal_3',['Hardware Abstraction Layer (HAL)',['../md_docs_2HAL.html',1,'']]],
+  ['layer_20hal_3',['Hardware Abstraction Layer (HAL)',['../md_docs_2HAL.html',1,'nav_architecture']]],
   ['learning_20objectives_4',['Learning objectives',['../md_exercises_201__robot__basics.html#learning-objectives',1,'Learning objectives'],['../md_exercises_202__dc__motor__control__1.html#learning-objectives-1',1,'Learning objectives'],['../md_exercises_203__dc__motor__control__2.html#learning-objectives-2',1,'Learning objectives'],['../md_exercises_204__kinematics.html#learning-objectives-3',1,'Learning objectives'],['../md_exercises_205__cartesian__position__control.html#learning-objectives-4',1,'Learning objectives'],['../md_exercises_206__tcp__control.html#learning-objectives-5',1,'Learning objectives']]],
   ['level_5',['level',['../md_docs_2SEQUENCER.html#steps-and-the-safety-level',1,'Steps and the safety level'],['../md_docs_2CONTROL__SYSTEM.html#the-control-system-and-the-safety-level',1,'The control system and the safety level']]],
   ['level_20does_20not_20do_6',['What the safety level does not do',['../md_docs_2SAFETY__SYSTEM.html#what-the-safety-level-does-not-do',1,'']]],

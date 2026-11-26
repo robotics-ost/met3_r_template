@@ -29,7 +29,7 @@ var searchData=
   ['robot_20from_20your_20pc_26',['Step 8: Connect to the robot from your PC',['../index.html#step-8-connect-to-the-robot-from-your-pc',1,'']]],
   ['robot_20is_20not_20found_20could_20not_20open_20port_20no_20com_20port_27',['The robot is not found / &lt;span class=&quot;tt&quot;&gt;Could not open port&lt;/span&gt; / no COM port',['../md_docs_2TROUBLESHOOTING.html#the-robot-is-not-found--could-not-open-port--no-com-port',1,'']]],
   ['robot_20restarts_20again_20and_20again_28',['The robot restarts again and again',['../md_docs_2TROUBLESHOOTING.html#the-robot-restarts-again-and-again',1,'']]],
-  ['robot_20software_29',['Robot Software',['../md_docs_2ROBOT__SOFTWARE.html',1,'']]],
+  ['robot_20software_29',['Robot Software',['../md_docs_2ROBOT__SOFTWARE.html',1,'nav_architecture']]],
   ['robot_20software_30',['robot software',['../md_docs_2CONTROL__SYSTEM.html#in-the-robot-software',1,'In the robot software'],['../md_docs_2HAL.html#in-the-robot-software-1',1,'In the robot software'],['../md_docs_2SAFETY__SYSTEM.html#in-the-robot-software-2',1,'In the robot software'],['../md_docs_2SEQUENCER.html#in-the-robot-software-3',1,'In the robot software'],['../md_docs_2UDP__INTERFACE.html#in-the-robot-software-4',1,'In the robot software']]],
   ['robot_20to_20wifi_31',['Task 1.2: Connect the robot to WiFi',['../md_exercises_201__robot__basics.html#task-12-connect-the-robot-to-wifi',1,'']]],
   ['robot_5fsoftware_2emd_32',['ROBOT_SOFTWARE.md',['../ROBOT__SOFTWARE_8md.html',1,'']]],

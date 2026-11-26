@@ -13,7 +13,7 @@ var searchData=
   ['first_20build_20takes_20very_20long_10',['The first build takes very long',['../md_docs_2TROUBLESHOOTING.html#the-first-build-takes-very-long',1,'']]],
   ['folders_11',['Components and folders',['../md_docs_2ROBOT__SOFTWARE.html#components-and-folders',1,'']]],
   ['for_20and_20while_12',['&lt;span class=&quot;tt&quot;&gt;if&lt;/span&gt;, &lt;span class=&quot;tt&quot;&gt;for&lt;/span&gt; and &lt;span class=&quot;tt&quot;&gt;while&lt;/span&gt;',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#if-for-and-while',1,'']]],
-  ['for_20python_20programmers_13',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'']]],
+  ['for_20python_20programmers_13',['C for Python Programmers',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html',1,'nav_guides']]],
   ['forward_20kinematics_20and_20odometry_14',['Task 4.1: Forward kinematics and odometry',['../md_exercises_204__kinematics.html#task-41-forward-kinematics-and-odometry',1,'']]],
   ['found_15',['&lt;span class=&quot;tt&quot;&gt;python&lt;/span&gt; or &lt;span class=&quot;tt&quot;&gt;pip&lt;/span&gt; is not found',['../md_docs_2TROUBLESHOOTING.html#python-or-pip-is-not-found',1,'']]],
   ['found_20could_20not_20open_20port_20no_20com_20port_16',['The robot is not found / &lt;span class=&quot;tt&quot;&gt;Could not open port&lt;/span&gt; / no COM port',['../md_docs_2TROUBLESHOOTING.html#the-robot-is-not-found--could-not-open-port--no-com-port',1,'']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['udp_20interface_0',['UDP Interface',['../md_docs_2UDP__INTERFACE.html',1,'']]],
+  ['udp_20interface_0',['UDP Interface',['../md_docs_2UDP__INTERFACE.html',1,'nav_architecture']]],
   ['udp_20telemetry_20command_20interface_1',['Host side ESP32 UDP telemetry/command interface',['../dir_7fb88deff7a1179c2129339c39b4c556.html#host-side-esp32-udp-telemetrycommand-interface',1,'']]],
   ['udp_5fcore_20py_2',['Shared core (&lt;span class=&quot;tt&quot;&gt;core/udp_core.py&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#shared-core-coreudp_corepy',1,'']]],
   ['undefined_20reference_20to_20motor_5fmodel_5finit_3',['&lt;span class=&quot;tt&quot;&gt;undefined reference to &apos;motor_model_init&apos;&lt;/span&gt;',['../md_docs_2TROUBLESHOOTING.html#undefined-reference-to-motor_model_init',1,'']]],
