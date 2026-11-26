@@ -2,7 +2,7 @@ var searchData=
 [
   ['b_20adding_20a_20new_20sequencer_20step_20type_0',['B. Adding a new sequencer step type',['../dir_7fb88deff7a1179c2129339c39b4c556.html#b-adding-a-new-sequencer-step-type',1,'']]],
   ['basics_1',['The basics',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#the-basics',1,'']]],
-  ['basics_20encoders_20and_20motor_20voltage_2',['Exercise 01: Robot Basics, Encoders and Motor Voltage',['../md_exercises_201__robot__basics.html',1,'']]],
+  ['basics_20encoders_20and_20motor_20voltage_2',['Exercise 01: Robot Basics, Encoders and Motor Voltage',['../md_exercises_201__robot__basics.html',1,'nav_exercises']]],
   ['because_20the_20remote_20contains_20work_20that_20you_20do_20not_20have_20locally_3',['Push rejected: &quot;Updates were rejected because the remote contains work that you do not have locally&quot;',['../md_docs_2GIT__GUIDE.html#push-rejected-updates-were-rejected-because-the-remote-contains-work-that-you-do-not-have-locally',1,'']]],
   ['bonus_20task_4',['Bonus task',['../md_exercises_205__cartesian__position__control.html#bonus-task',1,'']]],
   ['branch_5',['Optional: trying something out on a branch',['../md_docs_2GIT__GUIDE.html#optional-trying-something-out-on-a-branch',1,'']]],

@@ -272,84 +272,15 @@ Project structure</h1>
 </table>
 <h1 class="doxsection"><a class="anchor" id="architecture-overview"></a>
 Architecture Overview</h1>
-<p>The core system is designed in four layers (Safety System, Control System, Sequencer, Hardware Abstraction Layer). In addition, the network interface enables the user to interact with the robot via telemetry. Solid lines indicate write operations, while dashed lines stand for read only.</p>
-<div class="mermaidgraph">
-<pre class="mermaid">
-flowchart TB
-    subgraph core [&quot;Core System&quot;]
-        direction TB
-        Safe[&quot;Safety System&lt;br&gt;(System Monitoring, ensures safe operation)&quot;]
-        Ctrl[&quot;Control System&lt;br&gt;(Kinematics, path planning, motor control)&quot;]
-        Seq[&quot;Sequencer&lt;br&gt;(User defined sequences, exception handling)&quot;]
-        HAL[&quot;Hardware Abstraction Layer&lt;br&gt;(Interface to sensors and actuators)&quot;]
-    end
-
-    subgraph network [&quot;Network&quot;]
-        direction TB
-        UDP[&quot;UDP Interface&lt;br&gt;(Bidirectional communication between ESP32 and host PC)&quot;]
-    end
-
-    Safe -.-&gt;|&quot;Safety&lt;br&gt;Level&quot;| Seq
-    Safe --&gt;|&quot;Enable/Disable&lt;br&gt;Control System&lt;br&gt;Components&quot;| Ctrl
-    Safe -.-&gt;|&quot;Safety&lt;br&gt;Level&quot;| Ctrl
-    Safe --&gt;|&quot;Enable/Disable&lt;br&gt;Hardware&lt;br&gt;Components&quot;| HAL
-    Safe -.-&gt;|&quot;Safety&lt;br&gt;Level&quot;| UDP
-
-    Seq --&gt;|&quot;Trigger&lt;br&gt;Safety Event&quot;| Safe
-    Seq --&gt;|&quot;Set&lt;br&gt;Target&quot;| Ctrl
-    Seq -.-&gt;|&quot;Queued&lt;br&gt;Steps&quot;| UDP
-
-    Ctrl -.-&gt;|&quot;System&lt;br&gt;State&quot;| Seq
-    Ctrl --&gt;|&quot;Trigger&lt;br&gt;Safety Event&quot;| Safe
-    Ctrl --&gt;|&quot;Actuator&lt;br&gt;Setpoints&quot;| HAL
-    Ctrl -.-&gt;|&quot;System&lt;br&gt;State&quot;| UDP
-
-    HAL -.-&gt;|&quot;Sensor&lt;br&gt;Values&quot;| Ctrl
-    HAL -.-&gt;|&quot;Sensor&lt;br&gt;Values&quot;| Seq
-    HAL -.-&gt;|&quot;Sensor&lt;br&gt;Values&quot;| Safe
-
-    UDP --&gt;|&quot;Trigger&lt;br&gt;Safety Event&quot;| Safe
-    UDP --&gt;|&quot;Queue&lt;br&gt;Steps&quot;| Seq</pre>
-</div>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Layer  </th><th class="markdownTableHeadNone">Target Core  </th><th class="markdownTableHeadNone">Priority  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Sequencer</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (~50-100 Hz)  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Control System</b>  </td><td class="markdownTableBodyNone">Core 1  </td><td class="markdownTableBodyNone">Hard RT (~500-1000 Hz)  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Safety System</b>  </td><td class="markdownTableBodyNone">Core 1  </td><td class="markdownTableBodyNone">Hard RT (500-1000 Hz)  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>HAL</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Direct Register Access  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>UDP Telemetry</b>  </td><td class="markdownTableBodyNone">Core 0  </td><td class="markdownTableBodyNone">Non RT (50 Hz)  </td></tr>
-</table>
-<h2 class="doxsection"><a class="anchor" id="udp-telemetry"></a>
-UDP telemetry</h2>
-<p>The UDP telemetry library provides:</p>
+<p>The software on the robot has four layers. In addition, the network interface connects the robot to your PC.</p>
 <ul>
-<li>WiFi STA connection to a router</li>
-<li>UDP socket for bidirectional communication</li>
-<li>Batched telemetry packets (20 samples/batch, ~50 Hz send rate) containing safety and control samples, as well as sequencer steps</li>
-<li>Incoming command handling (HELLO registration, GOODBYE unregistration, commands)</li>
+<li><b>Safety System:</b> decides whether the motors are allowed to run.</li>
+<li><b>Control System:</b> runs the control loop. Most of your code goes here.</li>
+<li><b>Sequencer:</b> executes commands one after another, e.g. "move to" or "wait".</li>
+<li><b>Hardware Abstraction Layer (HAL):</b> accesses the motors and encoders.</li>
+<li><b>UDP Interface:</b> exchanges telemetry and commands with your PC.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="hardware-abstraction-layer-hal"></a>
-Hardware Abstraction Layer (HAL)</h2>
-<p>The HAL controls the physical hardware:</p>
-<ul>
-<li><b>Motor Driver</b> — TB6612FNG via PWM; per-motor voltage control with direction, INA219 bus voltage monitoring</li>
-<li><b>Encoder Driver</b> — ESP-IDF PCNT quadrature encoding; 2 encoders with configurable pulses per revolution</li>
-</ul>
-<h2 class="doxsection"><a class="anchor" id="safety-system"></a>
-Safety System</h2>
-<p>The safety system provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.</p>
-<h2 class="doxsection"><a class="anchor" id="control-system"></a>
-Control System</h2>
-<p>The control system provides the main control task, in which you add your own control logic.</p>
-<h2 class="doxsection"><a class="anchor" id="sequencer"></a>
-Sequencer</h2>
-<p>The sequencer is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.</p>
+<p><a class="el" href="md_docs_2SYSTEM__ARCHITECTURE.html" title="Architecture Concept">Architecture Concept</a> explains the idea behind this structure, and <a class="el" href="md_docs_2ROBOT__SOFTWARE.html" title="Robot Software">Robot Software</a> shows how it is built in this project. There is also a page for each of the components: <a class="el" href="md_docs_2SAFETY__SYSTEM.html" title="Safety System">Safety System</a>, <a class="el" href="md_docs_2CONTROL__SYSTEM.html" title="Control System">Control System</a>, <a class="el" href="md_docs_2SEQUENCER.html" title="Sequencer">Sequencer</a>, <a class="el" href="md_docs_2HAL.html" title="Hardware Abstraction Layer (HAL)">Hardware Abstraction Layer</a> and <a class="el" href="md_docs_2UDP__INTERFACE.html" title="UDP Interface">UDP Interface</a>.</p>
 <h1 class="doxsection"><a class="anchor" id="configuration"></a>
 Configuration</h1>
 <p>All configurable constants are gathered in <span class="tt"><a class="el" href="config_8h.html" title="Configuration constants for the robot system.">include/config.h</a></span>, so that values used by several components cannot drift apart. The function <span class="tt"><a class="el" href="main_8c.html#abce06be17fc37d675118a678a8100a36" title="Application entry point.">app_main()</a></span> in <span class="tt"><a class="el" href="main_8c.html" title="Main application entry point.">src/main.c</a></span> passes them to the individual components in a config struct during their initialization.</p>

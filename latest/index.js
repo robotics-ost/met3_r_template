@@ -14,13 +14,7 @@ var index =
     ] ],
     [ "Exercises", "index.html#exercises", null ],
     [ "Project structure", "index.html#project-structure", null ],
-    [ "Architecture Overview", "index.html#architecture-overview", [
-      [ "UDP telemetry", "index.html#udp-telemetry", null ],
-      [ "Hardware Abstraction Layer (HAL)", "index.html#hardware-abstraction-layer-hal", null ],
-      [ "Safety System", "index.html#safety-system", null ],
-      [ "Control System", "index.html#control-system", null ],
-      [ "Sequencer", "index.html#sequencer", null ]
-    ] ],
+    [ "Architecture Overview", "index.html#architecture-overview", null ],
     [ "Configuration", "index.html#configuration", [
       [ "WiFi Configuration", "index.html#wifi-configuration", null ]
     ] ]

@@ -7,7 +7,7 @@ var searchData=
   ['ki_4',['ki',['../structpi__controller__config__t.html#a050993b7ca6c97e62c1020017f716b91',1,'pi_controller_config_t']]],
   ['kinematics_5',['Task 4.2: Inverse kinematics',['../md_exercises_204__kinematics.html#task-42-inverse-kinematics',1,'']]],
   ['kinematics_20and_20odometry_6',['Task 4.1: Forward kinematics and odometry',['../md_exercises_204__kinematics.html#task-41-forward-kinematics-and-odometry',1,'']]],
-  ['kinematics_20of_20a_20differential_20drive_20robot_7',['Exercise 04: Kinematics of a Differential-Drive Robot',['../md_exercises_204__kinematics.html',1,'']]],
+  ['kinematics_20of_20a_20differential_20drive_20robot_7',['Exercise 04: Kinematics of a Differential-Drive Robot',['../md_exercises_204__kinematics.html',1,'nav_exercises']]],
   ['kinematics_20of_20the_20end_20effector_8',['Task 6.1: Kinematics of the end effector',['../md_exercises_206__tcp__control.html#task-61-kinematics-of-the-end-effector',1,'']]],
   ['kinematics_2ec_9',['kinematics.c',['../kinematics_8c.html',1,'']]],
   ['kinematics_2eh_10',['kinematics.h',['../kinematics_8h.html',1,'']]],

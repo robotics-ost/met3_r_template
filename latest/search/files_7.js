@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['pd_5fcontroller_2ec_0',['pd_controller.c',['../pd__controller_8c.html',1,'']]],
-  ['pd_5fcontroller_2eh_1',['pd_controller.h',['../pd__controller_8h.html',1,'']]],
-  ['pi_5fcontroller_2ec_2',['pi_controller.c',['../pi__controller_8c.html',1,'']]],
-  ['pi_5fcontroller_2eh_3',['pi_controller.h',['../pi__controller_8h.html',1,'']]],
-  ['position_5fcontroller_5fdiff_5fdrive_2ec_4',['position_controller_diff_drive.c',['../position__controller__diff__drive_8c.html',1,'']]],
-  ['position_5fcontroller_5fdiff_5fdrive_2eh_5',['position_controller_diff_drive.h',['../position__controller__diff__drive_8h.html',1,'']]]
+  ['main_2ec_0',['main.c',['../main_8c.html',1,'']]],
+  ['motor_5fdriver_2ec_1',['motor_driver.c',['../motor__driver_8c.html',1,'']]],
+  ['motor_5fdriver_2eh_2',['motor_driver.h',['../motor__driver_8h.html',1,'']]],
+  ['motor_5fmodel_2ec_3',['motor_model.c',['../motor__model_8c.html',1,'']]],
+  ['motor_5fmodel_2eh_4',['motor_model.h',['../motor__model_8h.html',1,'']]]
 ];

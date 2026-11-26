@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "0123456789[_abcdefghijklmnopqrstuvwxy",
   1: "[_cdeklmpstu",
   2: "au",
-  3: "0acegkmprstuw",
+  3: "0aceghkmnprstuw",
   4: "_abcdefhiklmnoprstuw",
   5: "_abcdehiklmnopqrstuwxy",
   6: "d",

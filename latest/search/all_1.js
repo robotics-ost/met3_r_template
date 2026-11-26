@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['1_0',['Exercise 02: DC Motor Control, Part 1',['../md_exercises_202__dc__motor__control__1.html',1,'']]],
+  ['1_0',['Exercise 02: DC Motor Control, Part 1',['../md_exercises_202__dc__motor__control__1.html',1,'nav_exercises']]],
   ['1_201_3a_20set_20up_20the_20development_20environment_1',['Task 1.1: Set up the development environment',['../md_exercises_201__robot__basics.html#task-11-set-up-the-development-environment',1,'']]],
   ['1_202_3a_20connect_20the_20robot_20to_20wifi_2',['Task 1.2: Connect the robot to WiFi',['../md_exercises_201__robot__basics.html#task-12-connect-the-robot-to-wifi',1,'']]],
   ['1_203_3a_20read_20the_20encoders_3',['Task 1.3: Read the encoders',['../md_exercises_201__robot__basics.html#task-13-read-the-encoders',1,'']]],

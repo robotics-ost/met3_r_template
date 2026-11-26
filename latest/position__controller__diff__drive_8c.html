@@ -220,6 +220,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Aborts the current position control operation. </p>
+<p>This function is called by the sequencer task. It only requests the abort: the robot is stopped by <a class="el" href="position__controller__diff__drive_8h.html#a25343ce5a652c5febae5f77e231f7932" title="Runs the position controller.">position_controller_run()</a> in its next call. </p>
 
 </div>
 </div>
@@ -289,10 +290,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Runs the position controller. </p>
+<p>Call this function in every cycle of the control loop. It calculates the desired robot velocities that drive the robot to the target pose.</p>
+<p>The functions <a class="el" href="position__controller__diff__drive_8h.html#a2aa9e1ff5c20fac447eaea9054e9426e" title="Sets the target position and orientation for the position controller.">position_controller_set_target()</a> and <a class="el" href="position__controller__diff__drive_8h.html#ab66a94aa1062a80a9bcfb75205ccb75c" title="Aborts the current position control operation.">position_controller_abort()</a> are called by the sequencer task, this function by the control task. They share the target pose (protected by the mutex <span class="tt">_xi_d_mutex</span>) and the states "target reached" and "target aborted" (event group bits <span class="tt"><a class="el" href="#ad0fb848389abea26feb35dec22f6f462">TARGET_REACHED_BIT</a></span> and <span class="tt"><a class="el" href="#ad8a077d62364dad3dbc28d5afbca1819">TARGET_ABORTED_BIT</a></span>). In every call, this function has to:</p><ul>
+<li>Read the target pose into a local variable. Hold the mutex only as long as needed for copying.</li>
+<li>Check if an abort was requested (<span class="tt"><a class="el" href="#ad8a077d62364dad3dbc28d5afbca1819">TARGET_ABORTED_BIT</a></span>). If yes: clear the bit, stop the robot (all desired velocities 0) and set <span class="tt"><a class="el" href="#ad0fb848389abea26feb35dec22f6f462">TARGET_REACHED_BIT</a></span>, so that the controller is idle as after <a class="el" href="position__controller__diff__drive_8h.html#a4205a3ff72ee095c971ab93922ba7b4a" title="Initializes the position controller with the given configuration.">position_controller_init()</a>.</li>
+<li>Output zero velocities if there is nothing to do (<span class="tt"><a class="el" href="#ad0fb848389abea26feb35dec22f6f462">TARGET_REACHED_BIT</a></span> is set).</li>
+<li>Otherwise calculate the desired robot velocities and limit them to the maximum velocities of the configuration.</li>
+<li>Check if the target is reached (<span class="tt">position_tolerance</span>, and <span class="tt">orientation_tolerance</span> if the orientation is controlled as well). If yes: set <span class="tt"><a class="el" href="#ad0fb848389abea26feb35dec22f6f462">TARGET_REACHED_BIT</a></span> and output zero velocities.</li>
+</ul>
+<p>The function must not block: it runs in the control loop.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">xi</td><td>Pointer to an array containing the current position and orientation [x, y, phi]. </td></tr>
-    <tr><td class="paramname">xid_d</td><td>Pointer to an array where the desired robot velocities will be stored [vx, vy, omega]. </td></tr>
+    <tr><td class="paramname">xi</td><td>Pointer to an array containing the current position and orientation in the global frame [x, y, phi] [m, m, rad]. </td></tr>
+    <tr><td class="paramname">xid_d</td><td>Pointer to an array where the desired robot velocities will be stored in the robot frame [vx, vy, omega] [m/s, m/s, rad/s]. </td></tr>
   </table>
   </dd>
 </dl>

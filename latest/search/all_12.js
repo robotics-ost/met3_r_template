@@ -17,5 +17,6 @@ var searchData=
   ['gui_20gui_5fweb_14',['Web GUI (&lt;span class=&quot;tt&quot;&gt;gui_web/&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#web-gui-gui_web',1,'']]],
   ['gui_20starts_20but_20shows_20no_20data_15',['The web GUI starts, but shows no data',['../md_docs_2TROUBLESHOOTING.html#the-web-gui-starts-but-shows-no-data',1,'']]],
   ['gui_5fweb_16',['Web GUI (&lt;span class=&quot;tt&quot;&gt;gui_web/&lt;/span&gt;)',['../dir_7fb88deff7a1179c2129339c39b4c556.html#web-gui-gui_web',1,'']]],
-  ['guide_17',['Git and GitHub Guide',['../md_docs_2GIT__GUIDE.html',1,'']]]
+  ['guide_17',['Git and GitHub Guide',['../md_docs_2GIT__GUIDE.html',1,'']]],
+  ['guides_18',['Guides',['../nav_guides.html',1,'']]]
 ];

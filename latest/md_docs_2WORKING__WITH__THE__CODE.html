@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md_docs_2WORKI
 How the program runs</h1>
 <ol type="1">
 <li><span class="tt"><a class="el" href="main_8c.html#abce06be17fc37d675118a678a8100a36" title="Application entry point.">app_main()</a></span> in <span class="tt"><a class="el" href="main_8c.html" title="Main application entry point.">src/main.c</a></span> runs once at start-up. It initializes all components and then starts their tasks.</li>
-<li>Each component runs as its own <b>task</b>, a function with an endless loop that runs periodically (see the table in the <a class="el" href="index.html#architecture-overview" title="Architecture Overview">Architecture Overview</a>).</li>
+<li>Each component runs as its own <b>task</b>, a function with an endless loop that runs periodically (see the table in <a class="el" href="md_docs_2ROBOT__SOFTWARE.html#tasks-cores-and-periods" title="Tasks, cores and periods">Robot Software</a>).</li>
 <li>The <b>control system task</b> <span class="tt"><a class="el" href="control__system_8h.html#aa9017692b430fefd8da744d11fc1eeab" title="Control system task.">control_system_task()</a></span> runs every <span class="tt"><a class="el" href="config_8h.html#a0e3cc4a366ffb5700421398683f33a60">CONTROL_SYSTEM_TASK_PERIOD_MS</a></span> (default 5 ms, set in <span class="tt"><a class="el" href="config_8h.html" title="Configuration constants for the robot system.">include/config.h</a></span>). This is where you read the sensors, calculate and set the actuators:</li>
 </ol>
 <div class="fragment"><div class="line"><span class="keywordflow">while</span> (!<a class="code hl_function" href="safety__system_8h.html#a4c26e5f7c0b8954461ec1b7bf5f05b6a">safety_system_is_shutting_down</a>())</div>

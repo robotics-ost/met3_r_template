@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['2_0',['Exercise 03: DC Motor Control, Part 2',['../md_exercises_203__dc__motor__control__2.html',1,'']]],
+  ['2_0',['Exercise 03: DC Motor Control, Part 2',['../md_exercises_203__dc__motor__control__2.html',1,'nav_exercises']]],
   ['2_201_3a_20dc_20motor_20model_1',['Task 2.1: DC motor model',['../md_exercises_202__dc__motor__control__1.html#task-21-dc-motor-model',1,'']]],
   ['2_202_3a_20position_20controller_2',['Task 2.2: Position controller',['../md_exercises_202__dc__motor__control__1.html#task-22-position-controller',1,'']]],
   ['2_20stage_3',['2. Stage',['../md_docs_2GIT__GUIDE.html#autotoc_md2-stage',1,'']]],

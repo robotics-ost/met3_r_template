@@ -1,6 +1,7 @@
 var files_dup =
 [
     [ "docs", "dir_49e56c817e5e54854c35e136979f97ca.html", null ],
+    [ "docs_config", "dir_bf179a049926b74760c735e1b0d64ba2.html", null ],
     [ "exercises", "dir_ddbe1331e10ab9199d6937d281ca7d61.html", "dir_ddbe1331e10ab9199d6937d281ca7d61" ],
     [ "host_interface", "dir_7fb88deff7a1179c2129339c39b4c556.html", "dir_7fb88deff7a1179c2129339c39b4c556" ],
     [ "include", "dir_d44c64559bbebec7f509842c48db8b23.html", "dir_d44c64559bbebec7f509842c48db8b23" ],
