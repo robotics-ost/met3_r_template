@@ -144,6 +144,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ade509b07f1df45730d31589b81a26efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSE endpoint: streams telemetry batches to the browser, one <span class="tt">data:</span> line (JSON-encoded) per batch.  <br /></td></tr>
 <tr class="memitem:a4bec48e2e47c2dc797e7d34675280001" id="r_a4bec48e2e47c2dc797e7d34675280001"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4bec48e2e47c2dc797e7d34675280001">cmd_safety</a> ()</td></tr>
 <tr class="memdesc:a4bec48e2e47c2dc797e7d34675280001"><td class="mdescLeft">&#160;</td><td class="mdescRight">POST /api/command/safety - trigger a safety event.  <br /></td></tr>
+<tr class="memitem:a7eeefd1a2da5cc70dca0bdec794fd627" id="r_a7eeefd1a2da5cc70dca0bdec794fd627"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7eeefd1a2da5cc70dca0bdec794fd627">cmd_move_to</a> ()</td></tr>
+<tr class="memdesc:a7eeefd1a2da5cc70dca0bdec794fd627"><td class="mdescLeft">&#160;</td><td class="mdescRight">POST /api/command/move_to - queue a move-to sequencer step.  <br /></td></tr>
 <tr class="memitem:aced9e15f4816d5731c3f7b792c3b264a" id="r_aced9e15f4816d5731c3f7b792c3b264a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aced9e15f4816d5731c3f7b792c3b264a">cmd_wait</a> ()</td></tr>
 <tr class="memdesc:aced9e15f4816d5731c3f7b792c3b264a"><td class="mdescLeft">&#160;</td><td class="mdescRight">POST /api/command/wait - queue a wait sequencer step.  <br /></td></tr>
 <tr class="memitem:ab6b240184fb1712fd929e1635e43cfab" id="r_ab6b240184fb1712fd929e1635e43cfab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab6b240184fb1712fd929e1635e43cfab">cmd_remove_step</a> ()</td></tr>
@@ -285,6 +287,26 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7eeefd1a2da5cc70dca0bdec794fd627" name="a7eeefd1a2da5cc70dca0bdec794fd627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eeefd1a2da5cc70dca0bdec794fd627">&#9670;&#160;</a></span>cmd_move_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cmd_move_to </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>POST /api/command/move_to - queue a move-to sequencer step. </p>
+<p>Expects JSON body <span class="tt">{"x": &lt;float&gt;, "y": &lt;float&gt;, "phi": &lt;float&gt;}</span> (x, y in [m], phi in [rad]). </p><dl class="section return"><dt>Returns</dt><dd>JSON <span class="tt">{"ok": true, "sent": {"x": &lt;float&gt;, "y": &lt;float&gt;, "phi": &lt;float&gt;}}</span>. </dd></dl>
 
 </div>
 </div>

@@ -13,10 +13,11 @@ var searchData=
   ['motor_5fdriver_5fmotor_5fb_5ffree_5fspin_10',['MOTOR_DRIVER_MOTOR_B_FREE_SPIN',['../config_8h.html#a5b3d085f860203a6bdc6b2e258a4b901',1,'config.h']]],
   ['motor_5fpwm_5ffrequency_11',['MOTOR_PWM_FREQUENCY',['../motor__driver_8c.html#ac7f4abc94851e930f898060bdfed79a6',1,'motor_driver.c']]],
   ['motor_5fpwm_5fresolution_12',['MOTOR_PWM_RESOLUTION',['../motor__driver_8c.html#a966d1d68fcd87e46ba1eef9e24027b55',1,'motor_driver.c']]],
-  ['msg_5ftype_5fcmd_5fremove_5fstep_13',['MSG_TYPE_CMD_REMOVE_STEP',['../udp__interface_8c.html#a6dd80d86977bd9aa3d2abbd352e7090d',1,'udp_interface.c']]],
-  ['msg_5ftype_5fcmd_5fsafety_14',['MSG_TYPE_CMD_SAFETY',['../udp__interface_8c.html#ad38df96a9e3721133adfc43d60abf043',1,'udp_interface.c']]],
-  ['msg_5ftype_5fcmd_5fwait_15',['MSG_TYPE_CMD_WAIT',['../udp__interface_8c.html#ad776ec0871712a4bee32c53cb4544d4b',1,'udp_interface.c']]],
-  ['msg_5ftype_5fgoodbye_16',['MSG_TYPE_GOODBYE',['../udp__interface_8c.html#ac127c599c533ae995788c86513dc5ef5',1,'udp_interface.c']]],
-  ['msg_5ftype_5fhello_17',['MSG_TYPE_HELLO',['../udp__interface_8c.html#afdef16404a087bcc073000bdde23b168',1,'udp_interface.c']]],
-  ['msg_5ftype_5ftelemetry_18',['MSG_TYPE_TELEMETRY',['../udp__interface_8c.html#a1f55b394c8e45d53381f2aa96cd89030',1,'udp_interface.c']]]
+  ['msg_5ftype_5fcmd_5fmove_5fto_13',['MSG_TYPE_CMD_MOVE_TO',['../udp__interface_8c.html#a6ee30cdf84a3ed79d1a6ee82bbb2faaf',1,'udp_interface.c']]],
+  ['msg_5ftype_5fcmd_5fremove_5fstep_14',['MSG_TYPE_CMD_REMOVE_STEP',['../udp__interface_8c.html#a6dd80d86977bd9aa3d2abbd352e7090d',1,'udp_interface.c']]],
+  ['msg_5ftype_5fcmd_5fsafety_15',['MSG_TYPE_CMD_SAFETY',['../udp__interface_8c.html#ad38df96a9e3721133adfc43d60abf043',1,'udp_interface.c']]],
+  ['msg_5ftype_5fcmd_5fwait_16',['MSG_TYPE_CMD_WAIT',['../udp__interface_8c.html#ad776ec0871712a4bee32c53cb4544d4b',1,'udp_interface.c']]],
+  ['msg_5ftype_5fgoodbye_17',['MSG_TYPE_GOODBYE',['../udp__interface_8c.html#ac127c599c533ae995788c86513dc5ef5',1,'udp_interface.c']]],
+  ['msg_5ftype_5fhello_18',['MSG_TYPE_HELLO',['../udp__interface_8c.html#afdef16404a087bcc073000bdde23b168',1,'udp_interface.c']]],
+  ['msg_5ftype_5ftelemetry_19',['MSG_TYPE_TELEMETRY',['../udp__interface_8c.html#a1f55b394c8e45d53381f2aa96cd89030',1,'udp_interface.c']]]
 ];

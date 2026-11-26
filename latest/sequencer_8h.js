@@ -4,6 +4,7 @@ var sequencer_8h =
     [ "sequencer_step_t", "structsequencer__step__t.html", "structsequencer__step__t" ],
     [ "sequencer_step_type_t", "sequencer_8h.html#a02e420230ae4451790880207676b6f20", [
       [ "WAIT", "sequencer_8h.html#a02e420230ae4451790880207676b6f20a79a322ccb4b29b85b3cab52dbccefd17", null ],
+      [ "MOVE_TO", "sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3", null ],
       [ "_COUNT", "sequencer_8h.html#a02e420230ae4451790880207676b6f20ac88cb015e72bc8bc025d149cc9651f52", null ]
     ] ],
     [ "sequencer_add_step_to_queue", "sequencer_8h.html#adf0b693996b3ad0bd6a1db5c38bfa5a5", null ],

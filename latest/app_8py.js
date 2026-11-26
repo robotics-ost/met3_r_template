@@ -4,6 +4,7 @@ var app_8py =
     [ "app._on_telemetry", "namespaceapp.html#aa0745ee51a59544100412725fd6ccc99", null ],
     [ "app._subscribe", "namespaceapp.html#a0da0bf28a3f480a5132f92f6b28a1242", null ],
     [ "app._unsubscribe", "namespaceapp.html#a0272f0a50184db3629cf3b7f794b81d3", null ],
+    [ "app.cmd_move_to", "namespaceapp.html#a7eeefd1a2da5cc70dca0bdec794fd627", null ],
     [ "app.cmd_remove_step", "namespaceapp.html#ab6b240184fb1712fd929e1635e43cfab", null ],
     [ "app.cmd_safety", "namespaceapp.html#a4bec48e2e47c2dc797e7d34675280001", null ],
     [ "app.cmd_wait", "namespaceapp.html#aced9e15f4816d5731c3f7b792c3b264a", null ],

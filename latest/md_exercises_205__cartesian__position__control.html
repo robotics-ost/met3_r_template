@@ -131,18 +131,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md_exercises_2
 <h1 class="doxsection"><a class="anchor" id="learning-objectives-4"></a>
 Learning objectives</h1>
 <p>You can implement a position controller in Cartesian space for a mobile robot with differential drive.</p>
+<p>You can explain how a command from the PC reaches the control system via the sequencer.</p>
 <h1 class="doxsection"><a class="anchor" id="task-5-position-control-in-cartesian-space"></a>
 Task 5: Position control in Cartesian space</h1>
 <ol type="1">
 <li>Draw the block diagram of the complete system. Combine functional components, such as the inverse kinematics, into a single block.</li>
 <li>Implement the position controller for differential-drive robots based on the provided starter code (<span class="tt">position_controller_diff_drive</span>) and integrate it into the control system.</li>
-<li>Implement a new step in the sequencer that sets a new target pose.<ul>
-<li>Adapt the web interface accordingly.</li>
-</ul>
-</li>
-<li>Test your implementation by sending different target poses to the robot via the web interface.<ul>
+<li>Connect the <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3">MOVE_TO</a></span> step of the sequencer to the position controller. The step itself and the <b>Move to</b> form in the web GUI are already provided, you only have to add the calls to the position controller. The places are marked with <span class="tt">/* TO DO */</span> in <span class="tt"><a class="el" href="sequencer_8c.html" title="Implementation of the sequencer interface.">lib/sequencer/src/sequencer.c</a></span>.</li>
+<li>Test your implementation by sending different target poses to the robot via the <b>Move to</b> form of the web GUI.<ul>
 <li>Test different values for the parameters K1, K2 and K3.</li>
 <li>How accurately can the robot return to its starting point? What influences the accuracy?</li>
+<li>What happens if you remove the active <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3">MOVE_TO</a></span> step from the queue while the robot is driving?</li>
 <li>How does the robot react to a change of the safety level?</li>
 </ul>
 </li>
@@ -169,7 +168,7 @@ Starter code</h1>
 <h1 class="doxsection"><a class="anchor" id="hints-4"></a>
 Hints</h1>
 <ul>
-<li>How to add a new step type on the PC side is described in the <a class="el" href="dir_7fb88deff7a1179c2129339c39b4c556.html" title="/home/runner/work/met3_r_template/met3_r_template/host_interface/README.md">host interface guide</a>, section <em>B. Changing sequencer step types</em>.</li>
+<li>The sequencer and the control system run in different tasks. Which functions of the position controller are called by the sequencer, and which one by the control system? The provided functions show how the two tasks share data safely. Read them before you implement <span class="tt"><a class="el" href="position__controller__diff__drive_8c.html#a25343ce5a652c5febae5f77e231f7932" title="Runs the position controller.">position_controller_run()</a></span>.</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="done-when-4"></a>
 Done when</h1>
@@ -177,7 +176,13 @@ Done when</h1>
 <li class="unchecked">the robot drives to a target pose that you send from the web GUI,</li>
 </ul>
 <ul class="check">
+<li class="unchecked">the robot stops when you remove the active <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3">MOVE_TO</a></span> step from the queue,</li>
+</ul>
+<ul class="check">
 <li class="unchecked">you can explain the influence of K1, K2 and K3,</li>
+</ul>
+<ul class="check">
+<li class="unchecked">you can explain how a target pose gets from the web GUI to the position controller,</li>
 </ul>
 <ul class="check">
 <li class="unchecked">you can explain how the robot reacts to a change of the safety level.</li>

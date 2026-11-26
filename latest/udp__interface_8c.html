@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('udp__interface
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for udp_interface.c:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="udp__interface_8c__incl.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="udp__interface_8c__incl.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -164,6 +164,8 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safety Command Structure.  <a href="structcmd__safety__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:cmd_5Fwait_5Ft" id="r_cmd_5Fwait_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structcmd__wait__t.html">cmd_wait_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait Command Structure.  <a href="structcmd__wait__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:cmd_5Fmove_5Fto_5Ft" id="r_cmd_5Fmove_5Fto_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structcmd__move__to__t.html">cmd_move_to_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-To Command Structure.  <a href="structcmd__move__to__t.html#details">More...</a><br /></td></tr>
 <tr class="memitem:cmd_5Fremove_5Fsequencer_5Fstep_5Ft" id="r_cmd_5Fremove_5Fsequencer_5Fstep_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structcmd__remove__sequencer__step__t.html">cmd_remove_sequencer_step_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove Sequencer Step Command Structure.  <a href="structcmd__remove__sequencer__step__t.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
@@ -177,6 +179,7 @@ Macros</h2></td></tr>
 <tr class="memitem:ad38df96a9e3721133adfc43d60abf043" id="r_ad38df96a9e3721133adfc43d60abf043"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad38df96a9e3721133adfc43d60abf043">MSG_TYPE_CMD_SAFETY</a>&#160;&#160;&#160;0x02</td></tr>
 <tr class="memitem:a6dd80d86977bd9aa3d2abbd352e7090d" id="r_a6dd80d86977bd9aa3d2abbd352e7090d"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6dd80d86977bd9aa3d2abbd352e7090d">MSG_TYPE_CMD_REMOVE_STEP</a>&#160;&#160;&#160;0x03</td></tr>
 <tr class="memitem:ad776ec0871712a4bee32c53cb4544d4b" id="r_ad776ec0871712a4bee32c53cb4544d4b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad776ec0871712a4bee32c53cb4544d4b">MSG_TYPE_CMD_WAIT</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memitem:a6ee30cdf84a3ed79d1a6ee82bbb2faaf" id="r_a6ee30cdf84a3ed79d1a6ee82bbb2faaf"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6ee30cdf84a3ed79d1a6ee82bbb2faaf">MSG_TYPE_CMD_MOVE_TO</a>&#160;&#160;&#160;0x05</td></tr>
 <tr class="memitem:ac127c599c533ae995788c86513dc5ef5" id="r_ac127c599c533ae995788c86513dc5ef5"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac127c599c533ae995788c86513dc5ef5">MSG_TYPE_GOODBYE</a>&#160;&#160;&#160;0xFF</td></tr>
 <tr class="memitem:af1683b8eaacf1c0d74968fe6e96fbe22" id="r_af1683b8eaacf1c0d74968fe6e96fbe22"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af1683b8eaacf1c0d74968fe6e96fbe22">UDP_INTERFACE_INITIALIZED_BIT</a>&#160;&#160;&#160;BIT0</td></tr>
 <tr class="memitem:ad552e7688532cbbecd3967538ced06ac" id="r_ad552e7688532cbbecd3967538ced06ac"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad552e7688532cbbecd3967538ced06ac">WIFI_CONNECTED_BIT</a>&#160;&#160;&#160;BIT1</td></tr>
@@ -212,6 +215,21 @@ Variables</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>01.09.2026 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a6ee30cdf84a3ed79d1a6ee82bbb2faaf" name="a6ee30cdf84a3ed79d1a6ee82bbb2faaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ee30cdf84a3ed79d1a6ee82bbb2faaf">&#9670;&#160;</a></span>MSG_TYPE_CMD_MOVE_TO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_CMD_MOVE_TO&#160;&#160;&#160;0x05</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Host -&gt; ESP32: move to target pose </p>
+
+</div>
+</div>
 <a id="a6dd80d86977bd9aa3d2abbd352e7090d" name="a6dd80d86977bd9aa3d2abbd352e7090d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6dd80d86977bd9aa3d2abbd352e7090d">&#9670;&#160;</a></span>MSG_TYPE_CMD_REMOVE_STEP</h2>
 
@@ -425,6 +443,9 @@ Variables</h2></td></tr>
 <li>MSG_TYPE_HELLO: Registers/updates the telemetry recipient peer address.</li>
 <li>MSG_TYPE_GOODBYE: Unregisters the current telemetry peer.</li>
 <li>MSG_TYPE_CMD_SAFETY: Registers a safety event.</li>
+<li>MSG_TYPE_CMD_WAIT: Adds a WAIT step to the sequencer queue.</li>
+<li>MSG_TYPE_CMD_MOVE_TO: Adds a MOVE_TO step to the sequencer queue.</li>
+<li>MSG_TYPE_CMD_REMOVE_STEP: Removes a step from the sequencer queue.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

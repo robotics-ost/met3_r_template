@@ -161,6 +161,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a94f286aff0674487689e6184d2859346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a command packet that triggers a safety event on the ESP32.  <br /></td></tr>
 <tr class="memitem:a9b215d62dd5ff58552ffa2147c22dc40" id="r_a9b215d62dd5ff58552ffa2147c22dc40"><td class="memItemLeft">bytes&#160;</td><td class="memItemRight"><a class="el" href="#a9b215d62dd5ff58552ffa2147c22dc40">build_wait_cmd</a> (int seq, int duration_ms)</td></tr>
 <tr class="memdesc:a9b215d62dd5ff58552ffa2147c22dc40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a command packet that queues a wait sequencer step.  <br /></td></tr>
+<tr class="memitem:a13a66d3ccd76735fd97d1695f4001a5a" id="r_a13a66d3ccd76735fd97d1695f4001a5a"><td class="memItemLeft">bytes&#160;</td><td class="memItemRight"><a class="el" href="#a13a66d3ccd76735fd97d1695f4001a5a">build_move_to_cmd</a> (int seq, float x, float y, float phi)</td></tr>
+<tr class="memdesc:a13a66d3ccd76735fd97d1695f4001a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a command packet that queues a move-to sequencer step.  <br /></td></tr>
 <tr class="memitem:a1661f7d0a925f9cab4d86d44a22b397e" id="r_a1661f7d0a925f9cab4d86d44a22b397e"><td class="memItemLeft">bytes&#160;</td><td class="memItemRight"><a class="el" href="#a1661f7d0a925f9cab4d86d44a22b397e">build_remove_step_cmd</a> (int seq, int step_id)</td></tr>
 <tr class="memdesc:a1661f7d0a925f9cab4d86d44a22b397e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a command packet that removes a queued sequencer step.  <br /></td></tr>
 <tr class="memitem:a5e3c665a7c9108fc7a3700fa83953151" id="r_a5e3c665a7c9108fc7a3700fa83953151"><td class="memItemLeft">Optional[<a class="el" href="classudp__core_1_1TelemetryBatch.html">TelemetryBatch</a>]&#160;</td><td class="memItemRight"><a class="el" href="#a5e3c665a7c9108fc7a3700fa83953151">parse_telemetry</a> (bytes data)</td></tr>
@@ -174,6 +176,8 @@ Variables</h2></td></tr>
 <tr class="memdesc:a5f7b9a45ce35593f523fb6bc30793a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of sequencer-step slots reserved per telemetry batch.  <br /></td></tr>
 <tr class="memitem:aee512d64a49a632535c35c5a447580fd" id="r_aee512d64a49a632535c35c5a447580fd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aee512d64a49a632535c35c5a447580fd">STEP_TYPE_WAIT</a> = 0</td></tr>
 <tr class="memdesc:aee512d64a49a632535c35c5a447580fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sequencer step type: wait for a fixed duration.  <br /></td></tr>
+<tr class="memitem:a2ec1773f46da4a2ea5cf3aa9411b4856" id="r_a2ec1773f46da4a2ea5cf3aa9411b4856"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2ec1773f46da4a2ea5cf3aa9411b4856">STEP_TYPE_MOVE_TO</a> = 1</td></tr>
+<tr class="memdesc:a2ec1773f46da4a2ea5cf3aa9411b4856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sequencer step type: move to a target pose.  <br /></td></tr>
 <tr class="memitem:a36b241b3c66fc67385b3de5d92db31bb" id="r_a36b241b3c66fc67385b3de5d92db31bb"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a36b241b3c66fc67385b3de5d92db31bb">CONFIG_FILENAME</a> = &quot;esp32_config.json&quot;</td></tr>
 <tr class="memdesc:a36b241b3c66fc67385b3de5d92db31bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default config file name searched for by <a class="el" href="#a065c85f2ad98118381ec7ee64b523976" title="Locate an esp32_config.json file using a fixed search order.">find_config_path()</a>.  <br /></td></tr>
 <tr class="memitem:a5814796c12ea1c369091e2a71f7c23d2" id="r_a5814796c12ea1c369091e2a71f7c23d2"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a5814796c12ea1c369091e2a71f7c23d2">CONFIG_ENV_VAR</a> = &quot;ESP32_CONFIG_PATH&quot;</td></tr>
@@ -195,6 +199,8 @@ Variables</h2></td></tr>
 <tr class="memdesc:a6bdc2d634af973dacf59447f374ccd42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host -&gt; ESP32: remove a queued step by id.  <br /></td></tr>
 <tr class="memitem:a3d9dc27988ecde84b94c37f095133d0f" id="r_a3d9dc27988ecde84b94c37f095133d0f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3d9dc27988ecde84b94c37f095133d0f">MSG_TYPE_CMD_WAIT</a> = 0x04</td></tr>
 <tr class="memdesc:a3d9dc27988ecde84b94c37f095133d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host -&gt; ESP32: queue a wait step.  <br /></td></tr>
+<tr class="memitem:af1218323f5c8da5cffd5a80ce341c674" id="r_af1218323f5c8da5cffd5a80ce341c674"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af1218323f5c8da5cffd5a80ce341c674">MSG_TYPE_CMD_MOVE_TO</a> = 0x05</td></tr>
+<tr class="memdesc:af1218323f5c8da5cffd5a80ce341c674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host -&gt; ESP32: queue a move-to step.  <br /></td></tr>
 <tr class="memitem:aa6695d48d09fd2d2d5639be9fdadec4e" id="r_aa6695d48d09fd2d2d5639be9fdadec4e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa6695d48d09fd2d2d5639be9fdadec4e">MSG_TYPE_GOODBYE</a> = 0xFF</td></tr>
 <tr class="memdesc:aa6695d48d09fd2d2d5639be9fdadec4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host -&gt; ESP32: unregister this host as the telemetry destination.  <br /></td></tr>
 <tr id="var-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">struct.pack/unpack format strings</div></td></tr>
@@ -204,8 +210,8 @@ Variables</h2></td></tr>
 <tr class="memdesc:aa841ae975ebdd11c2418e0fdf340af87"><td class="mdescLeft">&#160;</td><td class="mdescRight">One safety sample: <span class="tt">timestamp_us</span> (uint32), <span class="tt">safety_level</span> (uint8).  <br /></td></tr>
 <tr class="memitem:a6da6bcb523f11d2c06bdb6941f3096bd" id="r_a6da6bcb523f11d2c06bdb6941f3096bd"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a6da6bcb523f11d2c06bdb6941f3096bd">CONTROL_SAMPLE_FMT</a> = &quot;&lt;I2f&quot;</td></tr>
 <tr class="memdesc:a6da6bcb523f11d2c06bdb6941f3096bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">One control sample: <span class="tt">timestamp_us</span> (uint32), <span class="tt">enc_A_pos, enc_B_pos</span> (2x float32).  <br /></td></tr>
-<tr class="memitem:a667d57a7a1ca1a33f2dfc54dc806248f" id="r_a667d57a7a1ca1a33f2dfc54dc806248f"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a667d57a7a1ca1a33f2dfc54dc806248f">SEQUENCER_STEP_FMT</a> = &quot;&lt;BBI&quot;</td></tr>
-<tr class="memdesc:a667d57a7a1ca1a33f2dfc54dc806248f"><td class="mdescLeft">&#160;</td><td class="mdescRight">One sequencer step: <span class="tt">step_type, step_id</span> (uint8 each), <span class="tt">duration_ms</span> (uint32).  <br /></td></tr>
+<tr class="memitem:a667d57a7a1ca1a33f2dfc54dc806248f" id="r_a667d57a7a1ca1a33f2dfc54dc806248f"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a667d57a7a1ca1a33f2dfc54dc806248f">SEQUENCER_STEP_FMT</a> = &quot;&lt;BBI3f&quot;</td></tr>
+<tr class="memdesc:a667d57a7a1ca1a33f2dfc54dc806248f"><td class="mdescLeft">&#160;</td><td class="mdescRight">One sequencer step: <span class="tt">step_type, step_id</span> (uint8 each), <span class="tt">duration_ms</span> (uint32), <span class="tt">x, y, phi</span> (3x float32).  <br /></td></tr>
 <tr class="memitem:a11cfd27f4a3ab8ce58d4702faaae623a" id="r_a11cfd27f4a3ab8ce58d4702faaae623a"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a11cfd27f4a3ab8ce58d4702faaae623a">HEADER_FMT</a> = &quot;&lt;BBHBBB&quot;</td></tr>
 <tr class="memdesc:a11cfd27f4a3ab8ce58d4702faaae623a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Telemetry packet header: <span class="tt">magic, msg_type</span> (uint8 each), <span class="tt">seq</span> (uint16), <span class="tt">safety_cnt, control_cnt, steps_cnt</span> (uint8 each).  <br /></td></tr>
 <tr class="memitem:a40c7a5a38e3c91137a920ba273a0d4ca" id="r_a40c7a5a38e3c91137a920ba273a0d4ca"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a40c7a5a38e3c91137a920ba273a0d4ca">HELLO_FMT</a> = &quot;&lt;BBH&quot;</td></tr>
@@ -214,6 +220,8 @@ Variables</h2></td></tr>
 <tr class="memdesc:a2767c48ee1a95af2c6cac41f9719b58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safety command packet: <span class="tt">magic, msg_type</span> (uint8 each), <span class="tt">seq</span> (uint16), <span class="tt">safety_event</span> (uint8).  <br /></td></tr>
 <tr class="memitem:a7dfe937712d0c29cda7a15a6c1b9b90f" id="r_a7dfe937712d0c29cda7a15a6c1b9b90f"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a7dfe937712d0c29cda7a15a6c1b9b90f">WAIT_FMT</a> = &quot;&lt;BBHI&quot;</td></tr>
 <tr class="memdesc:a7dfe937712d0c29cda7a15a6c1b9b90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait command packet: <span class="tt">magic, msg_type</span> (uint8 each), <span class="tt">seq</span> (uint16), <span class="tt">duration_ms</span> (uint32).  <br /></td></tr>
+<tr class="memitem:af458f5947324b03f224b9ca499bbab19" id="r_af458f5947324b03f224b9ca499bbab19"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#af458f5947324b03f224b9ca499bbab19">MOVE_TO_FMT</a> = &quot;&lt;BBH3f&quot;</td></tr>
+<tr class="memdesc:af458f5947324b03f224b9ca499bbab19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-to command packet: <span class="tt">magic, msg_type</span> (uint8 each), <span class="tt">seq</span> (uint16), <span class="tt">x, y, phi</span> (3x float32).  <br /></td></tr>
 <tr class="memitem:ac3dee3c4bf319be2557151a9b76ffc5c" id="r_ac3dee3c4bf319be2557151a9b76ffc5c"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#ac3dee3c4bf319be2557151a9b76ffc5c">REMOVE_STEP_FMT</a> = &quot;&lt;BBHB&quot;</td></tr>
 <tr class="memdesc:ac3dee3c4bf319be2557151a9b76ffc5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove-step command packet: <span class="tt">magic, msg_type</span> (uint8 each), <span class="tt">seq</span> (uint16), <span class="tt">step_id</span> (uint8).  <br /></td></tr>
 <tr id="var-members-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Derived struct sizes (bytes), computed once at import time.</div></td></tr>
@@ -272,6 +280,49 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The packed HELLO packet bytes. </dd></dl>
+
+</div>
+</div>
+<a id="a13a66d3ccd76735fd97d1695f4001a5a" name="a13a66d3ccd76735fd97d1695f4001a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a66d3ccd76735fd97d1695f4001a5a">&#9670;&#160;</a></span>build_move_to_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> bytes build_move_to_cmd </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>seq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>phi</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build a command packet that queues a move-to sequencer step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seq</td><td>Outgoing sequence number (see <a class="el" href="classudp__core_1_1__SeqCounter.html#a3e453122429b056baa4b98f8b396282c" title="Atomically increment and return the next sequence number.">_SeqCounter.next()</a>). </td></tr>
+    <tr><td class="paramname">x</td><td>Target x position in the global frame [m]. </td></tr>
+    <tr><td class="paramname">y</td><td>Target y position in the global frame [m]. </td></tr>
+    <tr><td class="paramname">phi</td><td>Target orientation in the global frame [rad]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The packed command packet bytes. </dd></dl>
 
 </div>
 </div>
@@ -595,6 +646,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="af458f5947324b03f224b9ca499bbab19" name="af458f5947324b03f224b9ca499bbab19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af458f5947324b03f224b9ca499bbab19">&#9670;&#160;</a></span>MOVE_TO_FMT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str MOVE_TO_FMT = &quot;&lt;BBH3f&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move-to command packet: <span class="tt">magic, msg_type</span> (uint8 each), <span class="tt">seq</span> (uint16), <span class="tt">x, y, phi</span> (3x float32). </p>
+
+</div>
+</div>
+<a id="af1218323f5c8da5cffd5a80ce341c674" name="af1218323f5c8da5cffd5a80ce341c674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1218323f5c8da5cffd5a80ce341c674">&#9670;&#160;</a></span>MSG_TYPE_CMD_MOVE_TO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MSG_TYPE_CMD_MOVE_TO = 0x05</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Host -&gt; ESP32: queue a move-to step. </p>
+
+</div>
+</div>
 <a id="a6bdc2d634af973dacf59447f374ccd42" name="a6bdc2d634af973dacf59447f374ccd42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bdc2d634af973dacf59447f374ccd42">&#9670;&#160;</a></span>MSG_TYPE_CMD_REMOVE_STEP</h2>
 
@@ -792,12 +875,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">str SEQUENCER_STEP_FMT = &quot;&lt;BBI&quot;</td>
+          <td class="memname">str SEQUENCER_STEP_FMT = &quot;&lt;BBI3f&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>One sequencer step: <span class="tt">step_type, step_id</span> (uint8 each), <span class="tt">duration_ms</span> (uint32). </p>
+<p>One sequencer step: <span class="tt">step_type, step_id</span> (uint8 each), <span class="tt">duration_ms</span> (uint32), <span class="tt">x, y, phi</span> (3x float32). </p>
 
 </div>
 </div>
@@ -812,6 +895,22 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ec1773f46da4a2ea5cf3aa9411b4856" name="a2ec1773f46da4a2ea5cf3aa9411b4856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ec1773f46da4a2ea5cf3aa9411b4856">&#9670;&#160;</a></span>STEP_TYPE_MOVE_TO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int STEP_TYPE_MOVE_TO = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sequencer step type: move to a target pose. </p>
 
 </div>
 </div>

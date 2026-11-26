@@ -92,6 +92,6 @@ var searchData=
   ['troubleshooting_89',['Troubleshooting',['../md_docs_2TROUBLESHOOTING.html',1,'']]],
   ['trying_20something_20out_20on_20a_20branch_90',['Optional: trying something out on a branch',['../md_docs_2GIT__GUIDE.html#optional-trying-something-out-on-a-branch',1,'']]],
   ['turns_20in_20the_20wrong_20direction_91',['A wheel turns in the wrong direction',['../md_docs_2TROUBLESHOOTING.html#a-wheel-turns-in-the-wrong-direction',1,'']]],
-  ['types_92',['Types',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#types',1,'']]],
-  ['types_93',['B. Changing sequencer step types',['../dir_7fb88deff7a1179c2129339c39b4c556.html#b-changing-sequencer-step-types',1,'']]]
+  ['type_92',['B. Adding a new sequencer step type',['../dir_7fb88deff7a1179c2129339c39b4c556.html#b-adding-a-new-sequencer-step-type',1,'']]],
+  ['types_93',['Types',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#types',1,'']]]
 ];

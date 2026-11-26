@@ -13,11 +13,14 @@ var searchData=
   ['motor_5fdriver_5fconfig_10',['motor_driver_config',['../structcontrol__system__config__t.html#a102938c664ed89d2fa59bc6bc34f6d7a',1,'control_system_config_t']]],
   ['motor_5fdriver_5fevent_5fgroup_11',['motor_driver_event_group',['../motor__driver_8c.html#a2551e3932da69152ab5bf09e0a615fdf',1,'motor_driver.c']]],
   ['motor_5fdriver_5fstate_12',['motor_driver_state',['../motor__driver_8c.html#aee866f49331b43d6eccd8c3f9409c05b',1,'motor_driver.c']]],
-  ['msg_5ftype_13',['msg_type',['../structtelemetry__packet__t.html#af95f620c0e85b634c0caee87127b12a8',1,'telemetry_packet_t::msg_type'],['../structcmd__header__t.html#af95f620c0e85b634c0caee87127b12a8',1,'cmd_header_t::msg_type']]],
-  ['msg_5ftype_5fcmd_5fremove_5fstep_14',['MSG_TYPE_CMD_REMOVE_STEP',['../namespaceudp__core.html#a6bdc2d634af973dacf59447f374ccd42',1,'udp_core']]],
-  ['msg_5ftype_5fcmd_5fsafety_15',['MSG_TYPE_CMD_SAFETY',['../namespaceudp__core.html#ab8da8539329f3f37cd42ecdb5b477abf',1,'udp_core']]],
-  ['msg_5ftype_5fcmd_5fwait_16',['MSG_TYPE_CMD_WAIT',['../namespaceudp__core.html#a3d9dc27988ecde84b94c37f095133d0f',1,'udp_core']]],
-  ['msg_5ftype_5fgoodbye_17',['MSG_TYPE_GOODBYE',['../namespaceudp__core.html#aa6695d48d09fd2d2d5639be9fdadec4e',1,'udp_core']]],
-  ['msg_5ftype_5fhello_18',['MSG_TYPE_HELLO',['../namespaceudp__core.html#adb2d2572e09e932a5116430cdb00a59a',1,'udp_core']]],
-  ['msg_5ftype_5ftelemetry_19',['MSG_TYPE_TELEMETRY',['../namespaceudp__core.html#af92dc2c7be5c0a84ce764bd1bf75e4df',1,'udp_core']]]
+  ['move_5fto_13',['move_to',['../unionsequencer__step__t_1_1_0funion_0e_8____unnamed0____.html#aa7107c502fd27a0dbf893c133d81e9e7',1,'sequencer_step_t::[union].__unnamed0__']]],
+  ['move_5fto_5ffmt_14',['MOVE_TO_FMT',['../namespaceudp__core.html#af458f5947324b03f224b9ca499bbab19',1,'udp_core']]],
+  ['msg_5ftype_15',['msg_type',['../structtelemetry__packet__t.html#af95f620c0e85b634c0caee87127b12a8',1,'telemetry_packet_t::msg_type'],['../structcmd__header__t.html#af95f620c0e85b634c0caee87127b12a8',1,'cmd_header_t::msg_type']]],
+  ['msg_5ftype_5fcmd_5fmove_5fto_16',['MSG_TYPE_CMD_MOVE_TO',['../namespaceudp__core.html#af1218323f5c8da5cffd5a80ce341c674',1,'udp_core']]],
+  ['msg_5ftype_5fcmd_5fremove_5fstep_17',['MSG_TYPE_CMD_REMOVE_STEP',['../namespaceudp__core.html#a6bdc2d634af973dacf59447f374ccd42',1,'udp_core']]],
+  ['msg_5ftype_5fcmd_5fsafety_18',['MSG_TYPE_CMD_SAFETY',['../namespaceudp__core.html#ab8da8539329f3f37cd42ecdb5b477abf',1,'udp_core']]],
+  ['msg_5ftype_5fcmd_5fwait_19',['MSG_TYPE_CMD_WAIT',['../namespaceudp__core.html#a3d9dc27988ecde84b94c37f095133d0f',1,'udp_core']]],
+  ['msg_5ftype_5fgoodbye_20',['MSG_TYPE_GOODBYE',['../namespaceudp__core.html#aa6695d48d09fd2d2d5639be9fdadec4e',1,'udp_core']]],
+  ['msg_5ftype_5fhello_21',['MSG_TYPE_HELLO',['../namespaceudp__core.html#adb2d2572e09e932a5116430cdb00a59a',1,'udp_core']]],
+  ['msg_5ftype_5ftelemetry_22',['MSG_TYPE_TELEMETRY',['../namespaceudp__core.html#af92dc2c7be5c0a84ce764bd1bf75e4df',1,'udp_core']]]
 ];

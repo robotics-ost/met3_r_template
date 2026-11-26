@@ -229,9 +229,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"kinematics_8c.html",
-"namespaceudp__core.html#ab8da8539329f3f37cd42ecdb5b477abf",
-"udp__interface_8c.html#ac31e38637f7a5e5c8ce4d033b0955fec"
+"index.html#step-5-enter-the-wifi-credentials",
+"namespaceudp__core.html#a5f7b9a45ce35593f523fb6bc30793a70",
+"structtelemetry__sequencer__sample__t.html#ad0da36b2558901e21e7a30f6c227a45e"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -191,8 +191,10 @@ Using the GUI</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Sequencer Queue</b>  </td><td class="markdownTableBodyNone">The steps waiting in the sequencer, each with its <span class="tt">step_id</span>. Enter a <span class="tt">step_id</span> and click <b>Remove</b> to remove a step.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Wait</b>  </td><td class="markdownTableBodyNone">Adds a wait step with the given duration (ms) to the sequencer.  </td></tr>
+<td class="markdownTableBodyNone"><b>Move to</b>  </td><td class="markdownTableBodyNone">Adds a move-to step with the given target pose (x and y in m, phi in rad) to the sequencer. The robot only drives to the target once the position controller is implemented (Exercise 5).  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Wait</b>  </td><td class="markdownTableBodyNone">Adds a wait step with the given duration (ms) to the sequencer.  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Command Log</b>  </td><td class="markdownTableBodyNone">All commands sent to the robot.  </td></tr>
 </table>
 <dl class="section warning"><dt>Warning</dt><dd><b>Do System Off</b> puts the robot into deep sleep. It then no longer reacts to the GUI. Press the <b>EN</b> button (reset) on the board to restart it.</dd></dl>

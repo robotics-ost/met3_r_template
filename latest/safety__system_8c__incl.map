@@ -1,32 +1,32 @@
 <map id="lib/safety_system/src/safety_system.c" name="lib/safety_system/src/safety_system.c">
-<area shape="rect" id="Node000001" title="Safety system implementation." alt="" coords="521,5,682,45"/>
-<area shape="rect" id="Node000002" href="$safety__system_8h.html" title="Safety system interface for the application." alt="" coords="21,167,152,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="521,38,392,59,320,75,250,96,177,128,117,162,115,157,175,123,248,91,319,70,391,53,520,33"/>
-<area shape="rect" id="Node000005" href="$motor__driver_8h.html" title="Header file for the motor driver module. This module provides functions to initialize and control the..." alt="" coords="227,167,344,192"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="521,34,447,41,371,53,305,71,281,82,265,95,259,108,259,123,271,154,266,156,254,124,253,107,261,92,278,78,303,66,369,48,447,36,520,28"/>
-<area shape="rect" id="Node000006" href="$udp__interface_8h.html" title="UDP interface for handling network communication." alt="" coords="25,93,148,119"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="521,42,162,96,161,91,520,36"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="274,93,425,119"/>
-<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="542,48,400,92,398,87,540,43"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="449,93,578,119"/>
-<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="582,48,539,86,535,82,578,44"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="602,93,779,119"/>
-<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="625,44,669,82,665,86,621,48"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="803,93,941,119"/>
-<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="667,43,820,87,819,92,665,48"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="965,93,1049,119"/>
-<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="683,39,951,90,950,95,682,44"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="1073,93,1172,119"/>
-<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="682,35,1060,90,1059,96,682,40"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="1196,93,1295,119"/>
-<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="682,31,904,55,1183,91,1182,96,903,60,682,37"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="46,240,127,265"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,192,89,226,84,226,84,192"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="154,240,225,265"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="105,190,163,230,160,234,102,194"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="254,195,133,238,131,233,252,190"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="271,194,218,234,215,229,268,190"/>
-<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="89,119,89,153,84,153,84,119"/>
-<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="63,121,34,140,22,153,12,168,9,186,17,203,33,218,52,231,49,236,30,222,13,206,4,187,7,166,17,150,31,136,60,116"/>
-<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="110,116,139,137,166,165,181,196,189,226,183,227,176,198,162,168,135,141,107,121"/>
+<area shape="rect" id="Node000001" title="Safety system implementation." alt="" coords="520,5,680,50"/>
+<area shape="rect" id="Node000002" href="$safety__system_8h.html" title="Safety system interface for the application." alt="" coords="22,174,151,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="517,39,391,62,319,79,249,100,178,133,120,167,117,163,176,128,247,96,317,74,390,57,522,37"/>
+<area shape="rect" id="Node000005" href="$motor__driver_8h.html" title="Header file for the motor driver module. This module provides functions to initialize and control the..." alt="" coords="227,174,343,201"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="517,35,446,44,369,57,303,75,279,87,263,100,257,113,257,128,270,162,265,160,252,129,252,112,259,96,276,82,302,70,368,51,446,39,522,33"/>
+<area shape="rect" id="Node000006" href="$udp__interface_8h.html" title="UDP interface for handling network communication." alt="" coords="25,98,148,126"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="519,44,164,101,163,96,520,39"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="273,98,423,126"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="531,52,404,95,402,90,536,50"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="448,98,576,126"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="579,49,539,89,536,85,575,52"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="600,98,776,126"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="624,48,665,88,660,87,622,53"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="800,98,936,126"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="671,48,813,93,808,93,671,53"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="960,98,1043,126"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="681,42,948,97,942,98,681,47"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1067,98,1165,126"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="681,37,848,62,1054,97,1049,98,847,67,681,43"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1189,98,1288,126"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="681,34,899,57,1177,97,1171,98,899,63,681,39"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="46,249,127,277"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,200,89,234,84,233,85,204"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="154,249,224,277"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="106,199,161,239,156,241,104,204"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="252,202,137,246,136,241,247,202"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="271,201,220,242,217,237,266,203"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="88,124,89,159,84,157,86,129"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="58,129,33,148,12,175,9,193,16,210,31,225,50,240,45,242,28,229,12,213,4,193,7,173,30,144,61,124"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="111,124,140,144,166,172,181,203,188,235,183,233,176,205,162,175,137,148,111,129"/>
 </map>

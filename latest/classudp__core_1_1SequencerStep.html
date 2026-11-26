@@ -130,10 +130,96 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classudp__core
 
 <p>One entry from the ESP32's sequencer queue.  
  <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ad0da36b2558901e21e7a30f6c227a45e" id="r_ad0da36b2558901e21e7a30f6c227a45e"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ad0da36b2558901e21e7a30f6c227a45e">x</a> = 0.0</td></tr>
+<tr class="memdesc:ad0da36b2558901e21e7a30f6c227a45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">STEP_TYPE_WAIT or STEP_TYPE_MOVE_TO.  <br /></td></tr>
+<tr class="memitem:aa4f0d3eebc3c443f9be81bf48561a217" id="r_aa4f0d3eebc3c443f9be81bf48561a217"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa4f0d3eebc3c443f9be81bf48561a217">y</a> = 0.0</td></tr>
+<tr class="memdesc:aa4f0d3eebc3c443f9be81bf48561a217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target y position in the global frame [m] (valid for STEP_TYPE_MOVE_TO).  <br /></td></tr>
+<tr class="memitem:ab30c622a174639ec92b375db9b2ee56d" id="r_ab30c622a174639ec92b375db9b2ee56d"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ab30c622a174639ec92b375db9b2ee56d">phi</a> = 0.0</td></tr>
+<tr class="memdesc:ab30c622a174639ec92b375db9b2ee56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target orientation in the global frame [rad] (valid for STEP_TYPE_MOVE_TO).  <br /></td></tr>
+</table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>One entry from the ESP32's sequencer queue. </p>
 <p>Only the fields relevant to <span class="tt">step_type</span> carry valid data; the rest are zero (e.g. for a STEP_TYPE_WAIT step only <span class="tt">duration_ms</span> is meaningful). </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Field Documentation</h2>
+<a id="ab30c622a174639ec92b375db9b2ee56d" name="ab30c622a174639ec92b375db9b2ee56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30c622a174639ec92b375db9b2ee56d">&#9670;&#160;</a></span>phi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float phi = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Target orientation in the global frame [rad] (valid for STEP_TYPE_MOVE_TO). </p>
+
+</div>
+</div>
+<a id="ad0da36b2558901e21e7a30f6c227a45e" name="ad0da36b2558901e21e7a30f6c227a45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0da36b2558901e21e7a30f6c227a45e">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float x = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>STEP_TYPE_WAIT or STEP_TYPE_MOVE_TO. </p>
+<p>Firmware-assigned id of this step, used with send_remove_step().</p>
+<p>Wait duration in milliseconds (valid for STEP_TYPE_WAIT).</p>
+<p>Target x position in the global frame [m] (valid for STEP_TYPE_MOVE_TO). </p>
+
+</div>
+</div>
+<a id="aa4f0d3eebc3c443f9be81bf48561a217" name="aa4f0d3eebc3c443f9be81bf48561a217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f0d3eebc3c443f9be81bf48561a217">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float y = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Target y position in the global frame [m] (valid for STEP_TYPE_MOVE_TO). </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>host_interface/core/<a class="el" href="udp__core_8py.html">udp_core.py</a></li>
 </ul>
 </div><!-- contents -->

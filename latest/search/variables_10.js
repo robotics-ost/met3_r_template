@@ -19,7 +19,8 @@ var searchData=
   ['sequencer_5fstep_5fsize_16',['SEQUENCER_STEP_SIZE',['../namespaceudp__core.html#a8ba7c59c44470835cc3721e19b8fa7fa',1,'udp_core']]],
   ['stats_17',['stats',['../classudp__core_1_1UdpClient.html#aa57ebe01934de43865125819a3c4af74',1,'udp_core::UdpClient']]],
   ['step_18',['step',['../structdoubly__linked__step__list__node.html#ab6494ab809a9fa7364b4ede3bbc0769a',1,'doubly_linked_step_list_node']]],
-  ['step_5ftype_5fwait_19',['STEP_TYPE_WAIT',['../namespaceudp__core.html#aee512d64a49a632535c35c5a447580fd',1,'udp_core']]],
-  ['steps_20',['steps',['../classudp__core_1_1TelemetryBatch.html#a710df858758bea56a69448a7a8fb652a',1,'udp_core::TelemetryBatch']]],
-  ['steps_5fper_5fbatch_21',['STEPS_PER_BATCH',['../namespaceudp__core.html#a5f7b9a45ce35593f523fb6bc30793a70',1,'udp_core']]]
+  ['step_5ftype_5fmove_5fto_19',['STEP_TYPE_MOVE_TO',['../namespaceudp__core.html#a2ec1773f46da4a2ea5cf3aa9411b4856',1,'udp_core']]],
+  ['step_5ftype_5fwait_20',['STEP_TYPE_WAIT',['../namespaceudp__core.html#aee512d64a49a632535c35c5a447580fd',1,'udp_core']]],
+  ['steps_21',['steps',['../classudp__core_1_1TelemetryBatch.html#a710df858758bea56a69448a7a8fb652a',1,'udp_core::TelemetryBatch']]],
+  ['steps_5fper_5fbatch_22',['STEPS_PER_BATCH',['../namespaceudp__core.html#a5f7b9a45ce35593f523fb6bc30793a70',1,'udp_core']]]
 ];

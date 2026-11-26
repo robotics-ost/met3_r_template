@@ -8,6 +8,7 @@ var classudp__core_1_1UdpClient =
     [ "_update_stats", "classudp__core_1_1UdpClient.html#a84b8f10935eb7030af8afb1484489367", null ],
     [ "on_telemetry", "classudp__core_1_1UdpClient.html#a49d5c777ec5daef4363cc2c5ea2a7993", null ],
     [ "remove_telemetry_callback", "classudp__core_1_1UdpClient.html#a976af66fe7ec2447265f8b0467c3bb4a", null ],
+    [ "send_move_to", "classudp__core_1_1UdpClient.html#a5849f6e92ff2f77035fd2cf06689ebe2", null ],
     [ "send_remove_step", "classudp__core_1_1UdpClient.html#a357ba1f65c51bd636ea722a1ac79d2c2", null ],
     [ "send_safety", "classudp__core_1_1UdpClient.html#a282c55b379b18aa591f77a9e94f14786", null ],
     [ "send_wait", "classudp__core_1_1UdpClient.html#a668ea7dab8f2d023ddca50f7086b9cb7", null ],

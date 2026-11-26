@@ -151,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a282c55b379b18aa591f77a9e94f14786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a command that triggers a safety event on the ESP32.  <br /></td></tr>
 <tr class="memitem:a668ea7dab8f2d023ddca50f7086b9cb7" id="r_a668ea7dab8f2d023ddca50f7086b9cb7"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a668ea7dab8f2d023ddca50f7086b9cb7">send_wait</a> (self, int duration_ms)</td></tr>
 <tr class="memdesc:a668ea7dab8f2d023ddca50f7086b9cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a command that queues a wait sequencer step.  <br /></td></tr>
+<tr class="memitem:a5849f6e92ff2f77035fd2cf06689ebe2" id="r_a5849f6e92ff2f77035fd2cf06689ebe2"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a5849f6e92ff2f77035fd2cf06689ebe2">send_move_to</a> (self, float x, float y, float phi)</td></tr>
+<tr class="memdesc:a5849f6e92ff2f77035fd2cf06689ebe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a command that queues a move-to sequencer step.  <br /></td></tr>
 <tr class="memitem:a357ba1f65c51bd636ea722a1ac79d2c2" id="r_a357ba1f65c51bd636ea722a1ac79d2c2"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a357ba1f65c51bd636ea722a1ac79d2c2">send_remove_step</a> (self, int step_id)</td></tr>
 <tr class="memdesc:a357ba1f65c51bd636ea722a1ac79d2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a command that removes a queued sequencer step.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -464,6 +466,47 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">callback</td><td>The exact callable object passed to <a class="el" href="#a49d5c777ec5daef4363cc2c5ea2a7993" title="Register a callback invoked for every received telemetry batch.">on_telemetry()</a> earlier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5849f6e92ff2f77035fd2cf06689ebe2" name="a5849f6e92ff2f77035fd2cf06689ebe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5849f6e92ff2f77035fd2cf06689ebe2">&#9670;&#160;</a></span>send_move_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None send_move_to </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>phi</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send a command that queues a move-to sequencer step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Target x position in the global frame [m]. </td></tr>
+    <tr><td class="paramname">y</td><td>Target y position in the global frame [m]. </td></tr>
+    <tr><td class="paramname">phi</td><td>Target orientation in the global frame [rad]. </td></tr>
   </table>
   </dd>
 </dl>

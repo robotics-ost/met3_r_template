@@ -136,6 +136,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a1d127017fb298b889f4ba24752d08b8e" id="r_a1d127017fb298b889f4ba24752d08b8e"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a1d127017fb298b889f4ba24752d08b8e">type</a></td></tr>
 <tr class="memitem:a1e6927fa1486224044e568f9c370519b" id="r_a1e6927fa1486224044e568f9c370519b"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a1e6927fa1486224044e568f9c370519b">id</a></td></tr>
 <tr class="memitem:a336a3bf5d50c575635c6029d022674ea" id="r_a336a3bf5d50c575635c6029d022674ea"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a336a3bf5d50c575635c6029d022674ea">duration_ms</a></td></tr>
+<tr class="memitem:ad0da36b2558901e21e7a30f6c227a45e" id="r_ad0da36b2558901e21e7a30f6c227a45e"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ad0da36b2558901e21e7a30f6c227a45e">x</a></td></tr>
+<tr class="memitem:aa4f0d3eebc3c443f9be81bf48561a217" id="r_aa4f0d3eebc3c443f9be81bf48561a217"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa4f0d3eebc3c443f9be81bf48561a217">y</a></td></tr>
+<tr class="memitem:ab30c622a174639ec92b375db9b2ee56d" id="r_ab30c622a174639ec92b375db9b2ee56d"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ab30c622a174639ec92b375db9b2ee56d">phi</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Telemetry Sequencer Sample Structure. </p>
@@ -171,6 +174,21 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="ab30c622a174639ec92b375db9b2ee56d" name="ab30c622a174639ec92b375db9b2ee56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30c622a174639ec92b375db9b2ee56d">&#9670;&#160;</a></span>phi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float phi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Target orientation for MOVE_TO steps [rad] </p>
+
+</div>
+</div>
 <a id="a1d127017fb298b889f4ba24752d08b8e" name="a1d127017fb298b889f4ba24752d08b8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d127017fb298b889f4ba24752d08b8e">&#9670;&#160;</a></span>type</h2>
 
@@ -182,7 +200,37 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type of the sequencer step (MOVE_TO_POSE, WAIT, etc.) </p>
+<p>Type of the sequencer step (WAIT, MOVE_TO, etc.) </p>
+
+</div>
+</div>
+<a id="ad0da36b2558901e21e7a30f6c227a45e" name="ad0da36b2558901e21e7a30f6c227a45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0da36b2558901e21e7a30f6c227a45e">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Target x position for MOVE_TO steps [m] </p>
+
+</div>
+</div>
+<a id="aa4f0d3eebc3c443f9be81bf48561a217" name="aa4f0d3eebc3c443f9be81bf48561a217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f0d3eebc3c443f9be81bf48561a217">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Target y position for MOVE_TO steps [m] </p>
 
 </div>
 </div>

@@ -117,7 +117,6 @@ var searchData=
   ['troubleshooting_2emd_114',['TROUBLESHOOTING.md',['../TROUBLESHOOTING_8md.html',1,'']]],
   ['trying_20something_20out_20on_20a_20branch_115',['Optional: trying something out on a branch',['../md_docs_2GIT__GUIDE.html#optional-trying-something-out-on-a-branch',1,'']]],
   ['turns_20in_20the_20wrong_20direction_116',['A wheel turns in the wrong direction',['../md_docs_2TROUBLESHOOTING.html#a-wheel-turns-in-the-wrong-direction',1,'']]],
-  ['type_117',['type',['../structsequencer__step__t.html#a4e222f2e3c047cca88b6582f2e4ed661',1,'sequencer_step_t::type'],['../structtelemetry__sequencer__sample__t.html#a1d127017fb298b889f4ba24752d08b8e',1,'telemetry_sequencer_sample_t::type']]],
-  ['types_118',['Types',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#types',1,'']]],
-  ['types_119',['B. Changing sequencer step types',['../dir_7fb88deff7a1179c2129339c39b4c556.html#b-changing-sequencer-step-types',1,'']]]
+  ['type_117',['type',['../dir_7fb88deff7a1179c2129339c39b4c556.html#b-adding-a-new-sequencer-step-type',1,'B. Adding a new sequencer step type'],['../structsequencer__step__t.html#a4e222f2e3c047cca88b6582f2e4ed661',1,'sequencer_step_t::type'],['../structtelemetry__sequencer__sample__t.html#a1d127017fb298b889f4ba24752d08b8e',1,'telemetry_sequencer_sample_t::type']]],
+  ['types_118',['Types',['../md_docs_2C__FOR__PYTHON__PROGRAMMERS.html#types',1,'']]]
 ];

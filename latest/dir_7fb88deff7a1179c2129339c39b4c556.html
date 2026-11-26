@@ -229,30 +229,52 @@ A. Changing what's in a control sample (periodic telemetry values)</h2>
 </li>
 <li><b><span class="tt">gui_web/static/style.css</span></b> &ndash; add a <span class="tt">--sig-&lt;name&gt;</span> custom property under <span class="tt">:root</span> for each new signal (used as its chart line color); remove ones no longer referenced.</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="b-changing-sequencer-step-types"></a>
-B. Changing sequencer step types</h2>
-<p>Currently there are two step types, <span class="tt">STEP_TYPE_MOVE_TO</span> (0) and <span class="tt">STEP_TYPE_WAIT</span> (1); every step shares one fixed-size struct (<span class="tt">x, y, phi, duration_ms</span>), with whichever fields don't apply to a given step's type left at zero. To add a new step type (optionally with its own command to queue it):</p>
+<h2 class="doxsection"><a class="anchor" id="b-adding-a-new-sequencer-step-type"></a>
+B. Adding a new sequencer step type</h2>
+<p>Currently there are two step types, <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a79a322ccb4b29b85b3cab52dbccefd17">WAIT</a></span> (0) and <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3">MOVE_TO</a></span> (1). In the telemetry, every step travels in one fixed-size struct (<span class="tt">step_type, step_id,
+duration_ms, x, y, phi</span>); fields that don't apply to a step's type are zero (<span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a79a322ccb4b29b85b3cab52dbccefd17">WAIT</a></span> uses only <span class="tt">duration_ms</span>, <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3">MOVE_TO</a></span> only <span class="tt">x, y, phi</span>).</p>
+<p>To add a new step type (with its own command to queue it), change the firmware <b>and</b> the PC side. Use <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a79a322ccb4b29b85b3cab52dbccefd17">WAIT</a></span> and <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20a20681ca7678c35a18de39a634ce89de3">MOVE_TO</a></span> as templates.</p>
+<p><b>ESP32 firmware</b></p>
+<ol type="1">
+<li><b><span class="tt"><a class="el" href="sequencer_8h.html" title="Sequencer interface for the application.">lib/sequencer/include/sequencer.h</a></span></b><ul>
+<li>Add a value to <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20" title="Enumeration of sequencer step types.">sequencer_step_type_t</a></span> (before <span class="tt"><a class="el" href="sequencer_8h.html#a02e420230ae4451790880207676b6f20ac88cb015e72bc8bc025d149cc9651f52">_COUNT</a></span>).</li>
+<li>If the step has parameters: add a struct to the union in <span class="tt"><a class="el" href="structsequencer__step__t.html" title="Structure representing a sequencer step.">sequencer_step_t</a></span>.</li>
+</ul>
+</li>
+<li><b><span class="tt"><a class="el" href="sequencer_8c.html" title="Implementation of the sequencer interface.">lib/sequencer/src/sequencer.c</a></span></b><ul>
+<li><span class="tt">sequencer_step_type_to_string()</span> &ndash; add a <span class="tt">case</span>.</li>
+<li><span class="tt"><a class="el" href="sequencer_8h.html#a6388faf8d4f19d42f3835d4e4c710972" title="The main task function for the sequencer.">sequencer_task()</a></span> &ndash; add a <span class="tt">case</span> to the <span class="tt">switch</span>. A step is executed in several cycles: initialize it in the first cycle, check in every following cycle whether it is completed, and handle an abort (the step was removed from the queue). Never wait inside the <span class="tt">case</span>.</li>
+</ul>
+</li>
+<li><b><span class="tt"><a class="el" href="udp__interface_8c.html" title="UDP interface implementation.">lib/udp_interface/src/udp_interface.c</a></span></b><ul>
+<li>Add a <span class="tt">MSG_TYPE_CMD_*</span> constant and a packed struct for the command (same byte layout as on the PC side, see below).</li>
+<li><span class="tt">handle_command()</span> &ndash; add a <span class="tt">case</span> that creates the step and adds it to the queue with <span class="tt"><a class="el" href="sequencer_8h.html#adf0b693996b3ad0bd6a1db5c38bfa5a5" title="Adds a sequencer step to the queue.">sequencer_add_step_to_queue()</a></span>.</li>
+<li>If the web GUI should display the parameters of the step: add fields to the packed struct <span class="tt"><a class="el" href="structtelemetry__sequencer__sample__t.html" title="Telemetry Sequencer Sample Structure.">telemetry_sequencer_sample_t</a></span> and fill them in the loop that fills <span class="tt">packet.sequencer_samples</span>. Set the fields that don't belong to the step type to zero.</li>
+</ul>
+</li>
+</ol>
+<p><b>PC (host interface)</b></p>
 <ol type="1">
 <li><b><span class="tt"><a class="el" href="udp__core_8py.html" title="Shared UDP telemetry/command core for the ESP32 link.">core/udp_core.py</a></span></b><ul>
-<li>Add a new <span class="tt">STEP_TYPE_*</span> constant.</li>
-<li><span class="tt">SEQUENCER_STEP_FMT</span> and the <span class="tt">SequencerStep</span> dataclass &ndash; extend if the new step type needs fields the current struct doesn't have (every step type shares the same struct layout, so new fields must make sense as "zero when unused" for the existing types too).</li>
-<li><span class="tt">parse_telemetry()</span>'s step-unpacking line, if the struct changed.</li>
-<li>If the new step type needs a new command to queue it: add a new <span class="tt">MSG_TYPE_CMD_*</span> constant, a new <span class="tt">..._FMT</span> struct format, a new <span class="tt">build_..._cmd()</span> function, and a new <span class="tt">send_...()</span> method on <span class="tt">UdpClient</span> &ndash; mirror <span class="tt">build_wait_cmd()</span> / <span class="tt">send_wait()</span>.</li>
+<li>Add a new <span class="tt">STEP_TYPE_*</span> constant (same value as in the firmware).</li>
+<li>Add a new <span class="tt">MSG_TYPE_CMD_*</span> constant (same value as in the firmware), a new <span class="tt">..._FMT</span> struct format, a new <span class="tt">build_..._cmd()</span> function, and a new <span class="tt">send_...()</span> method on <span class="tt">UdpClient</span> &ndash; mirror <span class="tt">build_move_to_cmd()</span> / <span class="tt">send_move_to()</span>.</li>
+<li>If the step has parameters that the web GUI should display: <span class="tt">SEQUENCER_STEP_FMT</span>, the <span class="tt">SequencerStep</span> dataclass and the step-unpacking lines in <span class="tt">parse_telemetry()</span>. They must match <span class="tt"><a class="el" href="structtelemetry__sequencer__sample__t.html" title="Telemetry Sequencer Sample Structure.">telemetry_sequencer_sample_t</a></span> in the firmware. Every step type shares the same struct layout, so new fields must make sense as "zero when unused" for the existing types too.</li>
 </ul>
 </li>
 <li><b><span class="tt"><a class="el" href="app_8py.html" title="Web GUI backend for the ESP32 UDP link.">gui_web/app.py</a></span></b><ul>
-<li><span class="tt">_on_telemetry()</span>'s <span class="tt">"steps"</span> JSON list &ndash; add any new fields.</li>
-<li>If you added a new command: a new <span class="tt">/api/command/&lt;name&gt;</span> Flask route calling your new <span class="tt">send_...()</span> method &ndash; mirror <span class="tt">cmd_wait()</span>.</li>
+<li>A new <span class="tt">/api/command/&lt;name&gt;</span> Flask route calling your new <span class="tt">send_...()</span> method &ndash; mirror <span class="tt">cmd_move_to()</span>.</li>
+<li><span class="tt">_on_telemetry()</span>'s <span class="tt">"steps"</span> JSON list &ndash; add the new telemetry fields.</li>
 </ul>
 </li>
 <li><b><span class="tt">gui_web/static/app.js</span></b><ul>
-<li><span class="tt">renderSteps()</span> &ndash; the <span class="tt">switch (s.step_type)</span> check (and whatever detail text/label it builds) needs a branch for each step type you support.</li>
-<li><span class="tt">wireCommandForms()</span> &ndash; wire up a new command's form, if you added one.</li>
+<li><span class="tt">renderSteps()</span> &ndash; add a <span class="tt">case</span> for the new <span class="tt">step_type</span> (label and detail text of the card).</li>
+<li><span class="tt">wireCommandForms()</span> &ndash; wire up the form of the new command.</li>
 </ul>
 </li>
-<li><b><span class="tt">gui_web/templates/index.html</span></b> &ndash; add a new form for a new command, mirroring the existing wait form.</li>
+<li><b><span class="tt">gui_web/templates/index.html</span></b> &ndash; add a form for the new command, mirroring the <b>Move to</b> form.</li>
 <li><b><span class="tt">gui_web/static/style.css</span></b> &ndash; add a <span class="tt">.step-card.type-&lt;name&gt;</span> rule if you want the new step type visually distinct, mirroring <span class="tt">.step-card.type-wait</span>.</li>
 </ol>
+<dl class="section warning"><dt>Warning</dt><dd>The packed C struct of the command and the Python <span class="tt">struct</span> format must match <b>byte for byte</b> (order, types, size). If they don't, the firmware silently ignores the command: there is no error message.</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="c-changing-safety-events-and-safety-levels"></a>
 C. Changing safety events and safety levels</h2>
 <p>These are two independent, unrelated numeric codes: a safety <b>event</b> is a command you send to the ESP32 (it may trigger a transition); a safety <b>level</b> is a state the ESP32 reports back in telemetry. Neither is currently validated or enumerated in <span class="tt"><a class="el" href="udp__core_8py.html" title="Shared UDP telemetry/command core for the ESP32 link.">core/udp_core.py</a></span> &ndash; both travel as a plain <span class="tt">uint8</span>, so changing the <em>set</em> of values needs no core changes at all, only GUI changes:</p>

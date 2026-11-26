@@ -1,7 +1,7 @@
 <map id="lib/hal/include/motor_driver.h" name="lib/hal/include/motor_driver.h">
-<area shape="rect" id="Node000001" title="Header file for the motor driver module. This module provides functions to initialize and control the..." alt="" coords="17,5,173,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,87,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,47,63,83,58,80,81,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="111,93,181,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,44,133,80,129,83,105,47"/>
+<area shape="rect" id="Node000001" title="Header file for the motor driver module. This module provides functions to initialize and control the..." alt="" coords="17,5,172,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,86,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,49,63,86,59,83,80,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,98,181,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,48,132,85,127,84,107,53"/>
 </map>

@@ -3,13 +3,14 @@ var annotated_dup =
     [ "udp_core", "namespaceudp__core.html", [
       [ "SafetySample", "classudp__core_1_1SafetySample.html", null ],
       [ "ControlSample", "classudp__core_1_1ControlSample.html", null ],
-      [ "SequencerStep", "classudp__core_1_1SequencerStep.html", null ],
+      [ "SequencerStep", "classudp__core_1_1SequencerStep.html", "classudp__core_1_1SequencerStep" ],
       [ "TelemetryBatch", "classudp__core_1_1TelemetryBatch.html", "classudp__core_1_1TelemetryBatch" ],
       [ "LinkStats", "classudp__core_1_1LinkStats.html", "classudp__core_1_1LinkStats" ],
       [ "_SeqCounter", "classudp__core_1_1__SeqCounter.html", "classudp__core_1_1__SeqCounter" ],
       [ "UdpClient", "classudp__core_1_1UdpClient.html", "classudp__core_1_1UdpClient" ]
     ] ],
     [ "cmd_header_t", "structcmd__header__t.html", "structcmd__header__t" ],
+    [ "cmd_move_to_t", "structcmd__move__to__t.html", "structcmd__move__to__t" ],
     [ "cmd_remove_sequencer_step_t", "structcmd__remove__sequencer__step__t.html", "structcmd__remove__sequencer__step__t" ],
     [ "cmd_safety_t", "structcmd__safety__t.html", "structcmd__safety__t" ],
     [ "cmd_wait_t", "structcmd__wait__t.html", "structcmd__wait__t" ],
