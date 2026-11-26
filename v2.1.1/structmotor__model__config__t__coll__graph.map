@@ -1,0 +1,5 @@
+<map id="motor_model_config_t" name="motor_model_config_t">
+<area shape="rect" id="Node000001" title="Motor configuration structure." alt="" coords="10,106,177,134"/>
+<area shape="rect" id="Node000002" href="$structmotor__model__params__t.html" title="Motor parameters structure." alt="" coords="5,5,182,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,47,96,106,91,105,91,50"/>
+</map>

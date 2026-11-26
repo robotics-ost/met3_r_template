@@ -1,0 +1,9 @@
+<map id="lib/sequencer/include/sequencer.h" name="lib/sequencer/include/sequencer.h">
+<area shape="rect" id="Node000001" title="Sequencer interface for the application." alt="" coords="71,5,230,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,86,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,50,76,90,73,86,121,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,98,192,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,48,153,84,148,81,149,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="216,98,286,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,48,226,88,220,88,176,53"/>
+</map>
