@@ -1,0 +1,11 @@
+/*! \page nav_exercises Exercises
+
+The exercises of the practical course. They build on each other. Each exercise page lists the learning objectives, the tasks, the starter code and hints, and a *Done when* checklist. The starter code is in the folder `exercises/starter_code/`.
+
+- \subpage md_exercises_201__robot__basics
+- \subpage md_exercises_202__dc__motor__control__1
+- \subpage md_exercises_203__dc__motor__control__2
+- \subpage md_exercises_204__kinematics
+- \subpage md_exercises_205__cartesian__position__control
+- \subpage md_exercises_206__tcp__control
+*/

@@ -92,7 +92,7 @@ void app_main()
     /* Core 1: high-priority real time tasks (safety, control)
      * Core 0: low-priority tasks (network, sequencer) */
     xTaskCreatePinnedToCore(safety_system_task, "safety_system", 2048, NULL, 5, NULL, 1);
-    xTaskCreatePinnedToCore(control_system_task, "control_system", 4096, NULL, 5, NULL, 1);
+    xTaskCreatePinnedToCore(control_system_task, "control_system", 4096, NULL, 4, NULL, 1);
     xTaskCreatePinnedToCore(udp_interface_task, "udp_interface_task", 4096, NULL, 3, NULL, 0);
     xTaskCreatePinnedToCore(update_bus_voltage_task, "update_bus_voltage_task", 2048, NULL, 2, NULL, 0);
     xTaskCreatePinnedToCore(sequencer_task, "sequencer_task", 4096, NULL, 3, NULL, 0);
