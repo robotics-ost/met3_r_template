@@ -28,6 +28,7 @@
 #define MSG_TYPE_CMD_SAFETY 0x02      /**< Host -> ESP32: set safety level */
 #define MSG_TYPE_CMD_REMOVE_STEP 0x03 /**< Host -> ESP32: abort current step */
 #define MSG_TYPE_CMD_WAIT 0x04        /**< Host -> ESP32: wait for duration */
+#define MSG_TYPE_CMD_MOVE_TO 0x05      /**< Host -> ESP32: move to target pose */
 #define MSG_TYPE_GOODBYE 0xFF         /**< Host -> ESP32: unregister as peer */
 
 static const char *TAG = "UDP Interface"; /**< Tag for logging purposes */
@@ -73,9 +74,12 @@ typedef struct __attribute__((packed))
  */
 typedef struct __attribute__((packed))
 {
-    uint8_t type;         /**< Type of the sequencer step (MOVE_TO_POSE, WAIT, etc.) */
+    uint8_t type;         /**< Type of the sequencer step (WAIT, MOVE_TO, etc.) */
     uint8_t id;           /**< ID of the sequencer step */
     uint32_t duration_ms; /**< Duration for WAIT steps (ms) */
+    float x;              /**< Target x position for MOVE_TO steps [m] */
+    float y;              /**< Target y position for MOVE_TO steps [m] */
+    float phi;            /**< Target orientation for MOVE_TO steps [rad] */
 } telemetry_sequencer_sample_t;
 
 /**
@@ -131,6 +135,19 @@ typedef struct __attribute__((packed))
     cmd_header_t header;  /**< Command header */
     uint32_t duration_ms; /**< Duration to wait in milliseconds */
 } cmd_wait_t;
+
+/**
+ * @brief Move-To Command Structure
+ *
+ * This structure represents a move-to command message.
+ */
+typedef struct __attribute__((packed))
+{
+    cmd_header_t header; /**< Command header */
+    float x;             /**< Target x position in the global frame [m] */
+    float y;             /**< Target y position in the global frame [m] */
+    float phi;           /**< Target orientation in the global frame [rad] */
+} cmd_move_to_t;
 
 /**
  * @brief Remove Sequencer Step Command Structure
@@ -273,6 +290,9 @@ void udp_interface_add_control_sample(float enc_A_pos, float enc_B_pos)
  * - MSG_TYPE_HELLO: Registers/updates the telemetry recipient peer address.
  * - MSG_TYPE_GOODBYE: Unregisters the current telemetry peer.
  * - MSG_TYPE_CMD_SAFETY: Registers a safety event.
+ * - MSG_TYPE_CMD_WAIT: Adds a WAIT step to the sequencer queue.
+ * - MSG_TYPE_CMD_MOVE_TO: Adds a MOVE_TO step to the sequencer queue.
+ * - MSG_TYPE_CMD_REMOVE_STEP: Removes a step from the sequencer queue.
  *
  * @param buf Pointer to the received UDP datagram buffer.
  * @param len Length of the received datagram.
@@ -324,6 +344,22 @@ static void handle_command(const uint8_t *buf, int len, struct sockaddr_in *peer
                 .type = WAIT,
                 .wait = {
                     .duration_ms = cmd->duration_ms,
+                },
+            };
+            sequencer_add_step_to_queue(&step);
+        }
+        break;
+
+    case MSG_TYPE_CMD_MOVE_TO:
+        if (len >= (int)sizeof(cmd_move_to_t) && from_addr->sin_addr.s_addr == peer_addr->sin_addr.s_addr)
+        {
+            const cmd_move_to_t *cmd = (const cmd_move_to_t *)buf;
+            sequencer_step_t step = {
+                .type = MOVE_TO,
+                .move_to = {
+                    .x = cmd->x,
+                    .y = cmd->y,
+                    .phi = cmd->phi,
                 },
             };
             sequencer_add_step_to_queue(&step);
@@ -441,9 +477,20 @@ void udp_interface_task(void *arg)
         {
             packet.sequencer_samples[i].id = steps[i].id;
             packet.sequencer_samples[i].type = steps[i].type;
+            // Parameters that don't belong to the type of the step are sent as zero
+            packet.sequencer_samples[i].duration_ms = 0;
+            packet.sequencer_samples[i].x = 0.0f;
+            packet.sequencer_samples[i].y = 0.0f;
+            packet.sequencer_samples[i].phi = 0.0f;
             if (packet.sequencer_samples[i].type == WAIT)
             {
                 packet.sequencer_samples[i].duration_ms = steps[i].wait.duration_ms;
+            }
+            else if (packet.sequencer_samples[i].type == MOVE_TO)
+            {
+                packet.sequencer_samples[i].x = steps[i].move_to.x;
+                packet.sequencer_samples[i].y = steps[i].move_to.y;
+                packet.sequencer_samples[i].phi = steps[i].move_to.phi;
             }
         }
         /* Fill remaining array entries with zeros so the transmitted packet

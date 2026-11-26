@@ -115,6 +115,9 @@ def _on_telemetry(batch: TelemetryBatch) -> None:
                 "step_type": st.step_type,
                 "step_id": st.step_id,
                 "duration_ms": st.duration_ms,
+                "x": st.x,
+                "y": st.y,
+                "phi": st.phi,
             }
             for st in batch.steps
         ],
@@ -175,6 +178,22 @@ def cmd_safety():
     event = int(body["event"])
     client.send_safety(event)
     return jsonify({"ok": True, "sent": {"event": event}})
+
+
+@app.route("/api/command/move_to", methods=["POST"])
+def cmd_move_to():
+    """!
+    @brief POST /api/command/move_to - queue a move-to sequencer step.
+    @details Expects JSON body `{"x": <float>, "y": <float>, "phi": <float>}`
+             (x, y in [m], phi in [rad]).
+    @return JSON `{"ok": true, "sent": {"x": <float>, "y": <float>, "phi": <float>}}`.
+    """
+    body = request.get_json(force=True)
+    x = float(body["x"])
+    y = float(body["y"])
+    phi = float(body["phi"])
+    client.send_move_to(x, y, phi)
+    return jsonify({"ok": True, "sent": {"x": x, "y": y, "phi": phi}})
 
 
 @app.route("/api/command/wait", methods=["POST"])

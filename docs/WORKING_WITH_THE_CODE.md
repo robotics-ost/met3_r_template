@@ -4,7 +4,7 @@ This guide explains where your code goes, how to add a new module (e.g. a contro
 
 > [!IMPORTANT]
 > **Most of your code goes into the control loop in `lib/control_system/src/control_system.c`.**
-> Besides that, you change `include/config.h` and `src/main.c` for the configuration. In later exercises, you also extend other components, e.g. the telemetry or the sequencer.
+> Besides that, you change `include/config.h` and `src/main.c` for the configuration. In later exercises, you also extend other components, e.g. the telemetry, and connect the sequencer to your controller.
 
 ## How the program runs
 
