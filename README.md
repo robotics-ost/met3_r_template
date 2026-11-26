@@ -144,79 +144,15 @@ The files you will work with most are marked in **bold**.
 
 ## Architecture Overview
 
-The core system is designed in four layers (Safety System, Control System, Sequencer, Hardware Abstraction Layer). In addition, the network interface enables the user to interact with the robot via telemetry. Solid lines indicate write operations, while dashed lines stand for read only.
+The software on the robot has four layers. In addition, the network interface connects the robot to your PC.
 
-```mermaid
-flowchart TB
-    subgraph core ["Core System"]
-        direction TB
-        Safe["Safety System<br>(System Monitoring, ensures safe operation)"]
-        Ctrl["Control System<br>(Kinematics, path planning, motor control)"]
-        Seq["Sequencer<br>(User defined sequences, exception handling)"]
-        HAL["Hardware Abstraction Layer<br>(Interface to sensors and actuators)"]
-    end
+- **Safety System:** decides whether the motors are allowed to run.
+- **Control System:** runs the control loop. Most of your code goes here.
+- **Sequencer:** executes commands one after another, e.g. "move to" or "wait".
+- **Hardware Abstraction Layer (HAL):** accesses the motors and encoders.
+- **UDP Interface:** exchanges telemetry and commands with your PC.
 
-    subgraph network ["Network"]
-        direction TB
-        UDP["UDP Interface<br>(Bidirectional communication between ESP32 and host PC)"]
-    end
-
-    Safe -.->|"Safety<br>Level"| Seq
-    Safe -->|"Enable/Disable<br>Control System<br>Components"| Ctrl
-    Safe -.->|"Safety<br>Level"| Ctrl
-    Safe -->|"Enable/Disable<br>Hardware<br>Components"| HAL
-    Safe -.->|"Safety<br>Level"| UDP
-
-    Seq -->|"Trigger<br>Safety Event"| Safe
-    Seq -->|"Set<br>Target"| Ctrl
-    Seq -.->|"Queued<br>Steps"| UDP
-
-    Ctrl -.->|"System<br>State"| Seq
-    Ctrl -->|"Trigger<br>Safety Event"| Safe
-    Ctrl -->|"Actuator<br>Setpoints"| HAL
-    Ctrl -.->|"System<br>State"| UDP
-
-    HAL -.->|"Sensor<br>Values"| Ctrl
-    HAL -.->|"Sensor<br>Values"| Seq
-    HAL -.->|"Sensor<br>Values"| Safe
-
-    UDP -->|"Trigger<br>Safety Event"| Safe
-    UDP -->|"Queue<br>Steps"| Seq
-```
-
-| Layer | Target Core | Priority |
-|---|---|---|
-| **Sequencer** | Core 0 | Non RT (~50-100 Hz) |
-| **Control System** | Core 1 | Hard RT (~500-1000 Hz) |
-| **Safety System** | Core 1 | Hard RT (500-1000 Hz) |
-| **HAL** | Core 0 | Direct Register Access |
-| **UDP Telemetry** | Core 0 | Non RT (50 Hz) |
-
-### UDP telemetry
-
-The UDP telemetry library provides:
-
-- WiFi STA connection to a router
-- UDP socket for bidirectional communication
-- Batched telemetry packets (20 samples/batch, ~50 Hz send rate) containing safety and control samples, as well as sequencer steps
-- Incoming command handling (HELLO registration, GOODBYE unregistration, commands)
-
-### Hardware Abstraction Layer (HAL)
-
-The HAL controls the physical hardware:
-
-- **Motor Driver** — TB6612FNG via PWM; per-motor voltage control with direction, INA219 bus voltage monitoring
-- **Encoder Driver** — ESP-IDF PCNT quadrature encoding; 2 encoders with configurable pulses per revolution
-
-### Safety System
-The safety system provides a hierarchical state machine with event-driven transitions via FreeRTOS queues, task registration for coordinated shutdown, and automatic motor disable on emergency.
-
-### Control System
-
-The control system provides the main control task, in which you add your own control logic.
-
-### Sequencer
-The sequencer is implemented as a doubly linked list that can store a sequence of steps. Currently only a wait step is implemented as an example.
+[Architecture Concept](docs/SYSTEM_ARCHITECTURE.md) explains the idea behind this structure, and [Robot Software](docs/ROBOT_SOFTWARE.md) shows how it is built in this project. There is also a page for each of the components: [Safety System](docs/SAFETY_SYSTEM.md), [Control System](docs/CONTROL_SYSTEM.md), [Sequencer](docs/SEQUENCER.md), [Hardware Abstraction Layer](docs/HAL.md) and [UDP Interface](docs/UDP_INTERFACE.md).
 
 ## Configuration
 

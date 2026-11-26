@@ -9,7 +9,7 @@ This guide explains where your code goes, how to add a new module (e.g. a contro
 ## How the program runs
 
 1. `app_main()` in `src/main.c` runs once at start-up. It initializes all components and then starts their tasks.
-2. Each component runs as its own **task**, a function with an endless loop that runs periodically (see the table in the [Architecture Overview](../README.md#architecture-overview)).
+2. Each component runs as its own **task**, a function with an endless loop that runs periodically (see the table in [Robot Software](ROBOT_SOFTWARE.md#tasks-cores-and-periods)).
 3. The **control system task** `control_system_task()` runs every `CONTROL_SYSTEM_TASK_PERIOD_MS` (default 5 ms, set in `include/config.h`). This is where you read the sensors, calculate and set the actuators:
 
 ```c

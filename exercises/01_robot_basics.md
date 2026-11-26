@@ -12,7 +12,7 @@ You can:
 
 1. Install Git, VS Code, PlatformIO and Python as described in [Getting Started](../docs/GETTING_STARTED.md).
 2. Create your own repository from the starter code ([Quick Start](../README.md#quick-start), Steps 2&ndash;4).
-3. Get an overview of the repository: read the sections *Project structure* and *Architecture Overview* in the [main README](../README.md#project-structure).
+3. Get an overview of the repository: read the section *Project structure* in the [main README](../README.md#project-structure) and the pages [Architecture Concept](../docs/SYSTEM_ARCHITECTURE.md) and [Robot Software](../docs/ROBOT_SOFTWARE.md).
 
 ## Task 1.2: Connect the robot to WiFi
 
@@ -43,6 +43,7 @@ This exercise needs no additional starter code. You mainly work in `lib/control_
 ## Hints
 
 - [Working with the Code](../docs/WORKING_WITH_THE_CODE.md) explains how the control loop works and where to put your code.
+- The safety levels and what they do are explained in [Safety System](../docs/SAFETY_SYSTEM.md).
 - Useful functions: `encoder_driver_get_angles()`, `motor_driver_set_voltage()` and `udp_interface_add_control_sample()`. Click on the function names in the [online documentation](https://robotics-ost.github.io/met3_r_template/) to see how they are used.
 - The period of the control loop is set in `include/config.h` (`CONTROL_SYSTEM_TASK_PERIOD_MS`, default 5 ms).
 - There is no `triangle()` function in C. Write it yourself.

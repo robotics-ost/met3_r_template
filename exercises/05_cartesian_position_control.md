@@ -45,6 +45,7 @@ How to integrate a new module into the control system is explained step by step 
 ## Hints
 
 - The sequencer and the control system run in different tasks. Which functions of the position controller are called by the sequencer, and which one by the control system? The provided functions show how the two tasks share data safely. Read them before you implement `position_controller_run()`.
+- How the sequencer works and how its steps are executed is explained in [Sequencer](../docs/SEQUENCER.md). The big picture of all components is in [Architecture Concept](../docs/SYSTEM_ARCHITECTURE.md) and [Robot Software](../docs/ROBOT_SOFTWARE.md).
 
 ## Done when
 

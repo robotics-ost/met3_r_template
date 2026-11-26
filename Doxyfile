@@ -1028,13 +1028,10 @@ WARN_LOGFILE           =
 
 # Listed explicitly so that the guides appear in this order in the navigation
 INPUT                  = README.md \
-                         docs/GETTING_STARTED.md \
-                         docs/GIT_GUIDE.md \
-                         docs/WORKING_WITH_THE_CODE.md \
-                         docs/WEB_GUI.md \
-                         docs/C_FOR_PYTHON_PROGRAMMERS.md \
+                         docs_config/nav_architecture.dox \
+                         docs_config/nav_guides.dox \
+                         docs_config/nav_exercises.dox \
                          docs/TROUBLESHOOTING.md \
-                         exercises \
                          .
 
 # This tag can be used to specify the character encoding of the source files
